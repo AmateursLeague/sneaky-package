@@ -19,3 +19,16 @@
 
 ### Changes
 - Renamed import from `lib` to `display`.
+
+## [Stable-Release]
+## [v0.7.1] - 2024-03-29
+### Added
+- Browser Code
+- All subject code
+
+### Fixes
+- Integrated functioning code snippets
+
+### Changes
+- New package added for testing `graph`.
+
