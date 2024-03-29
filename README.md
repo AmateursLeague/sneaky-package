@@ -19,8 +19,8 @@ pip install matplotlib-visual
 Once the package is installed, create a new .py file and import the necessary module:
 
 ```python
-from matplotlib_visual.models import lib
-lib('sample') # the src code
+from matplotlib_visual.models import display
+display('sample') # the src code
 ```
 
 # Features
@@ -41,3 +41,4 @@ This package operates under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.e
 
 Happy sneaking! 🕵️‍♂️🤫
 
+> 🤖 **Note**: This markdown file was generated using [ChatGPT 3.5](https://openai.com/chatgpt), an AI-powered language model developed by OpenAI.
