@@ -32,3 +32,9 @@
 ### Changes
 - New package added for testing `graph`.
 
+## [Stable-Release]
+## [0.9.1] - 2024-04-08
+### Added
+- Clipboard feature (src code will copied into os clipboard)
+### Fixes
+- Bug Fixes for the clipboard feature
