@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='matplotlib_visual',
-    version='0.9.2',
+    version='0.9.3',
     packages=find_packages(),
     description='A package for visualizing data using Matplotlib',
     author='mcafin44',
