@@ -18,6 +18,3 @@ def display(snippet_name):
             subprocess.run('clip', input=text.strip().encode(), check=True)
         else:
             raise OSError("Unsupported operating system")
-
-    # Copy source code to clipboard
-    copy_to_clipboard(source_code)
