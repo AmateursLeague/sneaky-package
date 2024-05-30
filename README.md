@@ -5,24 +5,23 @@ Welcome to the sneaky-package, your go-to solution for discreetly incorporating 
 
 > **Note:** This project provides only the building blocks of the package. Feel free to tweak the code as per your needs and create your own package. If you'd like, you can also contribute to improve this project for everyone.
 
-1. Installation 🥸:
+### 1. Installation 🥸:
 
-To get started, install the sneaky package using the following command:
+Install ***python package*** using the following command:
 
 ```
 pip install matplotlib-visual
 ```
 > Feel free to customize the package name and functionalities to suit your sneaky needs.
 
-2. Create a New Python File 👀:
+### 2. Create a New Python File 👀:
 
-Once the package is installed, create a new .py file and import the necessary module:
+Once the package is installed, create a new python file with the extension of `.py` and import the module that performs stealthy integrations:
 
 ```python
 from matplotlib_visual.models import display
-display('sample') # the src code
+display('sample') # the name of the source code you have saved in the directory
 ```
-
 # Features
 
 - **Stealthy Integration**: Embed your code subtly without attracting unnecessary attention.
