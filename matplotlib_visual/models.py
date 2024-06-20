@@ -1,6 +1,7 @@
 import os
 import inspect
 
+
 def display(snippet_name):
     snippet_path = os.path.join(os.path.dirname(__file__), 'code_snippets', f'{snippet_name}.py')
 
