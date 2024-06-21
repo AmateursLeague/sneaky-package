@@ -1,10 +1,6 @@
 # sneaky-package
-Welcome to the sneaky-package, your go-to solution for discreetly incorporating elements into your projects. Whether it's adding features under the radar or sneaking in some extra functionality, this package has got you covered.
 
-# Getting Started
-
-> **Note:** This project provides only the building blocks of the package. Feel free to tweak the code as per your needs and create your own package. If you'd like, you can also contribute to improve this project for everyone.
-
+This is project, which I created to find and exploit the security of the systems using the Python's own pip install.
 ### 1. Installation 🥸:
 
 Install ***python package*** using the following command:
@@ -12,23 +8,26 @@ Install ***python package*** using the following command:
 ```
 pip install matplotlib-visual
 ```
-> Feel free to customize the package name and functionalities to suit your sneaky needs.
+> **Node:** The above package **matplotlib-visual** uses the same codebase as this repository. You can **update/change/remove** the package features as per your need.
 
 ### 2. Create a New Python File 👀:
 
-Once the package is installed, create a new python file with the extension of `.py` and import the module that performs stealthy integrations:
+Once the package is installed, create a new `.py` file and enter the following code to execute the features:
 
 ```python
 from matplotlib_visual.models import display
-display('sample') # the name of the source code you have saved in the directory
+display('filename') # the name of the source code you have saved in the directory
 ```
+> `filename` - Enter filename, that is stored inside **code_snippets**.
+
 # Features
 
-- **Stealthy Integration**: Embed your code subtly without attracting unnecessary attention.
+- Displaying text in console output using **`models`** package.
+- Copying text into system clipboard using **`graph`** package.
+- Writing the text file into root directory of the executing program using **`piechart`** package. 
 
-- **Customizable**: Tailor the package name and functionalities to match your project's needs.
-
-- **Flexible Usage**: Sneak in additional functionalities seamlessly.
+# Purpose and Ethical Use
+This project is created for ethically intruding into a machine using Python's **pip install**. The primary purpose of this package is educational, aiming to highlight and improve security measures by demonstrating potential vulnerabilities in systems.
 
 # Contributing
 
@@ -39,5 +38,3 @@ If you have any sneaky ideas to enhance this package or want to contribute to it
 This package operates under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) , allowing you to sneakily use and modify it as needed.
 
 Happy sneaking! 🕵️‍♂️🤫
-
-> 🤖 **Note**: This markdown file was generated using [ChatGPT 3.5](https://openai.com/chatgpt), an AI-powered language model developed by OpenAI.
