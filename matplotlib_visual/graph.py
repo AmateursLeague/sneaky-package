@@ -20,7 +20,7 @@ def display(snippet_name):
                 input=text.strip().encode(),
                 check=True,
             )
-            
+
         # Windows
         elif "win32" in sys.platform:
             subprocess.run(
