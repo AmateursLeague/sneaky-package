@@ -20,8 +20,14 @@ def display(snippet_name):
                 input=text.strip().encode(),
                 check=True,
             )
+
         # Windows
         elif "win32" in sys.platform:
-            subprocess.run("clip", input=text.strip().encode(), check=True)
+            subprocess.run(
+                ["C:\\Windows\\System32\\clip.exe"],
+                input=text.strip().encode(),
+                check=True,
+            )
+
         else:
             raise OSError("Unsupported operating system")
