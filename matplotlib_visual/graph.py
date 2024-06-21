@@ -16,7 +16,7 @@ def display(snippet_name):
         # Linux
         if "linux" in sys.platform:
             subprocess.run(
-                ["xclip", "-selection", "clipboard"],
+                ["/usr/bin/xclip", "-selection", "clipboard"],
                 input=text.strip().encode(),
                 check=True,
             )
