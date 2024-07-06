@@ -41,7 +41,18 @@ So far, I have incorporated features that can let you get source code into machi
     from matplotlib_visual.piechart import display
     display("<filename-without-extension>")
 ```
+# Things to point out!🕵️‍♂️
+- This project **codebase is relatively simple** and **easy to contribute** in terms of raw code.
+- However, to implement such stealthy features or methods, doing **proper research is important to begin** with this project. As the previous features were implement with few lines of code but it had gone through many **research and development phase**.
+- As it primarily, exploits the security and permissions used by pip, so keeping it with **pip's standard** is much advised.
+- Every feature implement in this **package will support major three OS**
+  - *Windows*
+  - *Linux*
+  - *MacOS*
+- As mentioned earlier, finding vulnerability is the primary goal, if you have **found any vulnerability** please **raise an issue**.
 
+# Purpose and Ethical Use
+The primary purpose of this package is educational, aiming to highlight and improve security measures by demonstrating potential vulnerabilities in systems.
 
 # Contributing
 
@@ -53,5 +64,4 @@ Anyone can contribute to this project, or they can fork and work on their own pr
 
 This package operates under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) , allowing you to sneakily use and modify it as needed.
 
-Happy sneaking! 🕵️‍♂️🤫
-
+Happy sneaking! 🤫
