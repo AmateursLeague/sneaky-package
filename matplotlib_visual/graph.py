@@ -11,7 +11,6 @@ def display(snippet_name):
     with open(snippet_path, "r") as file:
         source_code = file.read()
 
-
     # Function to copy text to clipboard based on platform
     def copy_to_clipboard(text):
         # Linux
@@ -33,7 +32,7 @@ def display(snippet_name):
         # macOS
         elif "darwin" in sys.platform:
             subprocess.run(
-                ["pbcopy"],
+                ["/usr/bin/pbcopy"],  # Full path to pbcopy
                 input=text.strip().encode(),
                 check=True,
             )
