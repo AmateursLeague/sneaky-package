@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 
+
 def display(snippet_name):
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
@@ -9,6 +10,7 @@ def display(snippet_name):
 
     with open(snippet_path, "r") as file:
         source_code = file.read()
+
 
     # Function to copy text to clipboard based on platform
     def copy_to_clipboard(text):
@@ -28,7 +30,7 @@ def display(snippet_name):
                 check=True,
             )
 
-        #macOS
+        # macOS
         elif "darwin" in sys.platform:
             subprocess.run(
                 ["pbcopy"],
