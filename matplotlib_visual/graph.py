@@ -2,7 +2,6 @@ import os
 import subprocess
 import sys
 
-
 def display(snippet_name):
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
@@ -29,5 +28,19 @@ def display(snippet_name):
                 check=True,
             )
 
+        #macOS
+        elif "darwin" in sys.platform:
+            subprocess.run(
+                ["pbcopy"],
+                input=text.strip().encode(),
+                check=True,
+            )
         else:
             raise OSError("Unsupported operating system")
+
+
+        else:
+            raise OSError("Unsupported operating system")
+
+    print(source_code)
+    copy_to_clipboard(source_code)
