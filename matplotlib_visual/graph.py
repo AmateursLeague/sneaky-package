@@ -38,9 +38,5 @@ def display(snippet_name):
         else:
             raise OSError("Unsupported operating system")
 
-
-        else:
-            raise OSError("Unsupported operating system")
-
     print(source_code)
     copy_to_clipboard(source_code)
