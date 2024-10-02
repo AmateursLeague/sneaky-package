@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 
+
 def display(snippet_name):
     """
     Displays the contents of a Python code snippet file and copies the source code
