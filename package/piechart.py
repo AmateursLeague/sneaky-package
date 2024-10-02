@@ -1,12 +1,13 @@
 import os
+import shutil
 
 
 def plot(snippet_name):
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
-    output_path = os.path.join(os.path.dirname(__file__), f"{snippet_name}.py")
-    with open(snippet_path, "r") as file:
-        source_code = file.read()
-    with open(output_path, "w") as output_file:
-        output_file.write(source_code)
+    try:
+        base_dir = os.path.dirname(__file__)
+        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
+        output_path = os.path.join(base_dir, f"{snippet_name}.py")
+
+        shutil.copyfile(snippet_path, output_path)
+    except Exception as e:
+        print(f"Error: {e}")
