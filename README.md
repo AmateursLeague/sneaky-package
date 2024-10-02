@@ -1,10 +1,14 @@
+Here’s an updated README that includes the contribution guidelines directly in the document:
+
+---
+
 # sneaky-package 🥸
-This is my side project, that exploits the permissions and vulnerabilities of **pip** packages, which is capable of sneaking in *sensitive information, source code or any malware* inside a local machine.
+This is my side project that exploits the permissions and vulnerabilities of **pip** packages, which is capable of sneaking in *sensitive information, source code, or any malware* into a local machine.
 
 ## How it works?
-- Well, this basically **functions like a Python package** and we use certain methods that triggers the respective operations.
-- It has few features that's especially for **integrating source into secured environment** without getting caught.
-- This repository holds the codebase that has already incorporated few features, but **feel free to fork and change the codebase** as you see fit.
+- This functions like a standard **Python package**, but it uses methods that trigger stealthy operations.
+- It has features specifically designed for **integrating source into secured environments** without getting caught.
+- This repository contains the codebase, but **feel free to fork and change the codebase** as needed.
 
 ## Getting started!
 
@@ -12,56 +16,89 @@ This is my side project, that exploits the permissions and vulnerabilities of **
 ```bash
 pip install matplotlib-visual
 ```
-> **Note:** This `matplotlib-visual` has already been implemented by me, you can officially install it in your PC. However this package holds information that were relevant to me and it won't be useful for new user, so I recommend you to fork and change the repository and upload your own package.
+> **Note:** The `matplotlib-visual` package has been implemented by me. You can install it, but the package holds information specific to me, so it may not be useful for new users. I recommend forking the repository, making changes, and uploading your own package.
 
-### **Executing Package:**
-1. Create a `python` file and enter any one of the codes below
-2. Or you can open a terminal and work on python without creating a `python` this command:
+### **Executing the Package:**
+1. Create a Python file and enter any of the code snippets below.
+2. Or, open a terminal and run Python interactively:
 ```bash
 python
 ```
 
-So far, I have incorporated features that can let you get source code into machine. But sneaking in such source code can be made in some ways, they are:
-- **Displaying source code** in console output.
+So far, I've added features that allow you to sneak source code into a machine using the following methods:
+- **Displaying source code** in the console output.
 ```python
     from matplotlib_visual.models import display
     display("<filename-without-extension>")
 ```
->*models method displays source code*
-- **Stealth Copy to Clipboard**, which is more secure.
+>*`models` method displays source code in the console.*
 
+- **Stealth Copy to Clipboard** for a more secure method.
 ```python
     from matplotlib_visual.graph import display
     display("<filename-without-extension>")
 ```
-> *graph* copies the source code into system's clipboard
+>*`graph` method copies the source code to the system's clipboard.*
 
 - **Writing the source code** into the program's root directory.
 ```python
     from matplotlib_visual.piechart import display
     display("<filename-without-extension>")
 ```
-# Things to point out!🕵️‍♂️
-- This project **codebase is relatively simple** and **easy to contribute** in terms of raw code.
-- However, to implement such stealthy features or methods, doing **proper research is important to begin** with this project. As the previous features were implement with few lines of code but it had gone through many **research and development phase**.
-- As it primarily, exploits the security and permissions used by pip, so keeping it with **pip's standard** is much advised.
-- Every feature implement in this **package will support major three OS**
+---
+
+# Contribution Guidelines
+
+We welcome all contributions! Whether you're improving features, fixing bugs, or enhancing documentation, your help is valuable to us. Here's how to get started:
+
+### 1. Understand the Project
+Before contributing, familiarize yourself with the project. It’s beginner-friendly, and most features are implemented with minimal lines of code. The key is to **research** thoroughly to understand how to implement stealthy features.
+
+### 2. Find or Create an Issue
+- You can either **request to be assigned an existing issue** or **raise a new issue** if you have ideas for new features or documentation improvements.
+- If the **contribution guidelines** or any part of the documentation are unclear, feel free to suggest changes or improvements.
+
+### 3. Request Assignment
+To work on an issue:
+- Comment:  
+  `"I would like to work on this issue under GSSoC'24 Extended Edition."`
+- If you've raised your own issue, comment:  
+  `"I want to work on this issue under GSSoC'24 Extended Edition."`
+
+### 4. Make Improvements
+We appreciate all contributions, whether code, documentation, or suggestions. Keep the code **clean, simple, and efficient**.
+
+### 5. Show Your Support
+If you find this project useful or interesting, please **star the repository** on GitHub to show your support. It really helps the project grow!
+
+---
+
+## Key Points to Remember
+- This package integrates source files into a target machine using the `stash/` directory.
+- A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
+- Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
+
+---
+
+## Things to point out!🕵️‍♂️
+- The **codebase is simple** and **easy to contribute to**, but implementing stealthy features requires **proper research**. Although some features are written with just a few lines of code, each has undergone extensive research and development.
+- Since the package exploits security permissions in `pip`, maintaining **pip standards** is advised.
+- Every feature in this **package supports major OS**:
   - *Windows*
   - *Linux*
   - *MacOS*
-- As mentioned earlier, finding vulnerability is the primary goal, if you have **found any vulnerability** please **raise an issue**.
+- If you find **any vulnerabilities**, please **raise an issue**.
 
-# Purpose and Ethical Use
-The primary purpose of this package is educational, aiming to highlight and improve security measures by demonstrating potential vulnerabilities in systems.
+## Purpose and Ethical Use
+The purpose of this package is educational, aiming to highlight and improve security by demonstrating potential vulnerabilities in systems.
 
-# Contributing
+---
 
-Anyone can contribute to this project, or they can fork and work on their own project. If you have any ideas to enhance this project to it's stealthy development, feel free to submit a pull request.
+## License
+This package is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
-**Remember the key is to keep it discreet!** 
+**Happy sneaking!** 🤫
 
-# License
+---
 
-This package operates under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) , allowing you to sneakily use and modify it as needed.
-
-Happy sneaking! 🤫
+This version integrates the contribution guidelines directly into the README, providing a seamless user experience.
