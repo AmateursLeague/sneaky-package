@@ -19,7 +19,7 @@ def copy_to_clipboard(text):
             input=text.strip().encode(),
             check=True,
         )
-    #macOS
+    # macOS
     elif "darwin" in sys.platform:
         subprocess.run(
             ["/usr/bin/pbcopy"],  # Full path to pbcopy for macOS
