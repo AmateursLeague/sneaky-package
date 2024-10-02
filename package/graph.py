@@ -57,10 +57,9 @@ def display(snippet_name, source_code):
     print(f"Snippet Name: {snippet_name}\n")
     print(source_code)
 
+
 # Example usage
 if __name__ == "__main__":
-
-    
     example_name = "Sample Code Snippet"
     example_code = """print("Hello, World!")"""
     display(example_name, example_code)
