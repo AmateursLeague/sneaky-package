@@ -1,17 +1,14 @@
 import os
+import shutil
 
 
 def plot(snippet_name):
-    # Define paths and check if the snippet file exists
     snippet_path = os.path.join(
         os.path.dirname(__file__), "stash", f"{snippet_name}.py"
     )
     output_path = os.path.join(os.path.dirname(__file__), f"{snippet_name}.py")
 
     if os.path.isfile(snippet_path):
-        with open(snippet_path, "r") as file:
-            source_code = file.read()
-        with open(output_path, "w") as output_file:
-            output_file.write(source_code)
+        shutil.copyfile(snippet_path, output_path)
     else:
-        print("Check for syntax errors.")
+        print("Syntax Error!")
