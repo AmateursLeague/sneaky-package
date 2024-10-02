@@ -7,7 +7,13 @@ def display(snippet_name):
         os.path.dirname(__file__), "stash", f"{snippet_name}.py"
     )
 
-    with open(snippet_path, "r") as file:
-        source_code = file.read()
+    if not os.path.isfile(snippet_path):
+        print(f"Error: The file '{snippet_name}.py' does not exist.")
+        return
 
-    print(source_code)
+    try:
+        with open(snippet_path, "r") as file:
+            source_code = file.read()
+        print(source_code)
+    except Exception as e:
+        print(f"Error reading file: {e}")
