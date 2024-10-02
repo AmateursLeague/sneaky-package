@@ -45,11 +45,7 @@ def display(snippet_name):
                 check=True,
             )
         elif "darwin" in sys.platform:
-            subprocess.run(
-                ["/usr/bin/pbcopy"],
-                input=text.strip().encode(),
-                check=True,
-            )
+            subprocess.run(["pbcopy"], input=text.strip().encode(), check=True)
         else:
             raise OSError("Unsupported operating system")
 
