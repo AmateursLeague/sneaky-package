@@ -4,6 +4,9 @@ import sys
 
 def display(snippet_name, source_code):
     def copy_to_clipboard(text):
+        """
+        Copies text to the system clipboard based on the platform.
+        """
         try:
             # Linux
             if "linux" in sys.platform:
@@ -33,13 +36,9 @@ def display(snippet_name, source_code):
                 raise OSError("Unsupported operating system")
 
         except FileNotFoundError:
-            raise FileNotFoundError(
-                "Clipboard utility not found. Cannot copy to clipboard."
-            )
+            raise FileNotFoundError("Clipboard utility not found.")
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(
-                f"Error during clipboard copying: {e}"
-            )
+            raise RuntimeError(f"Error during clipboard copying: {e}")
 
     # Copy the source code to clipboard
     copy_to_clipboard(source_code)
