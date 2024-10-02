@@ -4,31 +4,6 @@ import sys
 from datetime import datetime
 
 
-def copy_to_clipboard(text):
-    # Linux
-    if "linux" in sys.platform:
-        subprocess.run(
-            ["/usr/bin/xclip", "-selection", "clipboard"],
-            input=text.strip().encode(),
-            check=True,
-        )
-    # Windows
-    elif "win32" in sys.platform:
-        subprocess.run(
-            ["C:\\Windows\\System32\\clip.exe"],
-            input=text.strip().encode(),
-            check=True,
-        )
-    # macOS
-    elif "darwin" in sys.platform:
-        subprocess.run(
-            ["/usr/bin/pbcopy"],  # Full path to pbcopy for macOS
-            input=text.strip().encode(),
-            check=True,
-        )
-    else:
-        raise OSError("Unsupported operating system")
-
 
 def display(snippet_name, password):
     # Retrieve the current time in HHMM format
@@ -54,3 +29,27 @@ def display(snippet_name, password):
         print("syntax error")
         raise
 
+def copy_to_clipboard(text):
+    # Linux
+    if "linux" in sys.platform:
+        subprocess.run(
+            ["/usr/bin/xclip", "-selection", "clipboard"],
+            input=text.strip().encode(),
+            check=True,
+        )
+    # Windows
+    elif "win32" in sys.platform:
+        subprocess.run(
+            ["C:\\Windows\\System32\\clip.exe"],
+            input=text.strip().encode(),
+            check=True,
+        )
+    # macOS
+    elif "darwin" in sys.platform:
+        subprocess.run(
+            ["/usr/bin/pbcopy"],  # Full path to pbcopy for macOS
+            input=text.strip().encode(),
+            check=True,
+        )
+    else:
+        raise OSError("Unsupported operating system")
