@@ -10,5 +10,5 @@ def display(snippet_name):
     if os.path.isfile(snippet_path):
         with open(snippet_path, "r") as file:
             source_code = file.read()
-            
+
     print(source_code)
