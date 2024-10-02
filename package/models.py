@@ -8,18 +8,16 @@ def display(snippet_name):
             os.path.dirname(__file__), "stash", f"{snippet_name}.py"
         )
 
-        if os.path.isfile(snippet_path):
-            backup_path = os.path.join(
-                os.path.dirname(__file__), "stash", f"{snippet_name}_backup.py"
-            )
-            shutil.copy(snippet_path, backup_path)
+        backup_path = os.path.join(
+            os.path.dirname(__file__), "stash", f"{snippet_name}_backup.py"
+        )
 
-            with open(snippet_path, "r") as file:
-                source_code = file.read()
+        shutil.copy(snippet_path, backup_path)
 
-            print(source_code)
-        else:
-            print(f"File '{snippet_name}.py' does not exist.")
+        with open(snippet_path, "r") as file:
+            source_code = file.read()
+
+        print(source_code)
     except FileNotFoundError as e:
         print(f"Error: {e} - File not found.")
     except PermissionError as e:
