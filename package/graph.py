@@ -12,12 +12,6 @@ def display(snippet_name, source_code):
     """
 
     def copy_to_clipboard(text):
-        """
-        Copy the given text to the system clipboard.
-
-        Args:
-            text (str): Text to be copied to the clipboard.
-        """
         try:
             # Linux
             if "linux" in sys.platform:
@@ -42,6 +36,7 @@ def display(snippet_name, source_code):
                     input=text.strip().encode(),
                     check=True,
                 )
+
             else:
                 raise OSError("Unsupported operating system")
 
