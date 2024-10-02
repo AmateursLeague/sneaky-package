@@ -5,11 +5,13 @@ import getpass
 
 PASSWORD = "<password_of_your_choice>"  # Replace with your password
 
+
 def check_password():
     entered_password = getpass.getpass("Enter the password: ")
     if entered_password != PASSWORD:
         print("Incorrect password. Access denied.")
         sys.exit(1)
+        
 
 def display(snippet_name):
     check_password()  # Check password before proceeding
