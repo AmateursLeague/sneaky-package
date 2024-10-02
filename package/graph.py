@@ -33,9 +33,13 @@ def display(snippet_name, source_code):
                 raise OSError("Unsupported operating system")
 
         except FileNotFoundError:
-            raise FileNotFoundError("Clipboard utility not found. Cannot copy to clipboard.")
+            raise FileNotFoundError(
+                "Clipboard utility not found. Cannot copy to clipboard."
+            )
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"Error during clipboard copying: {e}")
+            raise RuntimeError(
+                f"Error during clipboard copying: {e}"
+            )
 
     # Copy the source code to clipboard
     copy_to_clipboard(source_code)
@@ -43,6 +47,3 @@ def display(snippet_name, source_code):
     # Display the snippet's content
     print(f"Snippet Name: {snippet_name}\n")
     print(source_code)
-
-# Uncommented the necessary part to reflect the suggestion.
-# No example usage as per the review request.
