@@ -1,7 +1,3 @@
-Here’s an updated README that includes the contribution guidelines directly in the document:
-
----
-
 # sneaky-package 🥸
 This is my side project that exploits the permissions and vulnerabilities of **pip** packages, which is capable of sneaking in *sensitive information, source code, or any malware* into a local machine.
 
@@ -98,7 +94,3 @@ The purpose of this package is educational, aiming to highlight and improve secu
 This package is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 **Happy sneaking!** 🤫
-
----
-
-This version integrates the contribution guidelines directly into the README, providing a seamless user experience.
