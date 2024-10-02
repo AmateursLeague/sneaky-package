@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 
+
 def display(snippet_name):
     """
     Display the content of the snippet file and copy it to the clipboard.
@@ -58,5 +59,3 @@ def display(snippet_name):
 
     # Display the snippet's content
     print(source_code)
-
-
