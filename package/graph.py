@@ -4,9 +4,7 @@ import sys
 
 def display(snippet_name, source_code):
     def copy_to_clipboard(text):
-        """
-        Copies text to the system clipboard based on the platform.
-        """
+        """Copies text to the system clipboard based on the platform."""
         try:
             # Linux
             if "linux" in sys.platform:
