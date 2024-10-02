@@ -23,39 +23,49 @@ def display(snippet_name):
 
     # Function to copy text to clipboard based on platform
     def copy_to_clipboard(text):
-        """
-        Copy the given text to the system clipboard.
+def copy_to_clipboard(text):
+    """
+    Copy the given text to the system clipboard.
 
-        Args:
-            text (str): Text to be copied to the clipboard.
-        """
-        try:
-            # Linux
-            if "linux" in sys.platform:
-                subprocess.run(
-                    ["/usr/bin/xclip", "-selection", "clipboard"],
-                    input=text.strip().encode(),
-                    check=True,
-                )
+    Args:
+        text (str): Text to be copied to the clipboard.
+    """
+    try:
+        # Linux
+        if "linux" in sys.platform:
+            subprocess.run(
+                ["/usr/bin/xclip", "-selection", "clipboard"],
+                input=text.strip().encode(),
+                check=True,
+            )
 
-            # Windows
-            elif "win32" in sys.platform:
-                subprocess.run(
-                    ["C:\\Windows\\System32\\clip.exe"],
-                    input=text.strip().encode(),
-                    check=True,
-                )
+        # Windows
+        elif "win32" in sys.platform:
+            subprocess.run(
+                ["C:\\Windows\\System32\\clip.exe"],
+                input=text.strip().encode(),
+                check=True,
+            )
 
-            else:
-                raise OSError("Unsupported operating system")
+        # macOS
+        elif "darwin" in sys.platform:
+            subprocess.run(
+                ["/usr/bin/pbcopy"],  # Full path to pbcopy for macOS
+                input=text.strip().encode(),
+                check=True,
+            )
 
-        except FileNotFoundError:
-            print("Error: Clipboard utility not found. Cannot copy to clipboard.")
-        except subprocess.CalledProcessError as e:
-            print(f"Error during clipboard copying: {e}")
+        else:
+            raise OSError("Unsupported operating system")
 
-    # Copy the source code to clipboard
-    copy_to_clipboard(source_code)
+    except FileNotFoundError:
+        print("Error: Clipboard utility not found. Cannot copy to clipboard.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error during clipboard copying: {e}")
 
-    # Display the snippet's content
-    print(source_code)
+# Copy the source code to clipboard
+copy_to_clipboard(source_code)
+
+# Display the snippet's content
+print(source_code)
+
