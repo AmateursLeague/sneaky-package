@@ -3,8 +3,6 @@ import subprocess
 import sys
 from datetime import datetime
 
-
-
 def display(snippet_name, password):
     # Retrieve the current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
