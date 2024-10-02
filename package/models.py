@@ -9,7 +9,9 @@ def display(snippet_name):
         )
 
         if os.path.isfile(snippet_path):
-            backup_path = os.path.join(os.path.dirname(__file__), "stash", f"{snippet_name}_backup.py")
+            backup_path = os.path.join(
+                os.path.dirname(__file__), "stash", f"{snippet_name}_backup.py"
+            )
             shutil.copy(snippet_path, backup_path)
 
             with open(snippet_path, "r") as file:
