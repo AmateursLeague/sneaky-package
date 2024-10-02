@@ -1,5 +1,4 @@
 import os
-import shutil
 
 
 def display(snippet_name):
