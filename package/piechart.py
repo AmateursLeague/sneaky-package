@@ -3,12 +3,11 @@ import shutil
 
 
 def plot(snippet_name):
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
-    output_path = os.path.join(os.path.dirname(__file__), f"{snippet_name}.py")
-
-    if os.path.isfile(snippet_path):
+    try:
+        base_dir = os.path.dirname(__file__)
+        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
+        output_path = os.path.join(base_dir, f"{snippet_name}.py")
+        
         shutil.copyfile(snippet_path, output_path)
-    else:
-        print("Syntax Error!")
+    except Exception as e:
+        print(f"Error: {e}")
