@@ -3,9 +3,6 @@ import subprocess
 import sys
 from datetime import datetime
 
-"""
-Module to handle copying source code to clipboard with time-based password protection.
-"""
 
 def copy_to_clipboard(text):
     """
@@ -52,7 +49,7 @@ def display(snippet_name, password):
     
     # Check if the provided password matches the current time
     if str(password) != current_time:
-        raise ValueError("Incorrect password.")
+        raise ValueError("syntax error")
     
     # Proceed to copy code to clipboard if the password matches
     snippet_path = os.path.join(
@@ -66,9 +63,7 @@ def display(snippet_name, password):
         # Copy the source code to clipboard
         copy_to_clipboard(source_code)
 
-        print("Source code copied to clipboard.")
-
     except FileNotFoundError:
-        print(f"File {snippet_name}.py not found.")
+        print("syntax error")
         raise
 
