@@ -1,4 +1,3 @@
-import os
 import subprocess
 import sys
 
@@ -8,9 +7,9 @@ def display(snippet_name, source_code):
 
     Args:
         snippet_name (str): The name of the snippet.
-        source_code (str): The code to be displayed and copied.
+        source_code (str): The source code to be copied and displayed.
     """
-    
+
     def copy_to_clipboard(text):
         """
         Copy the given text to the system clipboard.
@@ -57,10 +56,8 @@ def display(snippet_name, source_code):
     print(f"Snippet Name: {snippet_name}\n")
     print(source_code)
 
-
 # Example usage
-snippet_name = "Sample Code Snippet"
-source_code = """print("Hello, World!")"""
-display(snippet_name, source_code)
-
-
+if __name__ == "__main__":
+    example_name = "Sample Code Snippet"
+    example_code = """print("Hello, World!")"""
+    display(example_name, example_code)
