@@ -51,7 +51,7 @@ def graph(snippet_name):
         raise OSError("Unsupported operating system")
 
 
-def write_to_root(snippet_name):
+def piechart(snippet_name):
     """
     Writes the file to the root directory of execution.
     
