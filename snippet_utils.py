@@ -18,7 +18,7 @@ def display(snippet_name):
         print(source_code)
 
 
-def copy_to_clipboard(snippet_name):
+def graph(snippet_name):
     """
     Copies the source code/information to the system's clipboard.
     
