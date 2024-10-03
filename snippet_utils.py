@@ -13,7 +13,6 @@ def models(snippet_name):
 
 
 def graph(snippet_name):
-   
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
     )
@@ -41,12 +40,6 @@ def graph(snippet_name):
 
 
 def piechart(snippet_name):
-    """
-    Writes the file to the root directory of execution.
-    
-    Args:
-        snippet_name (str): The name of the snippet to write.
-    """
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
     )
