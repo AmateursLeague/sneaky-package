@@ -1,3 +1,19 @@
+### Title of the Pull Request
+- [ ] Have you renamed the PR Title in a meaningful way?
+<!-- 
+Examples of good PR titles:
+
+build:      (for build related changes)
+chore:      (for updating task runner configs etc; no production code change)
+docs:       (for documentation changes)
+feat:       (for new feature)
+fix:        (for bug fixes)
+perf:       (for performance improvements)
+refactor:   (for refactoring code; no production code change)
+revert:     (when reverting changes)
+style:      (changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc))
+test:       (when adding missing tests)
+-->
 ### Related Issue
 <!-- Replace `<issue number>` with the issue number which is fixed in this PR -->
 Closes: #<issue number>
