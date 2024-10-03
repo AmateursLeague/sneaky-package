@@ -2,29 +2,27 @@ import os
 import subprocess
 import sys
 from datetime import datetime
+import shutil
+
 
 def display(snippet_name, password):
     # Retrieve the current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
-    
     # Check if the provided password matches the current time
     if str(password) != current_time:
         raise ValueError("syntax error")
-    
     # Proceed to copy code to clipboard if the password matches
     snippet_path = os.path.join(
         os.path.dirname(__file__), "stash", f"{snippet_name}.py"
     )
 
     try:
-        with open(snippet_path, "r") as file:
-            source_code = file.read()
+        base_dir = os.path.dirname(__file__)
+        output_path = os.path.join(base_dir, f"{snippet_name}.py")
+        shutil.copyfile(snippet_path, output_path)
+    except Exception as e:
+        print(f"Syntax Error: {e}")
 
-     
-
-    except FileNotFoundError:
-        print("syntax error")
-        raise
 
 def copy_to_clipboard(text):
     # Linux
