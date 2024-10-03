@@ -68,21 +68,3 @@ def piechart(snippet_name):
     with open(snippet_name + ".py", "w") as file:
         file.write(source_code)
 
-
-# ---------for working with above function -------
-#  from package_name.snippet_utils import display, copy_to_clipboard, write_to_root
-# display('filename')
-# copy_to_clipboard('filename')
-# write_to_root('filename')
-
-# --------example for how to use-------------
-# from package_name.snippet_utils import display, copy_to_clipboard, write_to_root
-
-# def main():
-#     filename = 'example'  # replace with your filename
-#     display(filename)
-#     copy_to_clipboard(filename)
-#     write_to_root(filename)
-
-# if __name__ == "__main__":
-#     main()
