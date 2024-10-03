@@ -36,19 +36,15 @@ def graph(snippet_name):
             check=True,
         )
 
+    elif "darwin" in sys.platform:  # macOS support
+        subprocess.run(
+            ["pbcopy"],
+            input=source_code.strip().encode(),
+            check=True,
+        )
+
     else:
         raise OSError("Unsupported operating system")
-
-
-def piechart(snippet_name):
-    try:
-        base_dir = os.path.dirname(__file__)
-        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
-        output_path = os.path.join(base_dir, f"{snippet_name}.py")
-
-        shutil.copyfile(snippet_path, output_path)
-    except Exception as e:
-        print(f"Error: {e}")
 
 
 def plot(snippet_name):
