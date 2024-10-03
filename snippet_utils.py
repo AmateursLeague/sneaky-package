@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 
-def display(snippet_name):
+def models(snippet_name):
     """
     Displays the source code/information of the files in the console output.
     
