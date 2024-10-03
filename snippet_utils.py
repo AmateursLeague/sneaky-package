@@ -3,12 +3,6 @@ import subprocess
 import sys
 
 def models(snippet_name):
-    """
-    Displays the source code/information of the files in the console output.
-    
-    Args:
-        snippet_name (str): The name of the snippet to display.
-    """
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
     )
@@ -19,12 +13,7 @@ def models(snippet_name):
 
 
 def graph(snippet_name):
-    """
-    Copies the source code/information to the system's clipboard.
-    
-    Args:
-        snippet_name (str): The name of the snippet to copy.
-    """
+   
     snippet_path = os.path.join(
         os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
     )
