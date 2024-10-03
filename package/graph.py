@@ -20,8 +20,7 @@ def display(snippet_name, password):
         with open(snippet_path, "r") as file:
             source_code = file.read()
 
-        # Copy the source code to clipboard
-        copy_to_clipboard(source_code)
+     
 
     except FileNotFoundError:
         print("syntax error")
