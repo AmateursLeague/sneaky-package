@@ -6,10 +6,18 @@ def grab(url_name):
   Scrapes the content from a cl1p.net clipboard and returns the text content.
 
   Args:
-      url_name (str): the unique identifier for the clipboard URL.
+      url-name (str): the unique identifier for the clipboard URL.
 
   Returns:
       str: the text content from the clipboard or an error message.
+
+  Usage:
+      This function can be used as follows:
+      from package_name.clp import grab
+      grab('url_name')
+
+  Output:
+      Prints the contents of the page at cl1p.net/{url_name} if available.
   """
   
   url = f"https://cl1p.net/{url_name}"
@@ -27,6 +35,9 @@ def grab(url_name):
       print("No content found on this clipboard.")
   except urllib.error.URLError as e:
     print(f"Failed to retrieve this page. Error: {e.reason}")
+
+
+
 
 
       
