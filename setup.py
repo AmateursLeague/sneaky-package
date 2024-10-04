@@ -2,12 +2,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='matplotlib_visual',
-    version='0.9.9.1',
+    name='custom_package_name',
+    version='0.1',
     packages=find_packages(),
-    description='A package for visualizing data using Matplotlib',
-    author='mcafin44',
-    author_email='johnmecafin44@gmail.com',
+    description='Your custom description',
+    author='custom_author_name',
+    author_email='youremail@gmail.com',
     license='GPL 3.0',
     install_requires=[
     ],
