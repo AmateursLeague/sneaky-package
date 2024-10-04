@@ -41,6 +41,15 @@ So far, I've added features that allow you to sneak source code into a machine u
     from matplotlib_visual.piechart import display
     display("<filename-without-extension>")
 ```
+
+- **New Feature: Web Scraping**
+You can now scrape content from a cl1p.net clipboard.
+```python
+     from package_name.clp import grab
+     grab('url-name')
+```
+>*`grab` method fetches and displays the text content from the specified clipboard URL to the system.*
+
 ---
 
 # Contribution Guidelines
