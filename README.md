@@ -42,7 +42,7 @@ So far, I've added features that allow you to sneak source code into a machine u
     display("<filename-without-extension>")
 ```
 
-- **New Feature: Web Scraping**
+- **New Feature: Web Scraping** `<br>`
    You can now scrape content from a cl1p.net clipboard.
 ```python
      from package_name.clp import grab
