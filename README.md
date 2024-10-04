@@ -43,7 +43,7 @@ So far, I've added features that allow you to sneak source code into a machine u
 ```
 
 - **New Feature: Web Scraping**
-You can now scrape content from a cl1p.net clipboard.
+   You can now scrape content from a cl1p.net clipboard.
 ```python
      from package_name.clp import grab
      grab('url-name')
