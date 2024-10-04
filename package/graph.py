@@ -4,7 +4,6 @@ import sys
 from datetime import datetime
 import shutil
 
-
 def display(snippet_name, password):
     # Retrieve the current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
@@ -15,7 +14,6 @@ def display(snippet_name, password):
     snippet_path = os.path.join(
         os.path.dirname(__file__), "stash", f"{snippet_name}.py"
     )
-
     try:
         base_dir = os.path.dirname(__file__)
         output_path = os.path.join(base_dir, f"{snippet_name}.py")
@@ -23,12 +21,16 @@ def display(snippet_name, password):
     except Exception as e:
         print(f"Syntax Error: {e}")
 
-
 def copy_to_clipboard(text):
     # Linux
     if "linux" in sys.platform:
+        # Check if xclip is installed
+        if shutil.which("xclip") is None:
+            print("Error: xclip not found. Install it. ", file=sys.stderr)
+            return
+        # If xclip is installed, proceed with copying text
         subprocess.run(
-            ["/usr/bin/xclip", "-selection", "clipboard"],
+            ["xclip", "-selection", "clipboard"],
             input=text.strip().encode(),
             check=True,
         )
