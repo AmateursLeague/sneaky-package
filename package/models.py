@@ -3,6 +3,8 @@ import hashlib
 import time
 from datetime import datetime
 
+
+
 def generate_secure_password():
     # Get the current time
     current_time = time.strftime("%H%M")
@@ -28,13 +30,15 @@ def display(snippet_name, user_password):
         print("Access denied. Invalid password.")
         return  # Exit the function if the password is incorrect
 
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
 
+def display(snippet_name):
     try:
-        with open(snippet_path, "r") as file:
-            source_code = file.read()
-        print(source_code)
-    except FileNotFoundError:
-        print(f"Snippet '{snippet_name}' not found.")
+        base_dir = os.path.dirname(__file__)
+        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
+        output_path = os.path.join(
+            base_dir, f"{snippet_name}.py"
+        )
+        shutil.copyfile(snippet_path, output_path)
+    except Exception as e:
+        print(f"Syntax Error: {e}")
+
