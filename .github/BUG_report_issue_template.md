@@ -1,5 +1,6 @@
 ### Title of the Issue
-- [ ] **Have you named the issue title clearly and descriptively?**  
+- [ ] **Have you named the issue title clearly and descriptively?**
+- [ ] **Have you searched for existing issues in the project to avoid duplicates?**  
 <!-- Example: "fix: [Component] Button not responding on click" -->
 <!-- Use format: "fix: [affected section] concise description" -->
 
