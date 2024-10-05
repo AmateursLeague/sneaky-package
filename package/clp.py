@@ -14,4 +14,5 @@ def grab(url_name: str) -> str:
                 return
     except (urllib.error.HTTPError, urllib.error.URLError):
         pass
-    print("Nothing found.")
+    print("Nothing found. The clipboard might be empty or you have entered a wrong URL.")
+ 
