@@ -47,7 +47,7 @@ So far, I've added features that allow you to sneak source code into a machine u
      from package_name.clp import grab
      grab('url-name')
 ```
->*`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found or the clipboard doesn't exist, a message indicating "Nothing found" is returned.*
+>*`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found or the clipboard doesn't exist, a message indicating that nothing was found is returned.*
 
 ---
 
