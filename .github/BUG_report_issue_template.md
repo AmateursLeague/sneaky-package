@@ -1,8 +1,8 @@
 ### Title of the Issue
 - [ ] **Have you named the issue title clearly and descriptively?**
 - [ ] **Have you searched for existing issues in the project to avoid duplicates?**  
-<!-- Example: "fix: [Component] Button not responding on click" -->
-<!-- Use format: "fix: [affected section] concise description" -->
+<!-- Example: "Bug: [Component] Button not responding on click" -->
+<!-- Use format: "Bug: [affected section] concise description" -->
 
 ### Description
 <!-- A clear and detailed description of the bug, including what happens, how it happens, and any potential consequences. -->
