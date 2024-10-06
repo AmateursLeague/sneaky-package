@@ -104,32 +104,35 @@ python
     from matplotlib_visual.models import display
     display("<filename-without-extension>")
 ```
->*`models` method displays source code in the console.*
+> *`models` method displays source code in the console.*  
+
 
 - **📍Stealth Copy to Clipboard** for a more secure method.
 ```python
     from matplotlib_visual.graph import display
     display("<filename-without-extension>")
 ```
->*`graph` method copies the source code to the system's clipboard.*
+> *`graph` method copies the source code to the system's clipboard.*  
 
 - **📍Writing the source code** into the program's root directory.
 ```python
     from matplotlib_visual.piechart import display
     display("<filename-without-extension>")
 ```
+> *`piechart` method writes the file in the root directory of execution.*  
 
 - **📍Web Scraping** from a cl1p.net clipboard.
 ```python
      from package_name.clp import grab
      grab('url-name')
 ```
->*`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found or the clipboard doesn't exist, a message indicating that nothing was found is returned.*
+> *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
 
 ---
 
 5. **✅ Finalize Your Changes**
    - Before you proceed to next step ensure all changes are made and check them once again before making the final commit.
+
 
 6. **💬 Commit Your Changes** 
    - Once ready, commit them with a descriptive message:
@@ -164,8 +167,6 @@ All tasks will be assigned various levels based on complexity and required skill
 It is important to adhere to the guidelines; violations can affect your profile. Review the guidelines [here](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines).
 
 
-
-
 ## 📑Note for Contributors-
 
 - This package integrates source files into a target machine using the `stash/` directory.
@@ -188,7 +189,5 @@ Thanks goes to these wonderful people:
 
 We thank all the contributors for playing their part in the project, we really appreciate your efforts. We encourage other contributors to explore the package and help us enhance it, your contributions are valuable.
 
-
- 
 
 **Happy sneaking!** 🤫
