@@ -87,7 +87,7 @@ We appreciate all contributions, whether code, documentation, or suggestions. Ke
 3. **Submit a Pull Request**:
    - After making changes, submit a pull request so that your picture can be added to the README.
 
-### 5. Show Your Support
+### 6. Show Your Support
 If you find this project useful or interesting, please **star the repository** on GitHub to show your support. It really helps the project grow!
 
 ---
