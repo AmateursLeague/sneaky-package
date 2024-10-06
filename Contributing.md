@@ -58,7 +58,7 @@ If the issue already exists or you're interested in fixing something, feel free 
    git checkout -b feature/your-feature-name
    ```
 
-# Step 4: Make Changes
+### Step 4: Make Changes
    Implement your changes adhering to coding standards and best practices outlined in this project.
 
 # Step 5:Testing
