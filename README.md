@@ -28,7 +28,7 @@ For those who are unaware of what a **pip package** is, a pip package allows the
 ## Technologies Used 
 The project is based totally on Python, 
 
-##🪪Licence
+## 🪪Licence
 The purpose of this project is educational and the intend is just to test the vulneribilities of pip package. This package is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 ---
