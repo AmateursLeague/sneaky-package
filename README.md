@@ -1,4 +1,4 @@
-I just want you to Create a Table of content for this code          # SNEAKY PACKAGE 👾
+# SNEAKY PACKAGE 👾
 ![GSSoC-ext](GSSoC-Ext.png)
 
 ## Project Overview
