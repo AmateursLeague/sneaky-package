@@ -49,7 +49,7 @@ First, check for any [existing issues](https://github.com/AmateursLeague/sneaky-
 **Actual Behavior:** What actually happened.
 If the issue already exists or you're interested in fixing something, feel free to pick it up.
 
-# Step 2: Fork the Repository
+### Step 2: Fork the Repository
    Click on the "_Fork_" button at the top right of the repository page to create your copy.
 
 # Step 3: Create a Branch
