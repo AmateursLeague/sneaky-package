@@ -76,7 +76,7 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
 3. **🌿 Create a New Branch** 
    - Create a new branch for your work to ensure that changes made by other contributors don't overlap with yours:
      ```bash
-     git checkout -b YOUR-BRANCH-NAME
+     git switch YOUR-BRANCH-NAME
      ```
 
 4. **🛠️ Make Your Changes**
