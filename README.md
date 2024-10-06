@@ -81,7 +81,7 @@ We appreciate all contributions, whether code, documentation, or suggestions. Ke
 2. **Update the README**:
    - Add your image reference in the Contributors section using Markdown syntax:
      ```markdown
-     ![Your Name](your-github-username.jpg)
+     ![Your Name](contributors/your-github-username.jpg)
      ```
 
 3. **Submit a Pull Request**:
@@ -113,7 +113,7 @@ If you find this project useful or interesting, please **star the repository** o
 We appreciate all contributions! Here are some of the amazing people who have helped make this project better:
 
 <!-- Contributors' images will be displayed here -->
-![Softcreations01](softcreations01.jpg)
+![Softcreations01](contributors/softcreations01.jpg)
 
 ## Purpose and Ethical Use
 The purpose of this package is educational, aiming to highlight and improve security by demonstrating potential vulnerabilities in systems.
