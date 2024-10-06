@@ -101,7 +101,6 @@ We welcome all contributions! Whether you're improving features, fixing bugs, or
 - A **test file** is provided—run it to ensure that the files inside the stash appear on the target machine. 💡  
 - Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection. 🔒  
 
-
 ---
 
 ## Things to Point Out! 🕵️‍♂️
@@ -117,6 +116,7 @@ If you find **any vulnerabilities**, please raise an issue! ⚠️
 ---
 
 ## Purpose and Ethical Use ⚖️
+
 The purpose of this package is **educational**, aiming to highlight and improve security by demonstrating potential vulnerabilities in systems. 🛡️
 
 ---
