@@ -2,15 +2,15 @@
 
 ## 1. Introduction
 
-This documentation provides a comprehensive guide on how to set up and deploy a Python package to the Python Package Index (PyPI). The package is designed to facilitate the sharing of Python projects, enabling users to install it easily using pip.
+In this guide, We will provide you with a comprehensive overview of how to set up and deploy a Python package to the Python Package Index (PyPI). This package is designed to facilitate the sharing of Python projects, enabling you to install it easily using pip.
 
 ### Purpose
 
-The objectives of this guide are to help users:
+The objectives of this guide is to help you to:
 
-- Understand the necessary setup for the package
-- Deploy the package to PyPI
-- Install the package effortlessly on any system
+- Understand the necessary setup for your package
+- Deploy your package to PyPI
+- Install your package easily on any system
 
 ## 2. Pre-requisites
 
@@ -41,49 +41,75 @@ These tools are essential for building and uploading your package.
 
 ## 4. Project Structure
 
-Here’s an example of a basic project structure for a Python package:
+```
+sneaky_package/
+│
+├── .github/                              # GitHub-specific files
+│   ├── BUG_report_issue_template.md      # Template for bug reports
+│   ├── Feature_request_issue_template.md # Template for feature requests
+│   ├── changes_in_code_issue_template.md # Template for code change issues
+│   └── pull_request_template.md          # Template for pull requests
+│
+├── package/                              # Main package directory
+│   ├── __init__.py                       # Required for package initialization
+│   ├── clp.py                            # Module for CLP functionality
+│   ├── display.py                        # Module for display-related functions
+│   ├── graph.py                          # Module for graph-related functions
+│   ├── models.py                         # Module containing data models
+│   ├── piechart.py                       # Module for pie chart functionalities
+│   └── test.py                           # Test script for testing package modules
+│
+├── .gitignore                            # Specifies files to ignore in Git
+├── CHANGELOG.md                          # Log of changes made to the project
+├── CODE_OF_CONDUCT.md                    # Code of conduct for contributors
+├── LICENSE                               # License information for the project
+├── README.md                             # Documentation about the project
+└── setup.py                              # Setup script for packaging the project
 
 ```
-my_package/
-│
-├── setup.py              # Setup script for packaging
-├── README.md             # Package documentation
-├── LICENSE               # License for the package
-├── my_package/           # Main package directory
-│   ├── __init__.py       # Required for the package
-│   └── module.py         # Your module code
-└── tests/                # Unit tests for the package
-    └── test_module.py    # Example test file
-```
+### Note
+Feel free to change any filenames or directory names to better suit your needs. 
+
+The filenames in the stash/ directory are aliases, you can modify them as necessary!
 
 ### Explanation of Key Files
 
+- **.github/**: Contains templates for issues and pull requests to streamline contributions.
+- **.gitignore**: Lists files and directories that should not be tracked by Git.
+- **changelog.md**: Documents significant changes and updates made to the project over time.
+- **code_of_conduct.md**: Outlines expected behavior and guidelines for contributors.
 - **setup.py**: Contains package information and dependencies.
-- **README.md**: Provides information about the package.
-- **my_package/**: Directory containing the actual Python code.
-- **tests/**: Directory for unit testing your package.
+- **license**: Specifies the licensing terms under which the project is distributed.
+- **readme.md**: Provides an overview of the project, installation instructions, usage
+guidelines, and other relevant information.
+- **setup.py**: Contains metadata about the package and instructions on how to install it.
 
 ## 5. Building the Package
 
 ### Step-by-Step Instructions
 
-1. Create a `setup.py` file in the root directory with the following content:
+1. Create or update the `setup.py` file in the root directory using the following structure:
 
 ```python
 from setuptools import setup, find_packages
 
 setup(
-    name='your_package_name',
-    version='0.1',
-    packages=find_packages(),
-    install_requires=[
-        # Add any package dependencies here
+    name='custom_package_name',            # Replace with your actual package name
+    version='0.1',                         # Update version as needed
+    packages=find_packages(),              # Automatically find package directories
+    description='Your custom description', # Provide a brief description of your package
+    author='custom_author_name',           # Add your name or organization
+    author_email='youremail@gmail.com',    # Add your email address
+    license='GPL 3.0',                     # Specify the license type
+    install_requires=[                     # List any package dependencies here
+        # e.g., 'numpy>=1.18.0',
     ],
-    # You can also add metadata like author, license, etc.
 )
+
 ```
 
-**Note:** Ensure that your package's structure is correct and that the `setup.py` file is properly configured.
+**Note:** 
+Ensure that your package's structure is correct and that the `setup.py` file is properly configured.
 
 2. Build the Package by running:
 
@@ -98,17 +124,44 @@ This command will create a `dist/` directory containing `.tar.gz` and `.whl` fil
 ### Detailed Steps for Deployment
 
 1. **Create a PyPI Account**:
-   - Go to PyPI and create an account if you don’t have one.
-   - After logging in, generate an API token via your account settings.
 
-2. **Upload the Package Using Twine**:
-   - Use your API token for authentication:
+   - Go to [PyPI](https://pypi.org/) and click on "Register" to create an account if you don’t have one.
 
-```bash
-twine upload dist/* --username __token__ --password <YOUR_API_TOKEN>
-```
+      ![image](https://github.com/user-attachments/assets/cfbaadf6-3edc-4416-9481-72626b63a96c)
 
-Replace `<YOUR_API_TOKEN>` with the actual token copied from your PyPI account.
+   - Fill in the required information (username, password, email) and click on Create Account.
+   - After logging in, verify your email address by clicking on the link sent to your email.
+   - Once verified, go to your account settings and navigate to the API tokens section.
+
+      ![image](https://github.com/user-attachments/assets/cda0d120-5659-4a86-b265-885f70221bd7)
+
+   ### NOTE: To create an API token, you must enable Two-factor Authentication
+
+   - Click on "Add API token" to generate a new token. This token will be used for authentication when uploading packages.
+
+      ![image](https://github.com/user-attachments/assets/fd3eff02-94b4-461e-bb11-ee2cd580773b)
+
+      under "select scope", select your project.
+
+
+1. **Upload the Package Using Twine**:
+
+    - First, ensure you have Twine installed. If not, you can install it using pip:
+     ```bash
+     pip install twine
+     ```
+   - Next, navigate to the directory containing your package files in the terminal.
+   - Create a source distribution of your package by running:
+     ```bash
+     python setup.py sdist
+     ```
+   - Use your API token for authentication when uploading:
+     ```bash
+     twine upload dist/* --username __token__ --password <YOUR_API_TOKEN>
+     ```
+   - Replace `<YOUR_API_TOKEN>` with the actual token you generated earlier.
+   - You should see a confirmation message once the upload is successful.
+
 
 3. Make sure Twine is installed and run:
 
@@ -143,14 +196,6 @@ pip install your_package_name
 
 This command will download and install the latest version of your package from PyPI.
 
-After adding all these sections to your `pypi_setup.md` file, save it. Then commit the file to your repository:
-
-```bash
-git add pypi_setup.md
-git commit -m "Add documentation for PyPI package setup and deployment"
-git push
-```
-
 ## 8. Troubleshooting
 
 ### Common Issues and Solutions
@@ -170,21 +215,3 @@ git push
 
 - **Issue**: Invalid version error  
   **Solution**: Ensure your version number follows the correct format (e.g., `0.1`, `1.0.0`).
-
-Citations:
-
-[1] https://packaging.python.org/en/latest/tutorials/packaging-projects/
-
-[2] https://dev.to/mmphego/how-i-published-deployed-my-python-package-to-pypi-easily-3hio
-
-[3] https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/
-
-[4] https://stackoverflow.com/questions/3658084/how-to-create-upload-and-install-a-package-for-pypi
-
-[5] https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/
-
-[6] https://www.youtube.com/watch?v=h6oa_FwzFwU
-
-[7] https://realpython.com/pypi-publish-python-package/
-
-[8] https://pypi.org/project/python-deploy/
