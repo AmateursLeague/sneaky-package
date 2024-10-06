@@ -96,25 +96,6 @@ We welcome all contributions! Whether you're improving features, fixing bugs, or
 
 ---
 
-
-### 5. How to Add Your Picture
-
-1. **Upload Your Image**:
-   - Save your image as `your-github-username.jpg` and place it in the `contributors` directory.
-   - You can do this directly on GitHub by navigating to the `contributors` folder and using the "Upload files" button.
-
-2. **Update the README**:
-   - Add your image reference in the Contributors section using Markdown syntax:
-     ```markdown
-     ![Your Name](contributors/your-github-username.jpg)
-     ```
-
-3. **Submit a Pull Request**:
-   - After making changes, submit a pull request so that your picture can be added to the README.
-
-### 6. Show Your Support
-If you find this project useful or interesting, please **star the repository** on GitHub to show your support. It really helps the project grow!
-
 ## Key Points to Remember 📌
 - This package integrates source files into a target machine using the `stash/` directory. 📁  
 - A **test file** is provided—run it to ensure that the files inside the stash appear on the target machine. 💡  
