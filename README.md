@@ -1,5 +1,26 @@
 # SNEAKY PACKAGE 👾
 ![GSSoC-ext](GSSoC-Ext.png)
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [✨ Key Features ✨](#✨key-features✨)
+3. [⛓️ What is a **Pip Package**? ⛓️](#⛓️what-is-a-pip-package-⛓️)
+4. [Technologies Used](#technologies-used)
+5. [🪪 Licence](#🪪licence)
+6. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
+   - [🍴 Fork the Repository](#🍴-fork-the-repository)
+   - [💻 Clone Your Fork](#💻-clone-your-fork)
+   - [🌿 Create a New Branch](#🌿-create-a-new-branch)
+   - [🛠️ Make Your Changes](#🛠️-make-your-changes)
+   - [✅ Finalize Your Changes](#✅-finalize-your-changes)
+   - [💬 Commit Your Changes](#💬-commit-your-changes)
+   - [📤 Push Your Changes](#📤-push-your-changes)
+   - [🔄 Create a Pull Request (PR)](#🔄-create-a-pull-request-pr)
+   - [🔎 Review Changes](#🔎-review-changes)
+7. [🏆 Contribution Points](#🏆-contribution-points)
+8. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
+9. [📑 Note for Contributors](#📑-note-for-contributors)
+10. [Contributors ✨](#contributors-✨)
+11. [💌 Ending Note](#💌-ending-note)
 
 ## Project Overview
 
@@ -9,13 +30,17 @@ The project basically deals with the possible risks that users can face due to t
 
 ---
 
-##✨Key Features✨ 
-** 💾Designed to look conventional 
--The package gets into the system like a normal python package would do, but its main tarket is to perform sneaky fuctions that are unfavourable for users.
-** 📥Installing without getting Noticed
--One of the key feature of the package is that it is designed in such a way that it is not possible to detect its installation, and download can be done without getting caught.
-** 🖥️Cross Platform Package 
--The package run across all major operating systems including **Windows**, **Linux** and **Mac OS**
+## ✨ Key Features ✨
+
+### 💾 Designed to Look Conventional
+- The package installs like any normal Python package, but its main target is to perform sneaky functions that are unfavorable for users.
+
+### 📥 Installing Without Getting Noticed
+- One key feature of the package is that it is designed in such a way that it becomes difficult to detect its installation. The download and installation can be done without getting caught.
+
+### 🖥️ Cross-Platform Package
+- The package runs across all major operating systems, including **Windows**, **Linux**, and **macOS**.
+
 
 ---
 
@@ -73,7 +98,7 @@ pip install matplotlib-visual
 python
 ```
 
-##📊Progress fo far-
+## 📊Progress fo far-
 - **📍Displaying source code** in the console output.
 ```python
     from matplotlib_visual.models import display
@@ -141,7 +166,7 @@ It is important to adhere to the guidelines; violations can affect your profile.
 
 
 
-##📑Note for Contributors-
+## 📑Note for Contributors-
 
 - This package integrates source files into a target machine using the `stash/` directory.
 - A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
