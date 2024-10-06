@@ -72,6 +72,21 @@ To work on an issue:
 ### 4. Make Improvements
 We appreciate all contributions, whether code, documentation, or suggestions. Keep the code **clean, simple, and efficient**.
 
+### 5. How to Add Your Picture
+
+1. **Upload Your Image**:
+   - Save your image as `your-github-username.jpg` and place it in the `contributors` directory.
+   - You can do this directly on GitHub by navigating to the `contributors` folder and using the "Upload files" button.
+
+2. **Update the README**:
+   - Add your image reference in the Contributors section using Markdown syntax:
+     ```markdown
+     ![Your Name](your-github-username.jpg)
+     ```
+
+3. **Submit a Pull Request**:
+   - After making changes, submit a pull request so that your picture can be added to the README.
+
 ### 5. Show Your Support
 If you find this project useful or interesting, please **star the repository** on GitHub to show your support. It really helps the project grow!
 
@@ -92,6 +107,13 @@ If you find this project useful or interesting, please **star the repository** o
   - *Linux*
   - *MacOS*
 - If you find **any vulnerabilities**, please **raise an issue**.
+
+## Contributors
+
+We appreciate all contributions! Here are some of the amazing people who have helped make this project better:
+
+<!-- Contributors' images will be displayed here -->
+
 
 ## Purpose and Ethical Use
 The purpose of this package is educational, aiming to highlight and improve security by demonstrating potential vulnerabilities in systems.
