@@ -1,7 +1,7 @@
 # SNEAKY PACKAGE 👾
 ![GSSoC-ext](GSSoC-Ext.png)
 ## Table of Contents
-1. [Project Overview](#project-overview)
+1. [🚀Project Overview](#project-overview)
 2. [✨ Key Features ✨](#✨key-features✨)
 3. [⛓️ What is a **Pip Package**? ⛓️](#⛓️what-is-a-pip-package-⛓️)
 4. [Technologies Used](#technologies-used)
@@ -22,7 +22,7 @@
 10. [Contributors ✨](#contributors-✨)
 11. [💌 Ending Note](#💌-ending-note)
 
-## Project Overview
+## 🚀Project Overview
 
 The project basically deals with the possible risks that users can face due to the vulnerabilities of **pip packages**. The code can be installed in a device just like a normal Python package, but it can lead to leaks of sensitive information, viruses, or malware in your device. The project is for educational purposes, to draw attention to the security drawbacks of pip packages.
 
@@ -50,8 +50,8 @@ The project basically deals with the possible risks that users can face due to t
 For those who are unaware of what a **pip package** is, a pip package allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). These packages contain a collection of libraries and modules that can be further used in your code.
 
 
-## Technologies Used 
-The project is based totally on Python, 
+## 🟡Technologies Used 
+The project is based totally on Python, that is a high-level programming language known for its clear syntax and readability, making it an excellent choice for beginners. Contributors should keep in mind that this package exploits security permissions in pip, so it is expected that you maintain pip standards while working.
 
 ## 🪪Licence
 The purpose of this project is educational and the intend is just to test the vulneribilities of pip package. This package is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
@@ -81,8 +81,8 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
 
 4. **🛠️ Make Your Changes**
    - Make the required changes in the package, and contact the project manager [Yashwanth]((https://github.com/this-is-yaash)) for any queries.
-
-## To get Started-
+     
+## How To get Started-
 --- 
 
 ### **🔧Instalations:**
@@ -98,7 +98,7 @@ pip install matplotlib-visual
 python
 ```
 
-## 📊Progress fo far-
+### 📊Progress fo far-
 - **📍Displaying source code** in the console output.
 ```python
     from matplotlib_visual.models import display
@@ -171,7 +171,6 @@ It is important to adhere to the guidelines; violations can affect your profile.
 - This package integrates source files into a target machine using the `stash/` directory.
 - A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
 - Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
-- Since the package exploits security permissions in `pip`, maintaining **pip standards** is advised.
 
 ---
 
