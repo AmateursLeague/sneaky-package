@@ -21,7 +21,6 @@ To contribute to the Sneaky Package, follow these steps to set up your developme
    Ensure you have the following installed:
    - Python 3.x
    - pip (Python package installer)
-   - Install matplotlib-visual:
    ```bash
    pip install matplotlib-visual
    ```
