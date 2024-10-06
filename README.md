@@ -82,7 +82,7 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
 4. **🛠️ Make Your Changes**
    - Make the required changes in the package, and contact the project manager [Yashwanth]((https://github.com/this-is-yaash)) for any queries.
      
-## How To get Started-
+## How To get Started
 --- 
 
 ### **🔧Instalations:**
