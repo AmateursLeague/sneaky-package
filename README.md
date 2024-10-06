@@ -167,7 +167,7 @@ All tasks will be assigned various levels based on complexity and required skill
 It is important to adhere to the guidelines; violations can affect your profile. Review the guidelines [here](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines).
 
 
-## 📑Note for Contributors-
+## 📑Note for Contributors:
 
 - This package integrates source files into a target machine using the `stash/` directory.
 - A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
