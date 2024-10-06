@@ -38,7 +38,7 @@ Before contributing, take time to familiarize yourself with the structure of the
 ## How to Contribute
 Follow these steps to make your contributions:
 
-# Step 1: Identify an Issue
+### Step 1: Identify an Issue
 First, check for any [existing issues](https://github.com/AmateursLeague/sneaky-package/issues) in the repository. If you want to report a new issue, please make sure to follow the **Issue Template** provided below:
 
 **Issue Template:**
