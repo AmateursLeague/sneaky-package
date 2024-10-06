@@ -4,9 +4,8 @@
 1. [🚀Project Overview](#project-overview)
 2. [✨ Key Features ✨](#✨key-features✨)
 3. [⛓️ What is a **Pip Package**? ⛓️](#⛓️what-is-a-pip-package-⛓️)
-4. [Technologies Used](#technologies-used)
-5. [🪪 Licence](#🪪licence)
-6. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
+4. [🪪 Licence](#🪪licence)
+5. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
    - [🍴 Fork the Repository](#🍴-fork-the-repository)
    - [💻 Clone Your Fork](#💻-clone-your-fork)
    - [🌿 Create a New Branch](#🌿-create-a-new-branch)
@@ -16,17 +15,16 @@
    - [📤 Push Your Changes](#📤-push-your-changes)
    - [🔄 Create a Pull Request (PR)](#🔄-create-a-pull-request-pr)
    - [🔎 Review Changes](#🔎-review-changes)
-7. [🏆 Contribution Points](#🏆-contribution-points)
-8. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
-9. [📑 Note for Contributors](#📑-note-for-contributors)
+6. [🏆 Contribution Points](#🏆-contribution-points)
+7. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
+8. [📑 Note for Contributors](#📑-note-for-contributors)
+9. [Technologies Used](#technologies-used)
 10. [Contributors ✨](#contributors-✨)
 11. [💌 Ending Note](#💌-ending-note)
 
 ## 🚀Project Overview
 
-The project basically deals with the possible risks that users can face due to the vulnerabilities of **pip packages**. The code can be installed in a device just like a normal Python package, but it can lead to leaks of sensitive information, viruses, or malware in your device. The project is for educational purposes, to draw attention to the security drawbacks of pip packages.
-
-![graphical](img2.png)
+A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.
 
 ---
 
@@ -47,14 +45,14 @@ The project basically deals with the possible risks that users can face due to t
 
 ## ⛓️ What is a **Pip Package**? ⛓️
 
-For those who are unaware of what a **pip package** is, a pip package allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). These packages contain a collection of libraries and modules that can be further used in your code.
+-A **Pip Package** allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). 
 
+-These packages contain a collection of builtin libraries and modules. 
 
-## 🟡Technologies Used 
-The project is based totally on Python, that is a high-level programming language known for its clear syntax and readability, making it an excellent choice for beginners. Contributors should keep in mind that this package exploits security permissions in pip, so it is expected that you maintain pip standards while working.
 
 ## 🪪Licence
-The purpose of this project is educational and the intend is just to test the vulneribilities of pip package. This package is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
+The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the sys connected with pip.
+It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 ---
 
@@ -80,9 +78,9 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
      ```
 
 4. **🛠️ Make Your Changes**
-   - Make the required changes in the package, and contact the project manager [Yashwanth]((https://github.com/this-is-yaash)) for any queries.
+   - Make the required changes in the package, and contact the project manager [Yashwanth](https://github.com/this-is-yaash) for any queries.
      
-## How To get Started
+## How to get Started-
 --- 
 
 ### **🔧Instalations:**
@@ -98,7 +96,7 @@ pip install matplotlib-visual
 python
 ```
 
-### 📊Progress fo far-
+### 📊Progress so far-
 - **📍Displaying source code** in the console output.
 ```python
     from matplotlib_visual.models import display
@@ -167,13 +165,23 @@ All tasks will be assigned various levels based on complexity and required skill
 It is important to adhere to the guidelines; violations can affect your profile. Review the guidelines [here](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines).
 
 
-## 📑Note for Contributors:
+## 📑Note for Contributors-
 
 - This package integrates source files into a target machine using the `stash/` directory.
 - A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
 - Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
-
+- If you find **any vulnerabilities**, please raise an issue! ⚠️
 ---
+## 🟡Technologies Used 
+**Only uses Python
+- The project only uses Python to develop the package.
+**Beginner Friendly
+- Python is a high-level programming language known for its clear syntax and readability, making it an excellent choice for beginners.
+**Light Weight
+-Python is considered lightweight due to its simplicity, minimalistic syntax, and dynamic typing, which allows for faster development with less code.
+**Builtin Modules
+- Another great advantage of Python are the builtin modules present in it, making it easy to use. 
+
 
 Big thanks to all the contributors! 🎉
 
