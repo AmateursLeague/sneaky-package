@@ -61,7 +61,7 @@ If the issue already exists or you're interested in fixing something, feel free 
 ### Step 4: Make Changes
    Implement your changes adhering to coding standards and best practices outlined in this project.
 
-# Step 5:Testing
+### Step 5:Testing
    Write tests for any new features or bug fixes you implement. Ensure all tests pass before submitting your contribution.
 
 ## Submitting Contributions
