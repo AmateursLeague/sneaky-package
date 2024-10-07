@@ -45,9 +45,56 @@ A ready-to-deploy Python package designed to stealthily integrate files within a
 
 ## ⛓️ What is a **Pip Package**? ⛓️
 
--A **Pip Package** allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). 
+- A **Pip Package** allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). 
 
--These packages contain a collection of builtin libraries and modules. 
+- These packages contain a collection of builtin libraries and modules. 
+## How to get Started-
+--- 
+
+### **🔧Instalations:**
+```bash
+pip install matplotlib-visual
+```
+> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
+
+### **⏱️Execution:**
+1. Create a Python file and enter any of the code snippets below.
+2. Or, open a terminal and run Python interactively:
+```bash
+python
+```
+
+### 📊Progress so far:
+- **📍Displaying source code** in the console output.
+```python
+    from matplotlib_visual.models import display
+    display("<filename-without-extension>")
+```
+> *`models` method displays source code in the console.*  
+
+
+- **📍Stealth Copy to Clipboard** for a more secure method.
+```python
+    from matplotlib_visual.graph import display
+    display("<filename-without-extension>")
+```
+> *`graph` method copies the source code to the system's clipboard.*  
+
+- **📍Writing the source code** into the program's root directory.
+```python
+    from matplotlib_visual.piechart import display
+    display("<filename-without-extension>")
+```
+> *`piechart` method writes the file in the root directory of execution.*  
+
+- **📍Web Scraping** from a cl1p.net clipboard.
+```python
+     from package_name.clp import grab
+     grab('url-name')
+```
+> *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
+
+---
 
 
 ## 🪪Licence
@@ -79,55 +126,8 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
      ```
 
 4. **🛠️ Make Your Changes**
-   - Make the required changes in the package, and contact the project manager [Yashwanth](https://github.com/this-is-yaash) for any queries.
+   - Make the required changes in the package, and contact the project manager [this-is-yaash](https://github.com/this-is-yaash) for any queries.
      
-## How to get Started-
---- 
-
-### **🔧Instalations:**
-```bash
-pip install matplotlib-visual
-```
-> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
-
-### **⏱️Execution:**
-1. Create a Python file and enter any of the code snippets below.
-2. Or, open a terminal and run Python interactively:
-```bash
-python
-```
-
-### 📊Progress so far-
-- **📍Displaying source code** in the console output.
-```python
-    from matplotlib_visual.models import display
-    display("<filename-without-extension>")
-```
-> *`models` method displays source code in the console.*  
-
-
-- **📍Stealth Copy to Clipboard** for a more secure method.
-```python
-    from matplotlib_visual.graph import display
-    display("<filename-without-extension>")
-```
-> *`graph` method copies the source code to the system's clipboard.*  
-
-- **📍Writing the source code** into the program's root directory.
-```python
-    from matplotlib_visual.piechart import display
-    display("<filename-without-extension>")
-```
-> *`piechart` method writes the file in the root directory of execution.*  
-
-- **📍Web Scraping** from a cl1p.net clipboard.
-```python
-     from package_name.clp import grab
-     grab('url-name')
-```
-> *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
-
----
 
 5. **✅ Finalize Your Changes**
    - Before you proceed to next step ensure all changes are made and check them once again before making the final commit.
