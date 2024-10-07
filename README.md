@@ -18,7 +18,7 @@
 6. [🏆 Contribution Points](#🏆-contribution-points)
 7. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
 8. [📑 Note for Contributors](#📑-note-for-contributors)
-9. [Technologies Used](#technologies-used)
+9. [🟡Technologies & Description](#technologies-used)
 10. [Contributors ✨](#contributors-✨)
 11. [💌 Ending Note](#💌-ending-note)
 
@@ -173,16 +173,10 @@ It is important to adhere to the guidelines; violations can affect your profile.
 - Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
 - If you find **any vulnerabilities**, please raise an issue! ⚠️
 ---
-## 🟡Technologies Used 
-**Only uses Python
-- The project only uses Python to develop the package.
-**Beginner Friendly
-- Python is a high-level programming language known for its clear syntax and readability, making it an excellent choice for beginners.
-**Light Weight
--Python is considered lightweight due to its simplicity, minimalistic syntax, and dynamic typing, which allows for faster development with less code.
-**Builtin Modules
-- Another great advantage of Python are the builtin modules present in it, making it easy to use. 
-
+## 🟡Technologies & Description
+- This project only uses **`Python`** to develop the package.
+- The project codebase is compact & lightweight, allowing it to install and executer faster!
+- All the features are developed using built-in modules, making this project an idea choice for beginners. 
 
 Big thanks to all the contributors! 🎉
 
