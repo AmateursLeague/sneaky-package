@@ -1,128 +1,188 @@
-# sneaky-package 🥸  
-A ready-to-deploy Python package designed to **stealthily integrate files** within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a *lightweight & faster* Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with **`pip`**.
+# SNEAKY PACKAGE 👾
+![GSSoC-ext](GSSoC-Ext.png)
+## Table of Contents
+1. [🚀Project Overview](#project-overview)
+2. [✨ Key Features ✨](#✨key-features✨)
+3. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
+   - [🍴 Fork the Repository](#🍴-fork-the-repository)
+   - [💻 Clone Your Fork](#💻-clone-your-fork)
+   - [🌿 Create a New Branch](#🌿-create-a-new-branch)
+   - [🛠️ Make Your Changes](#🛠️-make-your-changes)
+   - [✅ Finalize Your Changes](#✅-finalize-your-changes)
+   - [💬 Commit Your Changes](#💬-commit-your-changes)
+   - [📤 Push Your Changes](#📤-push-your-changes)
+   - [🔄 Create a Pull Request (PR)](#🔄-create-a-pull-request-pr)
+   - [🔎 Review Changes](#🔎-review-changes)
+4. [🏆 Contribution Points](#🏆-contribution-points)
+5. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
+6. [📑 Note for Contributors](#📑-note-for-contributors)
+7. [🟡Technologies & Description](#technologies-used)
+8. [Contributors ✨](#contributors-✨)
+9. [💌 Ending Note](#💌-ending-note)
+10. [🪪 Licence](#🪪licence)
+
+## 🚀Project Overview
+
+A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.
 
 ---
 
-## Getting Started! 🚀
+## ✨ Key Features ✨
 
-### How does it work? 🤔  
-- Install the package using **`pip`**.
-- Either create a `.py` file or run Python in the terminal and execute the program.
-- You can execute the existing three features, but feel free to add or update features of your own and deploy your own package globally. 🌍
+### 💾 Designed to Look Conventional
+- The package installs like any normal Python package, but its main target is to perform sneaky functions that are unfavorable for users.
+
+### 📥 Installing Without Getting Noticed
+- One key feature of the package is that it is designed in such a way that it becomes difficult to detect its installation. The download and installation can be done without getting caught.
+
+### 🖥️ Cross-Platform Package
+- The package runs across all major operating systems, including **Windows**, **Linux**, and **macOS**.
+
 
 ---
+## 🛠️How to get Started-
+--- 
 
-### Example:  
+### **🔧Instalations:**
+```bash
+pip install matplotlib-visual
+```
+> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
 
-> **Note**: I already have a package of my own deployed globally in PyPI.  
-
-1. **Install the package** 📦:  
-```bash  
-pip install matplotlib_visual  
+### **⏱️Execution:**
+1. Create a Python file and enter any of the code snippets below.
+2. Or, open a terminal and run Python interactively:
+```bash
+python
 ```
 
-2. **Create a file or open Python in the terminal and enter the following code**:  
-```python  
-from matplotlib_visual.display import featureName  
-featureName("fileName", 1234) # password integer  
-```  
-
-- `display` - A method that contains features  
-- `featureName` - Check out `display.py` in the repo and use the required method name (feature).
-
----
-
-## How to Setup and Deploy the Package 🛠️
-
-1. [**Documentation on How to Build?**](https://gist.github.com/this-is-yaash/c6d1dceee10d17851b79d3781a078c51) 📄  
-2. [**Documentation on Register PyPI and Deploy Package**](https://gist.github.com/this-is-yaash/12c00a4c9cff94bf12a0e753b4eed075)  
-
-> Contributors & Users are advised to use this *gist* until the official documentation is ready. 📝
-
----
-
-## Features ✨
-
-These features allow you to discreetly integrate source code into a private machine using the following methods:
-
-- **Displaying source code** in the console output. 🖥️  
-```python  
-from package.display import models  
-display("<filename-without-extension>")  
+### 📊Progress so far:
+- **📍Displaying source code** in the console output.
+```python
+    from matplotlib_visual.models import display
+    display("<filename-without-extension>")
 ```
 > *`models` method displays source code in the console.*  
 
-- **Stealth Copy to Clipboard** for a more secure method. 📋  
-```python  
-from package.display import graph  
-display("<filename-without-extension>")  
+
+- **📍Stealth Copy to Clipboard** for a more secure method.
+```python
+    from matplotlib_visual.graph import display
+    display("<filename-without-extension>")
 ```
 > *`graph` method copies the source code to the system's clipboard.*  
 
-- **Writing the source code** into the program's root directory. 📝  
-```python  
-from package.display import piechart  
-display("<filename-without-extension>")  
+- **📍Writing the source code** into the program's root directory.
+```python
+    from matplotlib_visual.piechart import display
+    display("<filename-without-extension>")
 ```
 > *`piechart` method writes the file in the root directory of execution.*  
 
-- **Web Scraping** from a cl1p.net clipboard. 🌐  
-```python  
-from package.display import grab  
-grab('url-name')  
+- **📍Web Scraping** from a cl1p.net clipboard.
+```python
+     from package_name.clp import grab
+     grab('url-name')
 ```
 > *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
 
 ---
 
-## Contribution Guidelines 🙌
 
-We welcome all contributions! Whether you're improving features, fixing bugs, or enhancing documentation, your help is valuable to us. Here's how to get started:
+## 🚀 How to Contribute to This Project
 
-### 1. Understand the Project 🔍
-- It’s **beginner-friendly** with most features implemented in **minimal lines of code**.  
-- Research thoroughly to understand how to implement stealthy features. 🕵️‍♀️
+We welcome all contributors to our project **Sneaky-Package**. Before contributing we request you to get familiar with the project. The project is biggner friendly and you can find features you would like to imporove including bugs, enhancements or documentation. 
+**Here are steps to start contributing**: 
 
-### 2. Find or Create an Issue 🛠️
-- Visit the [**Issues section**](https://github.com/AmateursLeague/sneaky-package/issues) in this repository.  
-- Look for existing issues that are available to work on or past their time limit! ⏳  
-- Or raise your own issue with a proposal or idea and start contributing! 🗣️
+1. **🍴 Fork the Repository**  
+   - Go to the [repository page](https://github.com/AmateursLeague/sneaky-package).
+   - Click the *Fork* button (top right) to create a copy in your GitHub account.
 
-### 3. Make Improvements ✨
-- Keep the code **clean, simple, and efficient**. 🧹
+2. **💻 Clone Your Fork**  
+   - Open your terminal and run:
+     ```bash
+     git clone https://github.com/ENTER-YOUR-USERNAME/Sneaky-package.git
+     ```
+   - You have to enter your Github username in above code. 
 
-### 4. Show Your Support 🌟
-- If you find this project useful or interesting, please **star the repository** on GitHub! ⭐ It helps the project grow!
+3. **🌿 Create a New Branch** 
+   - Create a new branch for your work to ensure that changes made by other contributors don't overlap with yours:
+     ```bash
+     git switch YOUR-BRANCH-NAME
+     ```
+
+4. **🛠️ Make Your Changes**
+   - Make the required changes in the package, and contact the project manager [this-is-yaash](https://github.com/this-is-yaash) for any queries.
+     
+
+5. **✅ Finalize Your Changes**
+   - Before you proceed to next step ensure all changes are made and check them once again before making the final commit.
+
+
+6. **💬 Commit Your Changes** 
+   - Once ready, commit them with a descriptive message:
+     ```bash
+     git add .
+     git commit -m "Added feature X or Fixed issue Y"
+     ```
+
+7. **📤 Push Your Changes**
+   - Push your changes to your forked repository:
+     ```bash
+     git push origin YOUR-BRANCH-NAME
+     ```
+
+8. **🔄 Create a Pull Request (PR)** 
+   - Go back to the original repository [here]((https://github.com/AmateursLeague/sneaky-package)).
+   - Click the *Compare & pull request* button, write a short description of your changes, and submit the PR.
+
+9. **🔎 Review Changes**
+   - The project manager will review your PR, and if approved, your request will be merged.
+
+
+## 🏆 Contribution Points
+All tasks will be assigned various levels based on complexity and required skills. Each level provides different points:
+- **🥇 Level 1**: 10 Points  
+- **🥈 Level 2**: 25 Points  
+- **🥉 Level 3**: 45 Points  
 
 ---
 
-## Key Points to Remember 📌
-- This package integrates source files into a target machine using the `stash/` directory. 📁  
-- A **test file** is provided—run it to ensure that the files inside the stash appear on the target machine. 💡  
-- Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection. 🔒  
+## 📄GSSoC Guidelines 📄
+It is important to adhere to the guidelines; violations can affect your profile. Review the guidelines [here](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines).
+
+
+## 📑Note for Contributors-
+
+- This package integrates source files into a target machine using the `stash/` directory.
+- A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
+- Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
+- If you find **any vulnerabilities**, please raise an issue! ⚠️
+---
+## Technologies & Description
+- This project is developed entirely in **Python**.
+- The codebase is **compact** and **lightweight**, allowing for faster installation and execution.
+- All features are built using **Python's built-in modules**, making this project an ideal choice for beginners looking to explore package development without external dependencies.
+
+Big thanks to all the contributors! 🎉
+
+## Contributors ✨
+
+Thanks goes to these wonderful people:
+
+<a href="https://github.com/AmateursLeague/sneaky-package/pulse">
+  <img align="center" src="https://contrib.rocks/image?max=100&repo=AmateursLeague/sneaky-package" />
+</a>
+
+## 💌 Ending Note
+
+We thank all the contributors for playing their part in the project, we really appreciate your efforts. We encourage other contributors to explore the package and help us enhance it, your contributions are valuable.
+
+## 🪪Licence
+The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the system connected with pip.
+It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 ---
 
-## Things to Point Out! 🕵️‍♂️
-- The **codebase is simple** and **easy to contribute to**, but implementing stealthy features requires **proper research**. 🔍  
-- This package **exploits security permissions** in `pip`, so maintaining **pip standards** is advised. ✅  
-- Every feature in this package supports major operating systems:  
-  - *Windows* 🪟  
-  - *Linux* 🐧  
-  - *MacOS* 🍏  
-
-If you find **any vulnerabilities**, please raise an issue! ⚠️
-
----
-
-## Purpose and Ethical Use ⚖️
-
-The purpose of this package is **educational**, aiming to highlight and improve security by demonstrating potential vulnerabilities in systems. 🛡️
-
----
-
-## License 📜
-
-This package is licensed under the [**GPL 3.0**](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 **Happy sneaking!** 🤫
