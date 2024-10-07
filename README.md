@@ -173,10 +173,10 @@ It is important to adhere to the guidelines; violations can affect your profile.
 - Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
 - If you find **any vulnerabilities**, please raise an issue! ⚠️
 ---
-## 🟡Technologies & Description
-- This project only uses **`Python`** to develop the package.
-- The project codebase is compact & lightweight, allowing it to install and executer faster!
-- All the features are developed using built-in modules, making this project an idea choice for beginners. 
+## Technologies & Description
+- This project is developed entirely in **Python**.
+- The codebase is **compact** and **lightweight**, allowing for faster installation and execution.
+- All features are built using **Python's built-in modules**, making this project an ideal choice for beginners looking to explore package development without external dependencies.
 
 Big thanks to all the contributors! 🎉
 
