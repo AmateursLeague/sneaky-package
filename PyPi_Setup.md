@@ -44,45 +44,48 @@ These tools are essential for building and uploading your package.
 ```
 sneaky_package/
 │
-├── .github/                              # GitHub-specific files
-│   ├── BUG_report_issue_template.md      # Template for bug reports
-│   ├── Feature_request_issue_template.md # Template for feature requests
-│   ├── changes_in_code_issue_template.md # Template for code change issues
-│   └── pull_request_template.md          # Template for pull requests
-│
 ├── package/                              # Main package directory
-│   ├── __init__.py                       # Required for package initialization
-│   ├── clp.py                            # Module for CLP functionality
-│   ├── display.py                        # Module for display-related functions
-│   ├── graph.py                          # Module for graph-related functions
-│   ├── models.py                         # Module containing data models
-│   ├── piechart.py                       # Module for pie chart functionalities
-│   └── test.py                           # Test script for testing package modules
-│
-├── .gitignore                            # Specifies files to ignore in Git
-├── CHANGELOG.md                          # Log of changes made to the project
-├── CODE_OF_CONDUCT.md                    # Code of conduct for contributors
+│   ├── stash/                            # Stash directory for files integration
+│   │   └── test.py                       # test script for checking
+│   ├── display.py                        
+│   ├── graph.py                          
+│   ├── models.py                        
+│   └── piechart.py                      
 ├── LICENSE                               # License information for the project
 ├── README.md                             # Documentation about the project
 └── setup.py                              # Setup script for packaging the project
 
 ```
 ### Note
+
 Feel free to change any filenames or directory names to better suit your needs. 
 
 The filenames in the stash/ directory are aliases, you can modify them as necessary!
 
-### Explanation of Key Files
+### Explanation of Key Files/ Directories
 
-- **.github/**: Contains templates for issues and pull requests to streamline contributions.
-- **.gitignore**: Lists files and directories that should not be tracked by Git.
-- **changelog.md**: Documents significant changes and updates made to the project over time.
-- **code_of_conduct.md**: Outlines expected behavior and guidelines for contributors.
-- **setup.py**: Contains package information and dependencies.
-- **license**: Specifies the licensing terms under which the project is distributed.
-- **readme.md**: Provides an overview of the project, installation instructions, usage
-guidelines, and other relevant information.
-- **setup.py**: Contains metadata about the package and instructions on how to install it.
+- **package/**:  
+  The `package` directory is the main directory containing the core functionality of your project. Each file within this directory serves a specific purpose:
+  - **display.py**: Contains functions related to displaying information or output to the user.
+  - **graph.py**: Provides functionalities for displaying and copying code snippets to the clipboard, often involving authentication mechanisms.
+  - **models.py**: Contains data models and associated methods that manage the data being processed or manipulated within the package.
+  - **piechart.py**: Includes functionalities for plotting and copying code snippets, typically related to pie chart representations.
+
+
+- **setup.py**: This file is essential for packaging your project using setuptools. It specifies metadata about the package, including:
+  - `name`: The name of the package, which should be unique within the Python Package Index (PyPI).
+  - `version`: The current version of the package.
+  - `packages`: Uses `find_packages()` to automatically find and include all packages and subpackages.
+  - `description`: A brief summary of what the package does.
+  - `author` and `author_email`: Information about the package author.
+  - `license`: Specifies the license under which the package is released.
+  - `install_requires`: A list of dependencies that are required for the package to function, allowing automatic installation of these packages when your package is installed.
+
+ 
+- **LICENSE**: Contains the legal information regarding the usage, modification, and distribution of the project. This file helps clarify the terms under which the code can be used by others.
+
+
+- **README.md**: Provides an overview of the project, including how to install and use it. It serves as the first point of contact for users and contributors, helping them understand the purpose of the project and how to get started.
 
 ## 5. Building the Package
 
@@ -153,7 +156,7 @@ This command will create a `dist/` directory containing `.tar.gz` and `.whl` fil
    - Next, navigate to the directory containing your package files in the terminal.
    - Create a source distribution of your package by running:
      ```bash
-     python setup.py sdist
+     python setup.py sdist bdist_wheel
      ```
    - Use your API token for authentication when uploading:
      ```bash
