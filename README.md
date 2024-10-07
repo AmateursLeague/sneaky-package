@@ -58,7 +58,8 @@ It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ## 🚀 How to Contribute to This Project
 
-We welcome all contributors to our project **Sneaky-Package**. Before contributing we request you to get familiar with the project. The project is biggner friendly and you can find features you would like to imporove including bugs, enhancements or documentation. Here are steps to start contributing- 
+We welcome all contributors to our project **Sneaky-Package**. Before contributing we request you to get familiar with the project. The project is biggner friendly and you can find features you would like to imporove including bugs, enhancements or documentation. 
+**Here are steps to start contributing**: 
 
 1. **🍴 Fork the Repository**  
    - Go to the [repository page](https://github.com/AmateursLeague/sneaky-package).
