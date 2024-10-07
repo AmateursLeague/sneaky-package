@@ -3,7 +3,6 @@ import shutil
 from datetime import datetime
 
 def plot(snippet_name,password):
-        #
     current_time = datetime.now().strftime("%H%M")
     
     if str(password) != current_time:
