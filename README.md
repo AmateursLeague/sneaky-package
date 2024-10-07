@@ -51,7 +51,7 @@ A ready-to-deploy Python package designed to stealthily integrate files within a
 
 
 ## 🪪Licence
-The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the sys connected with pip.
+The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the system connected with pip.
 It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 ---
