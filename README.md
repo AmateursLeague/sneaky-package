@@ -3,9 +3,7 @@
 ## Table of Contents
 1. [🚀Project Overview](#project-overview)
 2. [✨ Key Features ✨](#✨key-features✨)
-3. [⛓️ What is a **Pip Package**? ⛓️](#⛓️what-is-a-pip-package-⛓️)
-4. [🪪 Licence](#🪪licence)
-5. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
+3. [🚀 How to Contribute to This Project](#🚀-how-to-contribute-to-this-project)
    - [🍴 Fork the Repository](#🍴-fork-the-repository)
    - [💻 Clone Your Fork](#💻-clone-your-fork)
    - [🌿 Create a New Branch](#🌿-create-a-new-branch)
@@ -15,12 +13,13 @@
    - [📤 Push Your Changes](#📤-push-your-changes)
    - [🔄 Create a Pull Request (PR)](#🔄-create-a-pull-request-pr)
    - [🔎 Review Changes](#🔎-review-changes)
-6. [🏆 Contribution Points](#🏆-contribution-points)
-7. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
-8. [📑 Note for Contributors](#📑-note-for-contributors)
-9. [🟡Technologies & Description](#technologies-used)
-10. [Contributors ✨](#contributors-✨)
-11. [💌 Ending Note](#💌-ending-note)
+4. [🏆 Contribution Points](#🏆-contribution-points)
+5. [📄 GSSoC Guidelines 📄](#📄-gssoc-guidelines-📄)
+6. [📑 Note for Contributors](#📑-note-for-contributors)
+7. [🟡Technologies & Description](#technologies-used)
+8. [Contributors ✨](#contributors-✨)
+9. [💌 Ending Note](#💌-ending-note)
+10. [🪪 Licence](#🪪licence)
 
 ## 🚀Project Overview
 
@@ -41,14 +40,7 @@ A ready-to-deploy Python package designed to stealthily integrate files within a
 
 
 ---
-
-
-## ⛓️ What is a **Pip Package**? ⛓️
-
-- A **Pip Package** allows the user to manage, install, update, and remove Python packages from the Python Package Index (PyPi). 
-
-- These packages contain a collection of builtin libraries and modules. 
-## How to get Started-
+## 🛠️How to get Started-
 --- 
 
 ### **🔧Instalations:**
@@ -96,12 +88,6 @@ python
 
 ---
 
-
-## 🪪Licence
-The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the system connected with pip.
-It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
-
----
 
 ## 🚀 How to Contribute to This Project
 
@@ -191,6 +177,12 @@ Thanks goes to these wonderful people:
 ## 💌 Ending Note
 
 We thank all the contributors for playing their part in the project, we really appreciate your efforts. We encourage other contributors to explore the package and help us enhance it, your contributions are valuable.
+
+## 🪪Licence
+The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the system connected with pip.
+It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
+
+---
 
 
 **Happy sneaking!** 🤫
