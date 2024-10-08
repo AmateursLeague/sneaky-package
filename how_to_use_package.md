@@ -3,7 +3,7 @@
 
 ## **🔧Installations:**
 ```bash
-pip install matplotlib_visual
+pip install package
 ```
 > **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
 
