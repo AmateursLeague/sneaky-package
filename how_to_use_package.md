@@ -17,7 +17,7 @@ python
 ### 📊Features of this package:
 - **📍Displaying source code** in the console output.
 ```python
-    from matplotlib_visual.models import display
+    from package.models import display
     display("<filename-without-extension>")
 ```
  *`models` method displays source code in the console.*  
@@ -25,21 +25,21 @@ python
 
 - **📍Stealth Copy to Clipboard** for a more secure method.
 ```python
-    from matplotlib_visual.graph import display
+    from package.graph import display
     display("<filename-without-extension>")
 ```
  *`graph` method copies the source code to the system's clipboard.*  
 
 - **📍Writing the source code** into the program's root directory.
 ```python
-    from matplotlib_visual.piechart import display
+    from package.piechart import display
     display("<filename-without-extension>")
 ```
  *`piechart` method writes the file in the root directory of execution.*  
 
 - **📍Web Scraping** from a cl1p.net clipboard.
 ```python
-     from package_name.clp import grab
+     from package.clp import grab
      grab('url-name')
 ```
  *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
