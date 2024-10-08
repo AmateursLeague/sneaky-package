@@ -26,7 +26,7 @@ python
 
 
 
-- **📍Stealthly Copies to Clipboard** for a more secure method.
+- **📍Stealth Copy to Clipboard** for a more secure method.
 
  *`graph` method copies the source code to the system's clipboard.*  
 ```python
@@ -47,7 +47,7 @@ python
 - **📍Web Scraping** from cl1p.net clipboard.
 
  *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
-```python
+```  python
      from package.clp import grab
      grab('url-name')
 ```
