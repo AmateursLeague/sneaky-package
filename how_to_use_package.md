@@ -6,7 +6,7 @@
 ```bash
 pip install matplotlib_visual
 ```
-> **Note:** The `matplotlib_visual` package has been implemented by Me(https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
+> **Note:** The `matplotlib_visual` package has been implemented by [this-is-yaash](https://github.com/this-is-yaash) and contains user-specific content. You are advised to follow the steps in the [`README.md`](https://github.com/AmateursLeague/sneaky-package?tab=readme-ov-file#-how-to-contribute-to-this-project) to deploy your own Python package and upload it accordingly.
 
 ## **⏱️Execution:**
 1. Create a Python file with **.py** extension and enter any of the code snippets below.
