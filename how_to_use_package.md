@@ -2,11 +2,11 @@
 --- 
 
 
-## **🔧Installations:**
+## **🔧Installation:**
 ```bash
-pip install package
+pip install matplotlib_visual
 ```
-> **Note:** The `sneaky-package` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
+> **Note:** The `matplotlib_visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
 
 ## **⏱️Execution:**
 1. Create a Python file with **.py** extension and enter any of the code snippets below.
