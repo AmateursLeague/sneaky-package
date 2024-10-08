@@ -51,6 +51,6 @@ python
      from package.clp import grab
      grab('url-name')
 ```
-
+> **Note:** `package` refers to the name of your own Python package that you have deployed on PyPI. Replace `package` with the name of the package you uploaded to PyPI.
 
 ---
