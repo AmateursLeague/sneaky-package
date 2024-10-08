@@ -1,6 +1,6 @@
 ### Title of the Pull Request
 - [ ] Have you renamed the PR Title in a meaningful way?
-<!-- 
+<!--
 Examples of good PR titles:
 
 build:      (for build related changes)
@@ -16,7 +16,7 @@ test:       (when adding missing tests)
 -->
 ### Related Issue
 <!-- Replace `<issue number>` with the issue number which is fixed in this PR -->
-Closes: #<issue number>
+closes #<issue number>
 
 ### Description
 <!-- Describe the changes you made in this pull request in DETAILS-->
