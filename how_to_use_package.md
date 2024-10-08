@@ -1,43 +1,47 @@
 # 🚀 Quick Start Guide for matplotlib_visual
+--- 
 
-### Step 1: Install the package
-
-\`\`\`bash
+## **🔧Installations:**
+```bash
 pip install matplotlib_visual
-\`\`\`
+```
+> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
 
-### Step 2: Create a Python file with a `.py` extension
+## **⏱️Execution:**
+1. Create a Python file with **.py** extension and enter any of the code snippets below.
+2. Or, open a terminal and run Python interactively:
+```bash
+python
+```
 
-### Step 3: 📂 Import and Use Features
+### 📊Features of this package:
+- **📍Displaying source code** in the console output.
+```python
+    from matplotlib_visual.models import display
+    display("<filename-without-extension>")
+```
+ *`models` method displays source code in the console.*  
 
-The four features of `matplotlib_visual` are:
 
-#### 1. Display Source Code 🖥️
+- **📍Stealth Copy to Clipboard** for a more secure method.
+```python
+    from matplotlib_visual.graph import display
+    display("<filename-without-extension>")
+```
+ *`graph` method copies the source code to the system's clipboard.*  
 
-**Command:**
-\`\`\`python
-from matplotlib_visual.display import models
-display("<filename>")
-\`\`\`
+- **📍Writing the source code** into the program's root directory.
+```python
+    from matplotlib_visual.piechart import display
+    display("<filename-without-extension>")
+```
+ *`piechart` method writes the file in the root directory of execution.*  
 
-#### 2. Stealth Copy to Clipboard 📋
+- **📍Web Scraping** from a cl1p.net clipboard.
+```python
+     from package_name.clp import grab
+     grab('url-name')
+```
+ *`grab` method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.*  
 
-**Command:**
-\`\`\`python
-from matplotlib_visual.display import graph
-display("<filename>")
-\`\`\`
-
-#### 3. Save to Root Directory 📝
-
-**Command:**
-\`\`\`python
-from matplotlib_visual.display import piechart
-display("<filename>")
-\`\`\`
-
-#### 4. Web Scrape from cl1p.net 🌐
-
-**Command:**
-\`\`\`python
-from matplotlib_visual.display import grab
+---
