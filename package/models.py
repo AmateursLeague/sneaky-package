@@ -4,32 +4,20 @@ from datetime import datetime
 
 def display(snippet_name):
     snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
-    try:
-        base_dir = os.path.dirname(__file__)
-        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
-        output_path = os.path.join(
-            base_dir, f"{snippet_name}.py"
+            os.path.dirname(__file__), "stash", f"{snippet_name}.py"
         )
+    try:
+        if not os.path.exists(snippet_path):
+            raise FileNotFoundError(f"File '{snippet_name}.py' not found in stash.")
+        
+
+        output_path = os.path.join(os.path.dirname(__file__), f"{snippet_name}.py")
         shutil.copyfile(snippet_path, output_path)
+
+        with open(output_path, "r") as file:
+            print(file.read())
+    
+    except FileNotFoundError as fnf_error:
+        print(fnf_error)
     except Exception as e:
-        print(f"Syntax Error: {e}")
-
-
-def models(snippet_name,password):
-    current_time = datetime.now().strftime("%H%M")
-    
-    if str(password) != current_time:
-        raise ValueError("syntax error")
-    
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
-    )
-
-    with open(snippet_path, "r") as file:
-        source_code = file.read()
-        print(source_code)
+        print(f"Error: {e}")
