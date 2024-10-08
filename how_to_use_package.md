@@ -14,7 +14,7 @@ pip install matplotlib_visual
 ```bash
 python
 ```
-
+---
 ### 📊Features of this package:
 - **📍Displays source code** in the console output.
 
