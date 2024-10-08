@@ -1,4 +1,4 @@
-# 🚀 Quick Start Guide for sneaky-package
+# 🚀 Quick Start Guide for **`sneaky-package`**
 --- 
 
 
