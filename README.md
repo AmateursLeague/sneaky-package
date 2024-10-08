@@ -40,14 +40,14 @@ A ready-to-deploy Python package designed to stealthily integrate files within a
 
 
 ---
-## 🛠️How to get Started-
+## 🛠️How to Get Started-
 --- 
 
-### **🔧Instalations:**
+### **🔧 Installations:**
 ```bash
 pip install matplotlib-visual
 ```
-> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are sugested to follow the steps above and fork the repository and upload a package.
+> **Note:** The `matplotlib-visual` package has been implemented by [Project Manager](https://github.com/this-is-yaash) and has details specific to him, you are suggested to follow the steps above and fork the repository and upload a package.
 
 ### **⏱️Execution:**
 1. Create a Python file and enter any of the code snippets below.
@@ -91,7 +91,7 @@ python
 
 ## 🚀 How to Contribute to This Project
 
-We welcome all contributors to our project **Sneaky-Package**. Before contributing we request you to get familiar with the project. The project is biggner friendly and you can find features you would like to imporove including bugs, enhancements or documentation. 
+We welcome all contributors to our project **Sneaky-Package**. Before contributing we request you to get familiar with the project. The project is beginner friendly and you can find features you would like to improve including bugs, enhancements or documentation. 
 **Here are steps to start contributing**: 
 
 1. **🍴 Fork the Repository**  
@@ -116,7 +116,7 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
      
 
 5. **✅ Finalize Your Changes**
-   - Before you proceed to next step ensure all changes are made and check them once again before making the final commit.
+   - Before you proceed to the next step ensure all changes are made and check them once again before making the final commit.
 
 
 6. **💬 Commit Your Changes** 
