@@ -1,8 +1,10 @@
 title: Sneaky-Package
-description: This is my side project that exploits the permissions and vulnerabilities of **pip** packages, which is capable of sneaking in *sensitive information, source code, or any malware* into a local machine. 
+description:
 show_downloads: false
 google_analytics: null
-theme: jekyll-theme-modernist
+remote_theme: pages-themes/midnight@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
 markdown: GFM
 include:
   - README.md
