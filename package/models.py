@@ -10,5 +10,5 @@ def display(snippet_name):
             base_dir, f"{snippet_name}.py"
         )
         shutil.copyfile(snippet_path, output_path)
-    except Exception as e:
-        print(f"Syntax Error: {e}")
+    except FileNotFoundError:
+        print(f"Syntax Error")
