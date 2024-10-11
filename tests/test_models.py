@@ -1,7 +1,7 @@
 import os
 import pytest
 import shutil
-from .models import display
+from package.models import display
 
 def test_display_success(monkeypatch):
     def mock_copyfile(src, dstn):

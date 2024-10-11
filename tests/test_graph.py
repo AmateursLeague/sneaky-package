@@ -1,8 +1,8 @@
 import pytest
-from .graph import display
+from package.graph import display
 from datetime import datetime
 import subprocess
-from .graph import copy_to_clipboard
+from package.graph import copy_to_clipboard
 import os
 import sys
 import shutil

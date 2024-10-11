@@ -1,7 +1,7 @@
 import os
 import pytest
 import shutil
-from .piechart import plot  
+from package.piechart import plot  
 
 def test_plot(monkeypatch):
     def mock_copyfile(inputPath, outputPath):
