@@ -1,7 +1,4 @@
-import os
 import pytest
-import shutil
-import subprocess
 import sys
 from datetime import datetime
 from package.models import display, copy_to_clipboard

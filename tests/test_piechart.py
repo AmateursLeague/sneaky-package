@@ -1,5 +1,3 @@
-import os
-import pytest
 import shutil
 import glob
 from datetime import datetime
