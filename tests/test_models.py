@@ -1,27 +1,44 @@
 import os
 import pytest
 import shutil
-from package.models import display
+import subprocess
+import sys
 from datetime import datetime
+from package.models import display, copy_to_clipboard
 
-def test_display_success(monkeypatch):
-    def mock_copyfile(src, dstn):
-        pass
-    monkeypatch.setattr(shutil,"copyfile",mock_copyfile)
-    try: 
-        current_time = datetime.now().strftime("%H%M")
-        display("test", current_time)
-    except Exception as e:
-        pytest.fail("Unexpected Error raised: {e}")
+# Mock datetime class
+class MockDateTime(datetime):
+    @classmethod
+    def now(cls):
+        return datetime.strptime("1234", "%H%M")  # Mock time to 12:34
 
-# will work on later
-# due to some imposter uploaded write operations into models now this chaos has unfolded
-# def test_display_failed(monkeypatch):
-#     def mock_copyfile(src,dstn):
-#         raise IOError("File not found")
-#     monkeypatch.setattr(shutil,"copyfile",mock_copyfile)
+# Mock functions for clipboard operations
+def mock_subprocess_run(*args, **kwargs):
+    return None  # Assume successful run
 
-#     with pytest.raises(IOError) as excinfo:
-#         current_time = f"{int(datetime.now().strftime('%H%M')) + 1:04d}"
-#         display("test", current_time)
-#     assert "File not found" in str(excinfo.value)
+def mock_open_file_content(*args, **kwargs):
+    class MockFile:
+        def __enter__(self):
+            return self
+        def __exit__(self, *args):
+            pass
+        def read(self):
+            return "Sample content"
+    return MockFile()
+
+
+def test_display_incorrect_password(monkeypatch):
+    monkeypatch.setattr("package.piechart.datetime", MockDateTime)  # Mock datetime
+
+    snippet_name = "test"
+    incorrect_password = "1111"  # Different from "1234"
+    
+    with pytest.raises(ValueError, match="syntax error: incorrect password"):
+        display(snippet_name, incorrect_password)
+
+
+def test_copy_to_clipboard_unsupported_os(monkeypatch):
+    monkeypatch.setattr(sys, "platform", "unsupported_os")
+    
+    with pytest.raises(OSError, match="Unsupported operating system"):
+        copy_to_clipboard("test content")
