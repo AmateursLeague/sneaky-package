@@ -3,7 +3,7 @@ import shutil
 import subprocess
 import sys
 
-def display(snippet_name=None, password, clipboard=None):
+def display(snippet_name, password, clipboard=None):
 
     try:
         if snippet_name:
