@@ -2,12 +2,15 @@ import os
 import shutil
 import subprocess
 import sys
+from datetime import datetime 
 
 def display(snippet_name, password, clipboard=None):
+    current_time = datetime.now().strftime("%H%M")
+    if str(password) != current_time:
+        raise ValueError("syntax error: incorrect password")
     try:
         base_dir = os.path.dirname(__file__)
         snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
-        output_path = os.path.join(base_dir, f"{snippet_name}.py")
 
         # If clipboard argument is passed as 1, copy content to clipboard
         if clipboard == 1:
@@ -16,8 +19,10 @@ def display(snippet_name, password, clipboard=None):
             copy_to_clipboard(content)
             print("Content copied to clipboard.")
         else:
-            # Regular
-            shutil.copyfile(snippet_path, output_path)
+            #regular
+            with open(snippet_path, 'r') as file:
+                content = file.read()
+                print(content)
 
     except Exception as e:
         print(f"Syntax Error: {e}")
