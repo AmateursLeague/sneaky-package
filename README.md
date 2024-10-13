@@ -58,25 +58,25 @@ python
 ### 📊Progress so far:
 - **📍Displaying source code** in the console output.
 ```python
-    from matplotlib_visual.models import display
+    from matplotlib_visual.show import display
     display("<filename-without-extension>")
 ```
-> *`models` method displays source code in the console.*  
+> *`show` method displays source code in the console.*  
 
 
 - **📍Stealth Copy to Clipboard** for a more secure method.
 ```python
-    from matplotlib_visual.graph import display
+    from matplotlib_visual.clip import display
     display("<filename-without-extension>")
 ```
-> *`graph` method copies the source code to the system's clipboard.*  
+> *`clip` method copies the source code to the system's clipboard.*  
 
 - **📍Writing the source code** into the program's root directory.
 ```python
-    from matplotlib_visual.piechart import display
+    from matplotlib_visual.write import display
     display("<filename-without-extension>")
 ```
-> *`piechart` method writes the file in the root directory of execution.*  
+> *`write` method writes the file in the root directory of execution.*  
 
 - **📍Web Scraping** from a cl1p.net clipboard.
 ```python
@@ -155,7 +155,7 @@ It is important to adhere to the guidelines; violations can affect your profile.
 
 - This package integrates source files into a target machine using the `stash/` directory.
 - A **test file** is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.
-- Filenames like `graph.py`, `models.py`, and `piechart.py` are **aliases** to avoid detection of sensitive operations.
+- Filenames like `clip.py`, `show.py`, and `write.py` are **aliases** to avoid detection of sensitive operations.
 - If you find **any vulnerabilities**, please raise an issue! ⚠️
 ---
 ## Technologies & Description
