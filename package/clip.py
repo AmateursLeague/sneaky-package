@@ -3,7 +3,7 @@ import subprocess
 import sys
 import shutil
 from datetime import datetime
-
+import glob
 def display(snippet_name, password):
     # Retrieve the current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
@@ -13,9 +13,18 @@ def display(snippet_name, password):
         raise ValueError("Invalid password")
     
     # Proceed to copy code to clipboard if the password matches
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "stash", f"{snippet_name}.py"
-    )
+    base_dir = os.path.dirname(__file__)
+    snippets_dir = os.path.join(base_dir, "stash")
+    pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
+
+    matching_files = glob.glob(pattern)
+    
+    if not matching_files:
+        raise FileNotFoundError(f"No file found with the name.")
+    elif len(matching_files) > 1:
+        raise ValueError("Multiple files found with the given name.")
+    
+    snippet_path = os.path.join(snippets_dir, matching_files[0])
 
     try:
         with open(snippet_path, "r") as file:
@@ -57,3 +66,6 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
+
+
+display('test', '1219')

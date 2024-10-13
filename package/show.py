@@ -10,7 +10,17 @@ def display(snippet_name, password, clipboard=None):
         raise ValueError("syntax error: incorrect password")
     try:
         base_dir = os.path.dirname(__file__)
-        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
+        snippets_dir = os.path.join(base_dir, "stash")
+        pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
+
+        matching_files = glob.glob(pattern)
+        
+        if not matching_files:
+            raise FileNotFoundError(f"No file found with the name.")
+        elif len(matching_files) > 1:
+            raise ValueError("Multiple files found with the given name.")
+        
+        snippet_path = os.path.join(snippets_dir, matching_files[0])
 
         # If clipboard argument is passed as 1, copy content to clipboard
         if clipboard == 1:
