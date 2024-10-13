@@ -5,9 +5,12 @@ from datetime import datetime
 import shutil
 
 def display(snippet_name, password):
-    current_time =  datetime.now().strftime("%H%M")
+    # Retrieve the current time in HHMM format
+    current_time = datetime.now().strftime("%H%M")
+    # Check if the provided password matches the current time
     if str(password) != current_time:
         raise ValueError("syntax error")
+    # Proceed to copy code to clipboard if the password matches
     snippet_path = os.path.join(
         os.path.dirname(__file__), "stash", f"{snippet_name}.py"
     )
@@ -15,7 +18,6 @@ def display(snippet_name, password):
         base_dir = os.path.dirname(__file__)
         output_path = os.path.join(base_dir, f"{snippet_name}.py")
         shutil.copyfile(snippet_path, output_path)
-        print("File Copied")
     except Exception as e:
         print(f"Syntax Error: {e}")
 
