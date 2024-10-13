@@ -20,8 +20,9 @@ def plot(snippet_name,password):
         elif len(matching_files) > 1:
             raise ValueError("Multiple files found with the given name.")
         
-        snippet_path = os.path.join(snippets_dir, matching_files[0])
-        output_path = os.path.join(base_dir, f"{snippet_name}.py")
+        snippet_path = matching_files[0] 
+        snippet_extension = os.path.splitext(snippet_path)[1] 
+        output_path = os.path.join(base_dir, f"{snippet_name}{snippet_extension}")
 
         shutil.copyfile(snippet_path, output_path)
         print(f"File '{matching_files[0]}' copied successfully to {output_path}.")
