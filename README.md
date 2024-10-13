@@ -16,7 +16,6 @@
   - [📄GSSoC Guidelines 📄](#gssoc-guidelines-)
   - [📑Note for Contributors-](#note-for-contributors-)
   - [Technologies \& Description](#technologies--description)
-  - [Contributors ✨](#contributors-)
   - [💌 Ending Note](#-ending-note)
   - [🪪Licence](#licence)
 
@@ -164,14 +163,6 @@ It is important to adhere to the guidelines; violations can affect your profile.
 - All features are built using **Python's built-in modules**, making this project an ideal choice for beginners looking to explore package development without external dependencies.
 
 Big thanks to all the contributors! 🎉
-
-## Contributors ✨
-
-Thanks goes to these wonderful people:
-
-<a href="https://github.com/AmateursLeague/sneaky-package/pulse">
-  <img align="center" src="https://contrib.rocks/image?max=100&repo=AmateursLeague/sneaky-package" />
-</a>
 
 ## 💌 Ending Note
 
