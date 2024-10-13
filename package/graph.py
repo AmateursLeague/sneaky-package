@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import shutil
 from datetime import datetime
 
 def display(snippet_name, password):
@@ -27,27 +28,32 @@ def display(snippet_name, password):
         print("File not found")
         raise
 
-def copy_to_clipboard(source_code):
+def copy_to_clipboard(text):
     # Linux
     if "linux" in sys.platform:
+        # Check if xclip is installed
+        if shutil.which("xclip") is None:
+            print("Error: xclip not found. Install it.", file=sys.stderr)
+            return
+        # If xclip is installed, proceed with copying text
         subprocess.run(
-            ["/usr/bin/xclip", "-selection", "clipboard"],
-            input=source_code.strip().encode(),
-            check=True,
-        )
+            ["xclip", "-selection", "clipboard"], 
+            input=text.strip().encode(), 
+            check=True)
+
     # Windows
     elif "win32" in sys.platform:
         subprocess.run(
-            ["C:\\Windows\\System32\\clip.exe"],
-            input=source_code.strip().encode(),
-            check=True,
-        )
+            ["C:\\Windows\\System32\\clip.exe"], 
+            input=text.strip().encode(), 
+            check=True)
+
     # macOS
     elif "darwin" in sys.platform:
         subprocess.run(
-            ["/usr/bin/pbcopy"],  # Full path to pbcopy for macOS
-            input=source_code.strip().encode(),
-            check=True,
-        )
+            ["/usr/bin/pbcopy"], 
+            input=text.strip().encode(), 
+            check=True)
+
     else:
         raise OSError("Unsupported operating system")
