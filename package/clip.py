@@ -68,4 +68,3 @@ def copy_to_clipboard(text):
         raise OSError("Unsupported operating system")
 
 
-display('test', '1219')
