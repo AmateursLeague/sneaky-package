@@ -1,7 +1,7 @@
 import shutil
 import glob
 from datetime import datetime
-from package.piechart import plot  
+from package.write import plot  
 
 #we cannot mock this function, so mocking the whole class
 class MockDateTime(datetime):
@@ -22,7 +22,7 @@ def mock_glob_multiple(pattern):
     return ["stash/test.py", "stash/test2.py"]
 
 def test_plot_success(monkeypatch, capfd):
-    monkeypatch.setattr("package.piechart.datetime", MockDateTime)
+    monkeypatch.setattr("package.write.datetime", MockDateTime)
     monkeypatch.setattr(shutil, "copyfile", mock_copyfile)
     monkeypatch.setattr(glob, "glob", mock_glob_single)
     
@@ -36,7 +36,7 @@ def test_plot_success(monkeypatch, capfd):
 
 
 def test_plot_no_file_found(monkeypatch, capfd):
-    monkeypatch.setattr("package.piechart.datetime", MockDateTime)
+    monkeypatch.setattr("package.write.datetime", MockDateTime)
     monkeypatch.setattr(glob, "glob", mock_glob_none)
     
     snippet_name = "nonexistent"
@@ -48,7 +48,7 @@ def test_plot_no_file_found(monkeypatch, capfd):
     assert "File is not found" in captured.out
 
 def test_plot_multiple_files_found(monkeypatch, capfd):
-    monkeypatch.setattr("package.piechart.datetime", MockDateTime)
+    monkeypatch.setattr("package.write.datetime", MockDateTime)
     monkeypatch.setattr(glob, "glob", mock_glob_multiple)
     
     snippet_name = "test"

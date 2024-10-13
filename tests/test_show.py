@@ -1,7 +1,7 @@
 import pytest
 import sys
 from datetime import datetime
-from package.models import display, copy_to_clipboard
+from package.show import display, copy_to_clipboard
 
 # Mock datetime class
 class MockDateTime(datetime):
@@ -25,7 +25,7 @@ def mock_open_file_content(*args, **kwargs):
 
 
 def test_display_incorrect_password(monkeypatch):
-    monkeypatch.setattr("package.piechart.datetime", MockDateTime)  # Mock datetime
+    monkeypatch.setattr("package.show.datetime", MockDateTime)  # Mock datetime
 
     snippet_name = "test"
     incorrect_password = "1111"  # Different from "1234"
