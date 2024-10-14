@@ -9,6 +9,21 @@ def display(snippet_name, password, clipboard=None):
     if str(password) != current_time:
         raise ValueError("syntax error: incorrect password")
     try:
+        if snippet_name:
+            base_dir = os.path.dirname(__file__)
+            snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
+            output_path = os.path.join(base_dir, f"{snippet_name}.py")
+            shutil.copyfile(snippet_path, output_path)
+        else:
+            ls()
+    except FileNotFoundError as e:
+        print(f"Error: File not found - {e}")
+    except PermissionError as e:
+        print(f"Error: Permission denied - {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+    try:
         base_dir = os.path.dirname(__file__)
         snippets_dir = os.path.join(base_dir, "stash")
         pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
@@ -36,6 +51,34 @@ def display(snippet_name, password, clipboard=None):
 
     except Exception as e:
         print(f"Syntax Error: {e}")
+
+def ls():
+    stash_dir = os.path.join(os.path.dirname(__file__), 'stash')
+    
+    try:
+        if not os.path.exists(stash_dir):
+            print(f"Error: Stash directory '{stash_dir}' does not exist.")
+            return
+        
+        if not os.access(stash_dir, os.R_OK):
+            print(f"Error: Permission denied to read the stash directory '{stash_dir}'.")
+            return
+        
+        files = os.listdir(stash_dir)
+        if not files:
+            print("No files found in stash directory.")
+        else:
+            for i, file in enumerate(files, 1):
+                print(f"{i}. {file}")
+    
+    except PermissionError:
+        print(f"Error: Permission denied to access the stash directory '{stash_dir}'.")
+    
+    except FileNotFoundError:
+        print(f"Error: Stash directory '{stash_dir}' not found.")
+    
+    except Exception as e:
+        print(f"An unexpected error occurred while listing files: {e}")
 
 def copy_to_clipboard(text):
     # Linux
