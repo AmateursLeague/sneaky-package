@@ -1,58 +1,13 @@
-import os
-import subprocess
-import sys
-import shutil
+from package.clip import display as clip_display
+from package.show import display as show_display
+from package.write import plot as write_plot
 
-def models(snippet_name):
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
-    )
-
-    with open(snippet_path, "r") as file:
-        source_code = file.read()
-        print(source_code)
-
-
-def graph(snippet_name):
-    snippet_path = os.path.join(
-        os.path.dirname(__file__), "code_snippets", f"{snippet_name}.py"
-    )
-
-    with open(snippet_path, "r") as file:
-        source_code = file.read()
-
-    # Function to copy text to clipboard based on platform
-    if "linux" in sys.platform:
-        subprocess.run(
-            ["/usr/bin/xclip", "-selection", "clipboard"],
-            input=source_code.strip().encode(),
-            check=True,
-        )
-
-    elif "win32" in sys.platform:
-        subprocess.run(
-            ["C:\\Windows\\System32\\clip.exe"],
-            input=source_code.strip().encode(),
-            check=True,
-        )
-
-    elif "darwin" in sys.platform:  # macOS support
-        subprocess.run(
-            ["pbcopy"],
-            input=source_code.strip().encode(),
-            check=True,
-        )
-
+def display(method, snippet_name, password, clipboard=None):
+    if method == "clip":
+        clip_display(snippet_name, password)
+    elif method == "show":
+        show_display(snippet_name, password, clipboard)
+    elif method == "write":
+        write_plot(snippet_name, password)
     else:
-        raise OSError("Unsupported operating system")
-
-
-def plot(snippet_name):
-    try:
-        base_dir = os.path.dirname(__file__)
-        snippet_path = os.path.join(base_dir, "stash", f"{snippet_name}.py")
-        output_path = os.path.join(base_dir, f"{snippet_name}.py")
-
-        shutil.copyfile(snippet_path, output_path)
-    except Exception as e:
-        print(f"Error: {e}")
+        raise ValueError(f"Unknown method '{method}' specified. Valid methods are 'clip', 'show', or 'write'.")
