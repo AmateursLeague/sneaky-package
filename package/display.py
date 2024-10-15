@@ -1,7 +1,7 @@
 from package.show import display
 from package.write import plot
 
-def write_plot(snippet_name, password):
+def write(snippet_name, password):
     return plot(snippet_name, password)
     
 
