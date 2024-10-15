@@ -3,6 +3,7 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime 
+import glob
 
 def display(snippet_name, password, clipboard=None):
     current_time = datetime.now().strftime("%H%M")
