@@ -3,10 +3,11 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime 
+import glob
 
 def display(snippet_name, password, clipboard=None):
     current_time = datetime.now().strftime("%H%M")
-    if str(password) != current_time:
+    if int(password) != int(current_time):
         raise ValueError("syntax error: incorrect password")
     try:
         base_dir = os.path.dirname(__file__)

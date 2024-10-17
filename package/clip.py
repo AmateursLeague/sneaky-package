@@ -5,14 +5,11 @@ import shutil
 from datetime import datetime
 import glob
 def display(snippet_name, password):
-    # Retrieve the current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
     
-    # Check if the provided password matches the current time
-    if str(password) != current_time:
+    if int(password) != int(current_time):
         raise ValueError("Invalid password")
     
-    # Proceed to copy code to clipboard if the password matches
     base_dir = os.path.dirname(__file__)
     snippets_dir = os.path.join(base_dir, "stash")
     pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
