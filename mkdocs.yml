@@ -1,30 +1,26 @@
-site_name: Sneaky Package Documentation
+site_name: Sneaky Package
 repo_name: AmateursLeague/sneaky-package
 repo_url: https://github.com/AmateursLeague/sneaky-package
 
 theme:
-  name: dracula
+  name: darkly
   
 include_sidebar: true
-user_color_mode_toggle: true
+user_color_mode_toggle: false
 
 plugin:
+  - search
 
 nav:
   - Home: index.md
   - Getting Started: usage.md
   - Installation Guide: installation.md
   - Contributing Guidelines: contributing.md
+  - Changelog: CHANGELOG.md
+  - License: LICENSE.md
 
 markdown_extensions:
   - toc
   - tables
-
-extra:
-  termynal:
-      title: "shell"
-      buttons: "macos"
-      prompt_literal_start:
-        - "$"
-        - ">"
-        - ">>>"
+  - pymdownx.superfences
+  - pymdownx.highlight
