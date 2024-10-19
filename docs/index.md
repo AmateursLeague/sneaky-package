@@ -5,15 +5,15 @@
 
 <strong>Sneaky Package</strong> A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection.
 
-#### Getting Started
+## Getting Started
 
-- **[What is Sneaky Package?](about.md)**  
+### **[What is Sneaky Package?](about.md)**  
   Learn about the purpose of Sneaky Package, its features, and how it can enhance your project. Get a comprehensive overview of what the package offers.
 
-- **[Installation Guide](installation.md)**  
+### **[Installation Guide](installation.md)**  
   Follow this guide to set up Sneaky Package quickly and easily from PyPi. Includes system requirements, package dependencies, and troubleshooting steps for common installation issues.
 
-- **[Usage Guide](usage.md)**  
+### **[Usage Guide](usage.md)**  
   Discover how to effectively use the core features of Sneaky Package with step-by-step examples and explanations. This section includes:
   - Basic usage scenarios
   - Advanced configuration
