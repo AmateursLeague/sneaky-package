@@ -3,23 +3,30 @@ import shutil
 from datetime import datetime
 import glob
 
-def plot(snippet_name,password):
+def plot(snippet_name, password):
+    # Get current time in HHMM format
     current_time = datetime.now().strftime("%H%M")
+    
+    # Validate password against current time
     if int(password) != int(current_time):
         raise ValueError("syntax error: incorrect password")
     
     try:
+        # Define paths
         base_dir = os.path.dirname(__file__)
         snippets_dir = os.path.join(base_dir, "stash")
         pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
 
+        # Find matching files
         matching_files = glob.glob(pattern)
         
+        # Handle file search results
         if not matching_files:
-            raise FileNotFoundError(f"No file found with the name.")
+            raise FileNotFoundError("No file found with the name.")
         elif len(matching_files) > 1:
             raise ValueError("Multiple files found with the given name.")
         
+        # Copy the snippet file
         snippet_path = matching_files[0] 
         snippet_extension = os.path.splitext(snippet_path)[1] 
         output_path = os.path.join(base_dir, f"{snippet_name}{snippet_extension}")
@@ -33,4 +40,3 @@ def plot(snippet_name,password):
         print("The given values are not supported")
     except Exception as e:
         print(f"Error: {e}")
-
