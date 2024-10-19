@@ -24,3 +24,7 @@ markdown_extensions:
   - tables
   - pymdownx.superfences
   - pymdownx.highlight
+
+extends: mkdocs
+
+hljs_style: rainbow
