@@ -1,5 +1,3 @@
-# Contribution Guidelines for Sneaky Package
-
 ## Introduction
 Thank you for your interest in contributing to **Sneaky Package!** This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip. Your contributions—whether they be code, documentation, or feedback—help foster a collaborative environment and drive innovation in our project.
 
