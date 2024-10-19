@@ -7,7 +7,7 @@ import glob
 
 def display(snippet_name, password, clipboard=None):
     current_time = datetime.now().strftime("%H%M")
-    if int(password) != current_time:
+    if int(password) != int(current_time):
         raise ValueError("syntax error: incorrect password")
     try:
         base_dir = os.path.dirname(__file__)

@@ -7,7 +7,11 @@ import glob
 def display(snippet_name, password):
     current_time = datetime.now().strftime("%H%M")
     
+<<<<<<< HEAD
     if int(password) != current_time:
+=======
+    if int(password) != int(current_time):
+>>>>>>> 5942f2ffc4482536c7b6feff21c1893134fdf31f
         raise ValueError("Invalid password")
     
     base_dir = os.path.dirname(__file__)
