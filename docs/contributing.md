@@ -3,7 +3,6 @@
 ## Introduction
 Thank you for your interest in contributing to **Sneaky Package!** This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip. Your contributions—whether they be code, documentation, or feedback—help foster a collaborative environment and drive innovation in our project.
 
-
 Please follow the guidelines below to ensure a smooth contribution process.
 
 ## Getting Started
@@ -22,7 +21,6 @@ To contribute to the Sneaky Package, follow these steps to set up your developme
    Ensure you have the following installed:
    - Python 3.x
    - pip (Python package installer)
-     
 
 4. **Install the package:**
    Open your terminal and run:
@@ -101,13 +99,11 @@ The project maintainers will review your pull request. You may be asked to make 
 
 If you have any questions or doubts during the review process, feel free to ask.
 
-
 ## Reporting Issues
 If you encounter bugs or have feature suggestions:
 
 - Report them by creating a new issue in the GitHub repository.
 - Provide clear and concise descriptions, including steps to reproduce bugs or use cases for feature requests.
-
 
 ## Acknowledgments
 We appreciate all contributions! If you have any doubts or need clarification at any point, please feel free to reach out by creating an issue or asking a question in the PR comments.
