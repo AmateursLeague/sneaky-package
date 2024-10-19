@@ -2,20 +2,12 @@
 
 Welcome to the installation guide for `sneaky-package`. This document will walk you through the process of setting up and running the package on your system.
 
-<!-- ## Table of Contents
-- [Prerequisites](#prerequisites)
-- [Installation Steps](#installation-steps)
-- [Verifying the Installation](#verifying-the-installation)
-- [Additional Steps](#additional-steps)
-- [Running the Package](#running-the-package)
-- [Troubleshooting](#troubleshooting) -->
-
 ## Prerequisites
 
 Before you begin, ensure that your system meets the following requirements:
 
-- Python (version 3.6 or above)
-- pip (Python package installer)
+- [Python](https://www.python.org/downloads/)  version 3.6 or above
+- [pip](https://pip.pypa.io/en/stable/installation/) Python package installer
 
 ## Installation Steps
 
