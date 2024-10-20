@@ -1,8 +1,14 @@
-# SNEAKY PACKAGE 👾
+<div align="center">
+  <img src="assets/main.gif" alt="Contributors Video" width="80%" height="40%">
+  <h1>SNEAKY PACKAGE 👾</h1>
+</div>
+
+A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.
+
+---
+
 ## Table of Contents
 - [SNEAKY PACKAGE 👾](#sneaky-package-)
-  - [Table of Contents](#table-of-contents)
-  - [🚀Project Overview](#project-overview)
   - [✨ Key Features ✨](#-key-features-)
     - [💾 Designed to Look Conventional](#-designed-to-look-conventional)
     - [📥 Installing Without Getting Noticed](#-installing-without-getting-noticed)
@@ -19,11 +25,6 @@
   - [💌 Ending Note](#-ending-note)
   - [🪪Licence](#licence)
 
-## 🚀Project Overview
-
-A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.
-
----
 
 ## ✨ Key Features ✨
 
