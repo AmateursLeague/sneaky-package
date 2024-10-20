@@ -2,7 +2,7 @@ name: Update Contributors in README
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
