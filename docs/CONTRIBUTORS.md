@@ -16,13 +16,17 @@ Thank you once again to all our contributors! Your efforts are truly appreciated
 
 <div align='center'>
 
-[![Stargazers repo roster for @AmateursLeague/sneaky-package](https://reporoster.com/stars/AmateursLeague/sneaky-package)](https://github.com/AmateursLeague/sneaky-package)
+<a href="https://github.com/AmateursLeague/sneaky-package/stargazers" target="_blank">
+<img align="center" src="https://reporoster.com/stars/dark/AmateursLeague/sneaky-package" alt="Stargazers repo roster for @AmateursLeague/sneaky-package" />
+</a>    
 
 </div>
 
 ### &#8627; Forkers
 <div align='center'>
 
-[![Forkers repo roster for @AmateursLeague/sneaky-package](https://reporoster.com/forks/AmateursLeague/sneaky-package)](https://github.com/AmateursLeague/sneaky-package/network/members)
+<a href="https://github.com/AmateursLeague/sneaky-package/network/members" target="_blank">
+<img align="center" src="https://reporoster.com/forks/dark/AmateursLeague/sneaky-package" alt="Forkers repo roster for @AmateursLeague/sneaky-package" />
+</a>
 
 </div>
