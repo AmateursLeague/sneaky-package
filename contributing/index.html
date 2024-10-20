@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Contributing Guidelines - Sneaky Package</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/rainbow.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Sneaky Package</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../usage/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../installation/" class="nav-link">Installation Guide</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Contributing Guidelines</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../CHANGELOG/" class="nav-link">Changelog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../LICENSE/" class="nav-link">License</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../installation/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../CHANGELOG/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/AmateursLeague/sneaky-package/edit/master/docs/contributing.md" class="nav-link">Edit on AmateursLeague/sneaky-package
+                                    </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#understanding-the-codebase" class="nav-link">Understanding the Codebase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-contribute" class="nav-link">How to Contribute</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#submitting-contributions" class="nav-link">Submitting Contributions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#reporting-issues" class="nav-link">Reporting Issues</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#acknowledgments" class="nav-link">Acknowledgments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#happy-coding" class="nav-link">Happy coding!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="introduction">Introduction</h2>
+<p>Thank you for your interest in contributing to <strong>Sneaky Package!</strong> This project is nothing more than a lightweight &amp; faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip. Your contributions—whether they be code, documentation, or feedback—help foster a collaborative environment and drive innovation in our project.</p>
+<p>Please follow the guidelines below to ensure a smooth contribution process.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To contribute to the Sneaky Package, follow these steps to set up your development environment:</p>
+<ol>
+<li>
+<p>Fork this repository to your GitHub account by clicking the "Fork" button in the top right.</p>
+</li>
+<li>
+<p><strong>Clone the Repository</strong>:
+   Open your terminal and run:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-USERNAME/sneaky-package
+<span class="nb">cd</span><span class="w"> </span>sneaky-package
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Install Prerequisites</strong>:
+   Ensure you have the following installed:</p>
+</li>
+<li>Python 3.x</li>
+<li>
+<p>pip (Python package installer)</p>
+</li>
+<li>
+<p><strong>Install the package:</strong>
+   Open your terminal and run:
+   <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>matplotlib_visual
+</code></pre></div></p>
+</li>
+</ol>
+<p>Create a file or open Python in the terminal and enter the following code:
+   <div class="highlight"><pre><span></span><code>from<span class="w"> </span>matplotlib_visual.display<span class="w"> </span>import<span class="w"> </span>featureName<span class="w">  </span>
+featureName<span class="o">(</span><span class="s2">&quot;fileName&quot;</span>,<span class="w"> </span><span class="m">1234</span><span class="o">)</span><span class="w"> </span><span class="c1"># password integer</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>  - `display` - A method that contains features  
+  - `featureName` - Check out `display.py` in the repo and use the required method name (feature).
+</code></pre></div>
+<h2 id="understanding-the-codebase">Understanding the Codebase</h2>
+<p>Before contributing, take time to familiarize yourself with the structure of the project by reading the <a href="https://github.com/AmateursLeague/sneaky-package/blob/main/README.md">README</a> file. 
+   - This project is <strong>beginner-friendly</strong> with most features implemented in <strong>minimal lines of code</strong>.
+   - Codebase is compact, lightweight and faster.<br />
+   - Research thoroughly to understand how to implement stealthy features.
+   - Review comments and docstrings within the code to grasp how each component works.</p>
+<h2 id="how-to-contribute">How to Contribute</h2>
+<p>Follow these steps to make your contributions:</p>
+<h3 id="step-1-identify-an-issue">Step 1: Identify an Issue</h3>
+<p>First, check for any <a href="https://github.com/AmateursLeague/sneaky-package/issues">existing issues</a> in the repository. If you want to report a new issue, please make sure to follow the <strong>Issue Template</strong> provided below:</p>
+<ul>
+<li><strong>Issue Template:</strong><ul>
+<li><strong>Issue Title:</strong> A concise and descriptive title.</li>
+<li><strong>Description:</strong> Clear and detailed description of the issue or feature request.</li>
+<li><strong>Steps to Reproduce (if applicable):</strong> Detailed steps to reproduce the issue.</li>
+<li><strong>Expected Behavior:</strong> What you expected to happen.</li>
+<li><strong>Actual Behavior:</strong> What actually happened.</li>
+</ul>
+</li>
+</ul>
+<p>If the issue already exists or you're interested in fixing something, feel free to pick it up.</p>
+<h3 id="step-2-fork-the-repository">Step 2: Fork the Repository</h3>
+<p>Click on the "<em>Fork</em>" button at the top right of the repository page to create your copy.</p>
+<h3 id="step-3-create-a-branch">Step 3: Create a Branch</h3>
+<p>After cloning your forked repository, create a new branch for your changes:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+</code></pre></div></p>
+<h3 id="step-4-make-changes">Step 4: Make Changes</h3>
+<p>Implement your changes adhering to coding standards and best practices outlined in this project.</p>
+<h3 id="step-5-testing">Step 5: Testing</h3>
+<p>Write tests for any new features or bug fixes you implement. Ensure all tests pass before submitting your contribution.</p>
+<h2 id="submitting-contributions">Submitting Contributions</h2>
+<p>To submit your changes:</p>
+<ol>
+<li>
+<p>Commit your changes with a clear message:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Description of changes made&quot;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Push your branch to your forked repository:
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
+</code></pre></div></p>
+</li>
+<li>
+<p>Go to the original repository and click "<em>Compare &amp; Pull Request</em>". When submitting the PR, please follow this <strong>PR Format:</strong></p>
+</li>
+<li>
+<p><strong>Pull Request Template:</strong></p>
+<ul>
+<li><strong>Title:</strong> Short and descriptive title for your pull request.</li>
+<li><strong>Description:</strong> Detailed description of what changes you made and why.</li>
+<li><strong>Issue Reference:</strong> Mention the issue number this PR addresses (if applicable).</li>
+</ul>
+</li>
+</ol>
+<p><strong>4. Code Review &amp; Feedback:</strong>
+The project maintainers will review your pull request. You may be asked to make some changes before your PR can be merged. Please respond to the feedback and make the necessary adjustments.</p>
+<p>If you have any questions or doubts during the review process, feel free to ask.</p>
+<h2 id="reporting-issues">Reporting Issues</h2>
+<p>If you encounter bugs or have feature suggestions:</p>
+<ul>
+<li>Report them by creating a new issue in the GitHub repository.</li>
+<li>Provide clear and concise descriptions, including steps to reproduce bugs or use cases for feature requests.</li>
+</ul>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We appreciate all contributions! If you have any doubts or need clarification at any point, please feel free to reach out by creating an issue or asking a question in the PR comments.</p>
+<h2 id="happy-coding">Happy coding!</h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
