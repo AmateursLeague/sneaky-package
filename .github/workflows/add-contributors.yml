@@ -2,7 +2,7 @@ name: Update Contributors in README
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","yash/fix-133"]
   workflow_dispatch:
 
 jobs:
