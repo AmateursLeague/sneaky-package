@@ -1,25 +1,4 @@
 # SNEAKY PACKAGE 👾
-## Table of Contents
-- [SNEAKY PACKAGE 👾](#sneaky-package-)
-  - [Table of Contents](#table-of-contents)
-  - [🚀Project Overview](#project-overview)
-  - [✨ Key Features ✨](#-key-features-)
-    - [💾 Designed to Look Conventional](#-designed-to-look-conventional)
-    - [📥 Installing Without Getting Noticed](#-installing-without-getting-noticed)
-    - [🖥️ Cross-Platform Package](#️-cross-platform-package)
-  - [🛠️How to Get Started-](#️how-to-get-started-)
-    - [**🔧 Installations:**](#-installations)
-    - [**⏱️Execution:**](#️execution)
-    - [📊Progress so far:](#progress-so-far)
-  - [🚀 How to Contribute to This Project](#-how-to-contribute-to-this-project)
-  - [🏆 Contribution Points](#-contribution-points)
-  - [📄GSSoC Guidelines 📄](#gssoc-guidelines-)
-  - [📑Note for Contributors-](#note-for-contributors-)
-  - [Technologies \& Description](#technologies--description)
-  - [💌 Ending Note](#-ending-note)
-  - [🪪Licence](#licence)
-
-## 🚀Project Overview
 
 A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight & faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.
 
@@ -137,18 +116,7 @@ We welcome all contributors to our project **Sneaky-Package**. Before contributi
 9. **🔎 Review Changes**
    - The project manager will review your PR, and if approved, your request will be merged.
 
-
-## 🏆 Contribution Points
-All tasks will be assigned various levels based on complexity and required skills. Each level provides different points:
-- **🥇 Level 1**: 10 Points  
-- **🥈 Level 2**: 25 Points  
-- **🥉 Level 3**: 45 Points  
-
 ---
-
-## 📄GSSoC Guidelines 📄
-It is important to adhere to the guidelines; violations can affect your profile. Review the guidelines [here](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines).
-
 
 ## 📑Note for Contributors-
 
@@ -173,6 +141,5 @@ The project works by highlighting and improving security measure by demonstratin
 It is licensed under the [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), allowing you to sneakily use and modify it as needed.
 
 ---
-
 
 **Happy sneaking!** 🤫

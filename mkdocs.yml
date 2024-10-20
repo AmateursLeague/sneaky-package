@@ -1,0 +1,30 @@
+site_name: Sneaky Package
+repo_name: AmateursLeague/sneaky-package
+repo_url: https://github.com/AmateursLeague/sneaky-package
+
+theme:
+  name: darkly
+  
+include_sidebar: true
+user_color_mode_toggle: false
+
+plugin:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: usage.md
+  - Installation Guide: installation.md
+  - Contributing Guidelines: contributing.md
+  - Changelog: CHANGELOG.md
+  - License: LICENSE.md
+
+markdown_extensions:
+  - toc
+  - tables
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+extends: mkdocs
+
+hljs_style: rainbow
