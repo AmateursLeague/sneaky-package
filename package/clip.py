@@ -6,12 +6,6 @@ from datetime import datetime
 import glob
 
 def display(snippet_name, password):
-    """
-    This function displays the content of a snippet file and copies it to the clipboard.
-    It first checks if the provided password matches the current time in HHMM format.
-    If the password is valid, it searches for a file with the given snippet_name in the "stash" directory.
-    If a single file is found, it reads the file content and calls the copy_to_clipboard function to copy the content.
-    """
     current_time = datetime.now().strftime("%H%M")
     
     if int(password) != int(current_time):
@@ -42,10 +36,6 @@ def display(snippet_name, password):
         raise
 
 def copy_to_clipboard(text):
-    """
-    This function copies the given text to the clipboard based on the operating system.
-    It supports Linux, Windows, and macOS.
-    """
     # Linux
     if "linux" in sys.platform:
         # Check if xclip is installed
