@@ -42,10 +42,6 @@ def display(snippet_name, password):
         raise
 
 def copy_to_clipboard(text):
-    """
-    This function copies the given text to the clipboard based on the operating system.
-    It supports Linux, Windows, and macOS.
-    """
     # Linux
     if "linux" in sys.platform:
         # Check if xclip is installed
