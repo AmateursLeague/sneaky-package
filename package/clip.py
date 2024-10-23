@@ -4,6 +4,7 @@ import sys
 import shutil
 from datetime import datetime
 import glob
+
 def display(snippet_name, password):
     current_time = datetime.now().strftime("%H%M")
     
@@ -63,5 +64,4 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
-
 
