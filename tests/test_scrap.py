@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch, mock_open
 import os
-import sys
-from scrap import copy_to_clipboard, save_snippet
+from package.scrap import copy_to_clipboard, save_snippet
+
 
 class TestScrapFunctions(unittest.TestCase):
 

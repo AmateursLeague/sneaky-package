@@ -1,6 +1,3 @@
-import urllib.request
-import re
-import html
 import os
 import subprocess
 import sys
@@ -35,7 +32,7 @@ def copy_to_clipboard(text):
         raise OSError("Unsupported operating system")
 
 def save_snippet(snippet_name, content):
-    base_dir = os.path.dirname(__file__)
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'tests'))
     snippets_dir = os.path.join(base_dir, "stash")
     os.makedirs(snippets_dir, exist_ok=True)  # Create stash directory if it doesn't exist
     snippet_path = os.path.join(snippets_dir, f"{snippet_name}.txt")
