@@ -2,6 +2,7 @@ import os
 import subprocess
 import sys
 import shutil
+import show
 
 def models(snippet_name):
     snippet_path = os.path.join(
@@ -56,3 +57,4 @@ def plot(snippet_name):
         shutil.copyfile(snippet_path, output_path)
     except Exception as e:
         print(f"Error: {e}")
+show.ls('package/stash') #Enter stash directory
