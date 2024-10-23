@@ -1,8 +1,37 @@
 import asyncio
 import requests
 import time
+import urllib.request
+import urllib.parse
+import subprocess
+import platform
 
-async def create(url_id, text, lifetime='60s'):
+def get_clipboard_content() -> str:
+    # Detect the operating system
+    current_os = platform.system()
+
+    try:
+        if current_os == 'Linux':
+            # Use xclip to get clipboard content
+            result = subprocess.run(['xclip', '-selection', 'clipboard', '-o'], stdout=subprocess.PIPE)
+            return result.stdout.decode('utf-8')
+        elif current_os == 'Darwin':  # macOS
+            # Use pbpaste to get clipboard content
+            result = subprocess.run(['pbpaste'], stdout=subprocess.PIPE)
+            return result.stdout.decode('utf-8')
+        elif current_os == 'Windows':
+            # Use PowerShell to get clipboard content on Windows
+            result = subprocess.run(['powershell', '-command', 'Get-Clipboard'], stdout=subprocess.PIPE)
+            return result.stdout.decode('utf-8')
+        else:
+            print(f"Unsupported OS: {current_os}")
+            return ""
+    except subprocess.CalledProcessError:
+        print("Failed to get clipboard content.")
+        return ""
+
+async def create(url_id, lifetime='60s'):
+    text = get_clipboard_content()
     base_url = 'https://cl1p.net'
     lifetime_seconds = convert_lifetime_to_seconds(lifetime)
 
