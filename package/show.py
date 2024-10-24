@@ -1,4 +1,5 @@
 import os
+import glob
 import shutil
 import subprocess
 import sys
@@ -67,7 +68,6 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
-
 def display(*args):
     if not args:
         ls('package/stash') #Enter stash directory
