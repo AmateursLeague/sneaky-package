@@ -7,7 +7,6 @@ import glob
 
 def display(snippet_name, password):
     current_time = datetime.now().strftime("%H%M")
-    
     if int(password) != int(current_time):
         raise ValueError("Invalid password")
     
