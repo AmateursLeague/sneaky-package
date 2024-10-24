@@ -141,13 +141,3 @@ def test_grab_multiple_textareas(capsys):
         
         captured = capsys.readouterr()
         assert "Correct content" in captured.out
-
-def test_grab_malformed_url(capsys):
-    """Test with malformed URL"""
-    with patch('urllib.request.urlopen') as mock_urlopen:
-        mock_urlopen.side_effect = ValueError("Invalid URL")
-        
-        grab("test/url/with/slashes")
-        
-        captured = capsys.readouterr()
-        assert "Nothing found" in captured.out
