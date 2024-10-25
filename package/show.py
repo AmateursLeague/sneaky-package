@@ -67,3 +67,12 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
+def display(*args):
+    if not args:
+        ls('package/stash') #Enter stash directory
+
+    
+def ls(directory_path):
+    contents = os.listdir(directory_path)
+    for files in contents:
+        print(files)
