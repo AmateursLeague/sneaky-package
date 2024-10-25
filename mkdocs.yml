@@ -2,8 +2,8 @@ site_name: Sneaky Package
 repo_name: AmateursLeague/sneaky-package
 repo_url: https://github.com/AmateursLeague/sneaky-package
 
-theme:
-  name: darkly
+theme: material
+
   
 include_sidebar: true
 user_color_mode_toggle: false
