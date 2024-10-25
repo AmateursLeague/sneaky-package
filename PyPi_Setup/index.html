@@ -1,0 +1,797 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>PyPi setup - Sneaky Package</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pypi-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sneaky Package" class="md-header__button md-logo" aria-label="Sneaky Package" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sneaky Package
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PyPi setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/AmateursLeague/sneaky-package" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AmateursLeague/sneaky-package
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sneaky Package" class="md-nav__button md-logo" aria-label="Sneaky Package" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sneaky Package
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/AmateursLeague/sneaky-package" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    AmateursLeague/sneaky-package
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing Guidelines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LICENSE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pre-requisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Pre-requisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pre-requisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-installations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Installations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Project Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-of-key-files-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation of Key Files/ Directories
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-building-the-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Building the Package
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Building the Package">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-Step Instructions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-uploading-to-pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Uploading to PyPI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Uploading to PyPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-steps-for-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Steps for Deployment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-upload-using-pypi-api-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional: Upload Using PyPI API Token
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-installation-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Installation Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Solutions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="pypi-setup">PyPi setup</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>In this guide, We will provide you with a comprehensive overview of how to set up and deploy a Python package to the Python Package Index (PyPI). This package is designed to facilitate the sharing of Python projects, enabling you to install it easily using pip.</p>
+<h3 id="purpose">Purpose</h3>
+<p>The objectives of this guide is to help you to:</p>
+<ul>
+<li>Understand the necessary setup for your package</li>
+<li>Deploy your package to PyPI</li>
+<li>Install your package easily on any system</li>
+</ul>
+<h2 id="2-pre-requisites">2. Pre-requisites</h2>
+<p>Before you begin, ensure that you have the following tools installed:</p>
+<h3 id="required-tools">Required Tools</h3>
+<ul>
+<li><strong>Python</strong> (version 3.6 or above)</li>
+<li><strong>pip</strong> (Python package manager)</li>
+<li><strong>setuptools</strong>, <strong>wheel</strong>, <strong>twine</strong> (for building and uploading packages)</li>
+</ul>
+<h2 id="3-installations">3. Installations</h2>
+<p>To prepare your environment, upgrade pip, setuptools, and wheel:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel
+</code></pre></div>
+<p>Next, install <code>tqdm</code> and <code>Twine</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>tqdm
+sudo<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>twine
+</code></pre></div>
+<p>These tools are essential for building and uploading your package.</p>
+<h2 id="4-project-structure">4. Project Structure</h2>
+<div class="highlight"><pre><span></span><code>sneaky_package/
+│
+├── package/                              # Main package directory
+│   ├── stash/                            # Stash directory for files integration
+│   │   └── test.py                       # test script for checking
+│   ├── display.py                        
+│   ├── graph.py                          
+│   ├── models.py                        
+│   └── piechart.py                      
+├── LICENSE                               # License information for the project
+├── README.md                             # Documentation about the project
+└── setup.py                              # Setup script for packaging the project
+</code></pre></div>
+<h3 id="note">Note</h3>
+<p>Feel free to change any filenames or directory names to better suit your needs. </p>
+<p>The filenames in the stash/ directory are aliases, you can modify them as necessary!</p>
+<h3 id="explanation-of-key-files-directories">Explanation of Key Files/ Directories</h3>
+<ul>
+<li><strong>package/</strong>:<br />
+  The <code>package</code> directory is the main directory containing the core functionality of your project. Each file within this directory serves a specific purpose:</li>
+<li><strong>display.py</strong>: Contains functions related to displaying information or output to the user.</li>
+<li><strong>graph.py</strong>: Provides functionalities for displaying and copying code snippets to the clipboard, often involving authentication mechanisms.</li>
+<li><strong>models.py</strong>: Contains data models and associated methods that manage the data being processed or manipulated within the package.</li>
+<li>
+<p><strong>piechart.py</strong>: Includes functionalities for plotting and copying code snippets, typically related to pie chart representations.</p>
+</li>
+<li>
+<p><strong>setup.py</strong>: This file is essential for packaging your project using setuptools. It specifies metadata about the package, including:</p>
+</li>
+<li><code>name</code>: The name of the package, which should be unique within the Python Package Index (PyPI).</li>
+<li><code>version</code>: The current version of the package.</li>
+<li><code>packages</code>: Uses <code>find_packages()</code> to automatically find and include all packages and subpackages.</li>
+<li><code>description</code>: A brief summary of what the package does.</li>
+<li><code>author</code> and <code>author_email</code>: Information about the package author.</li>
+<li><code>license</code>: Specifies the license under which the package is released.</li>
+<li>
+<p><code>install_requires</code>: A list of dependencies that are required for the package to function, allowing automatic installation of these packages when your package is installed.</p>
+</li>
+<li>
+<p><strong>LICENSE</strong>: Contains the legal information regarding the usage, modification, and distribution of the project. This file helps clarify the terms under which the code can be used by others.</p>
+</li>
+<li>
+<p><strong>README.md</strong>: Provides an overview of the project, including how to install and use it. It serves as the first point of contact for users and contributors, helping them understand the purpose of the project and how to get started.</p>
+</li>
+</ul>
+<h2 id="5-building-the-package">5. Building the Package</h2>
+<h3 id="step-by-step-instructions">Step-by-Step Instructions</h3>
+<ol>
+<li>Create or update the <code>setup.py</code> file in the root directory using the following structure:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom_package_name&#39;</span><span class="p">,</span>            <span class="c1"># Replace with your actual package name</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1&#39;</span><span class="p">,</span>                         <span class="c1"># Update version as needed</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>              <span class="c1"># Automatically find package directories</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Your custom description&#39;</span><span class="p">,</span> <span class="c1"># Provide a brief description of your package</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;custom_author_name&#39;</span><span class="p">,</span>           <span class="c1"># Add your name or organization</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;youremail@gmail.com&#39;</span><span class="p">,</span>    <span class="c1"># Add your email address</span>
+    <span class="n">license</span><span class="o">=</span><span class="s1">&#39;GPL 3.0&#39;</span><span class="p">,</span>                     <span class="c1"># Specify the license type</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>                     <span class="c1"># List any package dependencies here</span>
+        <span class="c1"># e.g., &#39;numpy&gt;=1.18.0&#39;,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Note:</strong> 
+Ensure that your package's structure is correct and that the <code>setup.py</code> file is properly configured.</p>
+<ol>
+<li>Build the Package by running:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>setup.py<span class="w"> </span>sdist<span class="w"> </span>bdist_wheel
+</code></pre></div>
+<p>This command will create a <code>dist/</code> directory containing <code>.tar.gz</code> and <code>.whl</code> files.</p>
+<h2 id="6-uploading-to-pypi">6. Uploading to PyPI</h2>
+<h3 id="detailed-steps-for-deployment">Detailed Steps for Deployment</h3>
+<ol>
+<li>
+<p><strong>Create a PyPI Account</strong>:</p>
+</li>
+<li>
+<p>Go to <a href="https://pypi.org/">PyPI</a> and click on "Register" to create an account if you don’t have one.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/cfbaadf6-3edc-4416-9481-72626b63a96c" /></p>
+</li>
+<li>
+<p>Fill in the required information (username, password, email) and click on Create Account.</p>
+</li>
+<li>After logging in, verify your email address by clicking on the link sent to your email.</li>
+<li>
+<p>Once verified, go to your account settings and navigate to the API tokens section.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/cda0d120-5659-4a86-b265-885f70221bd7" /></p>
+</li>
+</ol>
+<p>### NOTE: To create an API token, you must enable Two-factor Authentication</p>
+<ul>
+<li>
+<p>Click on "Add API token" to generate a new token. This token will be used for authentication when uploading packages.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/fd3eff02-94b4-461e-bb11-ee2cd580773b" /></p>
+<p>under "select scope", select your project.</p>
+</li>
+<li>
+<p><strong>Upload the Package Using Twine</strong>:</p>
+<ul>
+<li>First, ensure you have Twine installed. If not, you can install it using pip:
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>twine
+</code></pre></div></li>
+<li>Next, navigate to the directory containing your package files in the terminal.</li>
+<li>Create a source distribution of your package by running:
+ <div class="highlight"><pre><span></span><code>python<span class="w"> </span>setup.py<span class="w"> </span>sdist<span class="w"> </span>bdist_wheel
+</code></pre></div></li>
+<li>Use your API token for authentication when uploading:
+ <div class="highlight"><pre><span></span><code>twine<span class="w"> </span>upload<span class="w"> </span>dist/*<span class="w"> </span>--username<span class="w"> </span>__token__<span class="w"> </span>--password<span class="w"> </span>&lt;YOUR_API_TOKEN&gt;
+</code></pre></div></li>
+<li>Replace <code>&lt;YOUR_API_TOKEN&gt;</code> with the actual token you generated earlier.</li>
+<li>You should see a confirmation message once the upload is successful.</li>
+</ul>
+</li>
+<li>
+<p>Make sure Twine is installed and run:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>twine<span class="w"> </span>upload<span class="w"> </span>dist/*
+</code></pre></div>
+<p>This command will prompt you for your PyPI credentials. If you haven't logged in yet, you'll need to enter them.</p>
+<h3 id="optional-upload-using-pypi-api-token">Optional: Upload Using PyPI API Token</h3>
+<ol>
+<li>Create an API Token on PyPI:</li>
+<li>Log into your PyPI account.</li>
+<li>Go to Account Settings and generate an API token.</li>
+<li>
+<p>Store the token securely.</p>
+</li>
+<li>
+<p>Upload Package with API Token:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>twine<span class="w"> </span>upload<span class="w"> </span>dist/*<span class="w"> </span>--username<span class="w"> </span>__token__<span class="w"> </span>--password<span class="w"> </span>&lt;YOUR_API_TOKEN&gt;
+</code></pre></div>
+<p>Replace <code>&lt;YOUR_API_TOKEN&gt;</code> with your generated token.</p>
+<h2 id="7-installation-instructions">7. Installation Instructions</h2>
+<p>Once your package is deployed, users can install it via pip:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>your_package_name
+</code></pre></div>
+<p>This command will download and install the latest version of your package from PyPI.</p>
+<h2 id="8-troubleshooting">8. Troubleshooting</h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions</h3>
+<ul>
+<li><strong>Issue</strong>: Build fails due to missing setuptools or wheel<br />
+<strong>Solution</strong>: Ensure you have the latest versions installed:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools<span class="w"> </span>wheel
+</code></pre></div>
+<ul>
+<li>
+<p><strong>Issue</strong>: Twine upload failed with authentication error<br />
+<strong>Solution</strong>: Verify that you are using the correct PyPI token; regenerate it if necessary.</p>
+</li>
+<li>
+<p><strong>Issue</strong>: Unable to find package after uploading<br />
+<strong>Solution</strong>: Double-check that the package name in your <code>setup.py</code> matches what was uploaded on PyPI.</p>
+</li>
+<li>
+<p><strong>Issue</strong>: Invalid version error<br />
+<strong>Solution</strong>: Ensure your version number follows the correct format (e.g., <code>0.1</code>, <code>1.0.0</code>).</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
