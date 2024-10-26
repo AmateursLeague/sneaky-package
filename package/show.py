@@ -7,7 +7,7 @@ import glob
 
 def display(snippet_name = None, password = None , clipboard=None):
     if snippet_name is None and password is None and clipboard is None:
-        ls('C:\\Users\\olasd\\Desktop\\gitDemo\\sneaky-package\\package\\stash') #Enter stash directory
+        ls('/package/stash') #Enter stash directory
         return
     current_time = datetime.now().strftime("%H%M")
     if snippet_name is None or password is None:
@@ -74,7 +74,6 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
-
 
 def ls(directory_path):
     contents = os.listdir(directory_path)
