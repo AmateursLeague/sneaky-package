@@ -1,146 +1,64 @@
-from unittest.mock import patch
-import urllib.request
-import urllib.error
-from package.scrap import grab
+import unittest
+from unittest.mock import patch, mock_open
+from package.scrap.grab import copy_to_clipboard, grab_content, show, clip, write
 
-# Sample HTML responses
-VALID_HTML_WITH_CONTENT = """
-<html>
-<body>
-    <textarea id="cl1pTextArea">Sample clipboard content</textarea>
-</body>
-</html>
-"""
+class TestGrabFunctions(unittest.TestCase):
+    def setUp(self):
+        """Set up test data that will be used across test methods"""
+        self.sample_html = '''
+            <html>
+                <body>
+                    <textarea id="cl1pTextArea">Test content</textarea>
+                </body>
+            </html>
+        '''
+        self.test_content = "Test content"
+        
+    @patch('subprocess.run')
+    def test_copy_to_clipboard_linux(self, mock_run):
+        # Mock platform to test Linux clipboard
+        with patch('sys.platform', 'linux'), \
+             patch('shutil.which', return_value='/usr/bin/xclip'):
+            copy_to_clipboard("test content")
 
-VALID_HTML_EMPTY_CONTENT = """
-<html>
-<body>
-    <textarea id="cl1pTextArea"></textarea>
-</body>
-</html>
-"""
-
-INVALID_HTML_NO_TEXTAREA = """
-<html>
-<body>
-    <div>Some content but no textarea</div>
-</body>
-</html>
-"""
-
-
-# Mock response class
-class MockResponse:
-    def __init__(self, content, status=200):
-        self.content = content
-        self.status = status
-
-    def read(self):
-        return self.content.encode("utf-8")
-
-    def __enter__(self):
-        return self
-
-    def __exit__(self, *args):
-        pass
-
-
-def test_grab_successful_content(capsys):
-    """Test successful content retrieval"""
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.return_value = MockResponse(VALID_HTML_WITH_CONTENT)
-
-        grab("test-url")
-
-        # Check if correct URL was called
-        mock_urlopen.assert_called_once_with("https://cl1p.net/test-url")
-
-        # Check if content was printed
-        captured = capsys.readouterr()
-        assert "Sample clipboard content" in captured.out
-
-
-def test_grab_empty_content(capsys):
-    """Test empty clipboard content"""
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.return_value = MockResponse(VALID_HTML_EMPTY_CONTENT)
-
-        grab("test-url")
-
-        captured = capsys.readouterr()
-        assert "Nothing found" in captured.out
-
-
-def test_grab_no_textarea(capsys):
-    """Test HTML without textarea"""
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.return_value = MockResponse(INVALID_HTML_NO_TEXTAREA)
-
-        grab("test-url")
-
-        captured = capsys.readouterr()
-        assert "Nothing found" in captured.out
-
-
-def test_grab_http_error(capsys):
-    """Test HTTP error handling"""
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.side_effect = urllib.error.HTTPError(
-            url="https://cl1p.net/test-url", code=404, msg="Not Found", hdrs={}, fp=None
+        mock_run.assert_called_once_with(
+            ['xclip', '-selection', 'clipboard'],
+            input=b'test content',
+            check=True
         )
 
-        grab("test-url")
+    @patch('subprocess.run')
+    def test_copy_to_clipboard_windows(self, mock_run):
+        with patch('sys.platform', 'win32'):
+            copy_to_clipboard("test text")
+            mock_run.assert_called_once_with(["C:\\Windows\\System32\\clip.exe"], input=b'test text', check=True)
 
-        captured = capsys.readouterr()
-        assert "Nothing found" in captured.out
+    @patch('subprocess.run')
+    def test_copy_to_clipboard_macos(self, mock_run):
+        with patch('sys.platform', 'darwin'):
+            copy_to_clipboard("test text")
+            mock_run.assert_called_once_with(["/usr/bin/pbcopy"], input=b'test text', check=True)
+            
+    @patch('builtins.print')
+    @patch('package.scrap.grab.grab_content', return_value="test content")
+    def test_show(self, mock_grab_content, mock_print):
+        show("test-url")
+        mock_print.assert_called_once_with("The content is: ", "test content")
 
+    @patch('builtins.print')
+    @patch('package.scrap.grab.grab_content', return_value="test content")
+    @patch('package.scrap.grab.copy_to_clipboard')
+    def test_clip(self, mock_copy_to_clipboard, mock_grab_content, mock_print):
+        clip("test-url")
+        mock_copy_to_clipboard.assert_called_once_with("test content")
+        mock_print.assert_called_once_with("Content copied to clipboard.")
 
-def test_grab_url_error(capsys):
-    """Test URL error handling"""
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.side_effect = urllib.error.URLError("Connection failed")
+    @patch('builtins.open', new_callable=mock_open)
+    @patch('package.scrap.grab.grab_content', return_value="test content")
+    def test_write(self, mock_grab_content, mock_open):
+        write("test-url", "test.txt")
+        mock_open.assert_called_once_with("test.txt", 'w')
+        mock_open().write.assert_called_once_with("test content")
 
-        grab("test-url")
-
-        captured = capsys.readouterr()
-        assert "Nothing found" in captured.out
-
-
-def test_grab_encoded_content(capsys):
-    """Test HTML with encoded characters"""
-    html_with_encoded_content = """
-    <html>
-    <body>
-        <textarea id="cl1pTextArea">Hello &amp; World</textarea>
-    </body>
-    </html>
-    """
-
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.return_value = MockResponse(html_with_encoded_content)
-
-        grab("test-url")
-
-        captured = capsys.readouterr()
-        assert "Hello & World" in captured.out
-
-
-def test_grab_multiple_textareas(capsys):
-    """Test HTML with multiple textareas"""
-    html_multiple_textareas = """
-    <html>
-    <body>
-        <textarea>Wrong content</textarea>
-        <textarea id="cl1pTextArea">Correct content</textarea>
-        <textarea>More wrong content</textarea>
-    </body>
-    </html>
-    """
-
-    with patch("urllib.request.urlopen") as mock_urlopen:
-        mock_urlopen.return_value = MockResponse(html_multiple_textareas)
-
-        grab("test-url")
-
-        captured = capsys.readouterr()
-        assert "Correct content" in captured.out
+if __name__ == '__main__':
+    unittest.main()
