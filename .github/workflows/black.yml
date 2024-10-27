@@ -3,3 +3,7 @@ on:
    pull_request:
       paths:
           -/package/**.py
+
+   push:
+       branches:
+            
