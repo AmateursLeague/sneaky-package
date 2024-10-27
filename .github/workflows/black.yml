@@ -26,3 +26,10 @@ jobs:
 
       - name: Run Black Formatter
         run: black package/
+
+      - name: Check if Black made changes
+        run: |
+          if [[ `git status --porcelain` ]]; then
+          exit 1
+          fi
+        shell: bash
