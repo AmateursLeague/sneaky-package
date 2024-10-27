@@ -46,7 +46,7 @@ def grab_content(url_name):
         if match:
             content = html.unescape(match.group(1)).strip()
             if content:
-                return None
+                return content
     except (urllib.error.HTTPError, urllib.error.URLError):
         pass
     return content
