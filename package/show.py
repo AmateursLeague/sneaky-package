@@ -6,8 +6,18 @@ from datetime import datetime
 import glob
 
 
-def display(snippet_name, password, clipboard=None):
+def display(snippet_name=None, password=None, clipboard=None):
+
+    if snippet_name is None and password is None and clipboard is None:
+        ls("/package/stash")  # Enter stash directory
+        return
+    
     current_time = datetime.now().strftime("%H%M")
+
+    if snippet_name is None or password is None:
+        print("Both snippet_name and password must be provided")
+        return
+
     if int(password) != int(current_time):
         raise ValueError("syntax error: incorrect password")
     try:
@@ -40,6 +50,7 @@ def display(snippet_name, password, clipboard=None):
         print(f"Syntax Error: {e}")
 
 
+
 def copy_to_clipboard(text):
     # Linux
     if "linux" in sys.platform:
@@ -66,3 +77,10 @@ def copy_to_clipboard(text):
 
     else:
         raise OSError("Unsupported operating system")
+
+
+def ls(directory_path):
+    contents = os.listdir(directory_path)
+    for files in contents:
+        print(files)
+
