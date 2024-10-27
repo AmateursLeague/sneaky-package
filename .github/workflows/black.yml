@@ -25,11 +25,8 @@ jobs:
         run: pip install black
 
       - name: Run Black Formatter
-        run: black package/
+        id: action_black
+        run: black --check package/ || { echo "Black found formatting issues!"; exit 1; }
 
-      - name: Check if Black made changes
-        run: |
-          if [[ `git status --porcelain` ]]; then
-          exit 1
-          fi
-        shell: bash
+      - name: Formatting Check
+        run: echo "Code is formatted correctly."
