@@ -7,4 +7,22 @@ on:
    push:
        branches:
             -main
-            
+
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Black
+        run: pip install black
+
+      - name: Run Black Formatter
+        run: black package/
