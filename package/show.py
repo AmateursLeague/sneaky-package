@@ -11,6 +11,7 @@ def display(snippet_name=None, password=None, clipboard=None):
     if snippet_name is None and password is None and clipboard is None:
         ls("/package/stash")  # Enter stash directory
         return
+    
     current_time = datetime.now().strftime("%H%M")
 
     if snippet_name is None or password is None:
@@ -27,7 +28,7 @@ def display(snippet_name=None, password=None, clipboard=None):
         matching_files = glob.glob(pattern)
 
         if not matching_files:
-            raise FileNotFoundError(f"No file found with the name.")
+            raise FileNotFoundError("No file found with the name.")
         elif len(matching_files) > 1:
             raise ValueError("Multiple files found with the given name.")
 
@@ -47,6 +48,7 @@ def display(snippet_name=None, password=None, clipboard=None):
 
     except Exception as e:
         print(f"Syntax Error: {e}")
+
 
 
 def copy_to_clipboard(text):
@@ -81,3 +83,4 @@ def ls(directory_path):
     contents = os.listdir(directory_path)
     for files in contents:
         print(files)
+
