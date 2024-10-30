@@ -1,0 +1,32 @@
+name: Black Code Formatter
+on:
+   pull_request:
+      paths:
+          -/package/**.py
+
+   push:
+       branches:
+            -main
+
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Black
+        run: pip install black
+
+      - name: Run Black Formatter
+        id: action_black
+        run: black --check package/ || { echo "Black found formatting issues!"; exit 1; }
+
+      - name: Formatting Check
+        run: echo "Code is formatted correctly."
