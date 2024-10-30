@@ -27,17 +27,16 @@ jobs:
       - name: Run Black Formatter
         id: action_black
         run: |
-          black package/ tests/
-          git diff --exit-code || echo "Files have been formatted by Black."
+          black package/ tests/ || echo "Black found formatting issues!"
 
       - name: Check for changes
         id: check_changes
         run: |
           git diff --exit-code || echo "Changes detected."
-          git status  # Add this to show the current status
+          echo "changes=true" >> $GITHUB_ENV  # Set an environment variable for changes
 
       - name: Commit and push changes
-        if: steps.action_black.outcome == 'success' && steps.check_changes.outputs.changes != ''
+        if: steps.action_black.outcome == 'success' && env.changes == 'true'  # Change this line
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
