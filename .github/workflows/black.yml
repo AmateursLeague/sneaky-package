@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # Allow write access to repository contents
+
 jobs:
   format-code:
     runs-on: ubuntu-latest
@@ -26,15 +29,22 @@ jobs:
 
       - name: Run Black Formatter
         id: action_black
-        run: black package/ tests/ || echo "Black found formatting issues!"
+        run: |
+          black package/ tests/ || echo "Black found formatting issues!"
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --exit-code || echo "Changes detected."
+          echo "changes=true" >> $GITHUB_ENV
 
       - name: Commit and push changes
-        if: ${{ steps.action_black.outcome == 'success' }}
+        if: steps.action_black.outcome == 'success' && env.changes == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "style: format code with Black"
-          git push
+          git commit -m "style: format code with Black" || echo "No changes to commit."
+          git push || echo "Failed to push changes."
