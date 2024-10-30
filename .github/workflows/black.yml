@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # Allow write access to repository contents
+
 jobs:
   format-code:
     runs-on: ubuntu-latest
@@ -33,10 +36,10 @@ jobs:
         id: check_changes
         run: |
           git diff --exit-code || echo "Changes detected."
-          echo "changes=true" >> $GITHUB_ENV  # Set an environment variable for changes
+          echo "changes=true" >> $GITHUB_ENV
 
       - name: Commit and push changes
-        if: steps.action_black.outcome == 'success' && env.changes == 'true'  # Change this line
+        if: steps.action_black.outcome == 'success' && env.changes == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
