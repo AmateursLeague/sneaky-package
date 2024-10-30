@@ -25,7 +25,8 @@ jobs:
         run: pip install black
 
       - name: Run Black Formatter
-        run: black .
+        run: black package/**.py tests/**.py
+
       
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
