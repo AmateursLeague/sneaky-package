@@ -26,10 +26,12 @@ jobs:
 
       - name: Run Black Formatter
         id: action_black
-        run: black package/ tests/ || echo "Black found formatting issues!"
+        run: |
+          black package/ tests/
+          git diff --exit-code || echo "Black found formatting issues!" # This will allow us to check if files have changed.
 
       - name: Commit and push changes
-        if: ${{ steps.action_black.outcome == 'success' }}
+        if: steps.action_black.outcome == 'success' && git diff --exit-code
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
