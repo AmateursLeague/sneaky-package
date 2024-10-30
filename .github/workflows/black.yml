@@ -28,8 +28,7 @@ jobs:
         run: black package/ tests/
 
       - name: Commit changes
-        if: github.event_name == 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: 'style: Format code with Black'
-          branch: ${{ github.head_ref }}
+          branch: ${{ github.head_ref || github.ref_name }}
