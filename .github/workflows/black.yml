@@ -38,13 +38,23 @@ jobs:
           git diff --exit-code || echo "Changes detected."
           echo "changes=true" >> $GITHUB_ENV
 
+      - name: Configure GPG
+        run: |
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import --batch --passphrase "${{ secrets.GPG_PASSPHRASE }}"
+          echo "use-agent" >> ~/.gnupg/gpg.conf
+          echo "pinentry-program /usr/bin/pinentry" >> ~/.gnupg/gpg-agent.conf
+          gpg --list-secret-keys  # Ensure the key is imported
+
       - name: Commit and push changes
         if: steps.action_black.outcome == 'success' && env.changes == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local commit.gpgSign true
+          git config --local user.signingkey 051C4759AC834560A58B6D6E00D340662E83DCE2 
           git add .
-          git commit -m "style: format code with Black" || echo "No changes to commit."
+          git commit -S -m "style: format code with Black" || echo "No changes to commit."
           git push || echo "Failed to push changes."
