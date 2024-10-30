@@ -34,9 +34,10 @@ jobs:
         id: check_changes
         run: |
           git diff --exit-code || echo "Changes detected."
+          git status  # Add this to show the current status
 
       - name: Commit and push changes
-        if: steps.check_changes.outputs.changes != ''
+        if: steps.action_black.outcome == 'success' && steps.check_changes.outputs.changes != ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
