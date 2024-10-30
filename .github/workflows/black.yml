@@ -1,16 +1,3 @@
-name: Black Code Formatter
-
-on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write  # Allow write access to repository contents
-
 jobs:
   format-code:
     runs-on: ubuntu-latest
@@ -32,18 +19,16 @@ jobs:
         run: |
           black package/ tests/ || echo "Black found formatting issues!"
 
-      - name: Check for changes
-        id: check_changes
-        run: |
-          git diff --exit-code || echo "Changes detected."
-          echo "changes=true" >> $GITHUB_ENV
+      - name: Install GPG
+        run: sudo apt-get install -y gnupg
 
       - name: Configure GPG
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import --batch --passphrase "${{ secrets.GPG_PASSPHRASE }}"
+          mkdir -p ~/.gnupg
+          chmod 700 ~/.gnupg
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
           echo "use-agent" >> ~/.gnupg/gpg.conf
-          echo "pinentry-program /usr/bin/pinentry" >> ~/.gnupg/gpg-agent.conf
-          gpg --list-secret-keys  # Ensure the key is imported
+          gpg --list-secret-keys  # List to verify the key is imported
 
       - name: Commit and push changes
         if: steps.action_black.outcome == 'success' && env.changes == 'true'
@@ -54,7 +39,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local commit.gpgSign true
-          git config --local user.signingkey 051C4759AC834560A58B6D6E00D340662E83DCE2 
+          git config --local user.signingkey YOUR_LONG_KEY_ID  # Replace with your long key ID
           git add .
           git commit -S -m "style: format code with Black" || echo "No changes to commit."
           git push || echo "Failed to push changes."
