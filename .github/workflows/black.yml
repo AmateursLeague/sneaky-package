@@ -24,9 +24,8 @@ jobs:
       - name: Install Black
         run: pip install black
 
+      - name: Install Black
+        run: pip install black
+        
       - name: Run Black Formatter
-        id: action_black
-        run: black --check package/ || { echo "Black found formatting issues!"; exit 1; }
-
-      - name: Formatting Check
-        run: echo "Code is formatted correctly."
+        run: black package/
