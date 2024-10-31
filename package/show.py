@@ -6,33 +6,40 @@ from datetime import datetime
 import glob
 
 
-def display(snippet_name=None, password=None, clipboard=None):
+import os
+import glob
+from datetime import datetime
 
+def display(snippet_name=None, password=None, clipboard=None):
     if snippet_name is None and password is None and clipboard is None:
         ls("/package/stash")  # Enter stash directory
         return
 
     current_time = datetime.now().strftime("%H%M")
-
+    # print(current_time)
+    
+    # Check if both snippet_name and password are provided
     if snippet_name is None or password is None:
         print("Both snippet_name and password must be provided")
         return
-
-    if int(password) != int(current_time):
+    
+    # Convert password to string for comparison to handle leading zeros
+    if str(password).zfill(4) != current_time: 
         raise ValueError("syntax error: incorrect password")
+    
     try:
         base_dir = os.path.dirname(__file__)
         snippets_dir = os.path.join(base_dir, "stash")
         pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
 
         matching_files = glob.glob(pattern)
-
+        
         if not matching_files:
             raise FileNotFoundError("No file found with the name.")
         elif len(matching_files) > 1:
             raise ValueError("Multiple files found with the given name.")
 
-        snippet_path = os.path.join(snippets_dir, matching_files[0])
+        snippet_path = matching_files[0]
 
         # If clipboard argument is passed as 1, copy content to clipboard
         if clipboard == 1:
@@ -48,6 +55,7 @@ def display(snippet_name=None, password=None, clipboard=None):
 
     except Exception as e:
         print(f"Syntax Error: {e}")
+
 
 
 def copy_to_clipboard(text):
