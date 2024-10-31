@@ -13,6 +13,9 @@ author_email = os.getenv("AUTHOR_EMAIL")
 description = os.getenv("DESCRIPTION", "")  # this is optional
 pypi_api_token = os.getenv("PYPI_API_TOKEN")
 
+if pypi_api_token is None:
+    pypi_api_token = input("Enter your PyPI API token: ")
+    
 # Create setup.py content dynamically
 setup_content = f"""
 from setuptools import setup, find_packages
