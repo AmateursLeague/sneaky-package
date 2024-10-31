@@ -1,0 +1,5 @@
+setuptools
+twine
+build
+black
+python-dotenv

@@ -1,13 +1,14 @@
-# setup.py
+
 from setuptools import setup, find_packages
 
 setup(
-    name="custom_package_name",
-    version="0.1",
+    name="Sneaky",
+    version="1.0",
     packages=find_packages(),
-    description="Your custom description",
-    author="custom_author_name",
-    author_email="youremail@gmail.com",
+    description="This is a package that does something Sneaky",
+    author="Yash K. Saini",
+    author_email="ys3853428@gmail.com",
     license="GPL 3.0",
     install_requires=[],
+    url="https://github.com/yashksaini-coder/sneaky-package"
 )
