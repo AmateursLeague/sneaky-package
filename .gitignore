@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # Custom directory & files
-matplotlib_visual/code_snippets
+matplotlib_visual/stash
