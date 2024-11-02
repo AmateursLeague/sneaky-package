@@ -6,7 +6,7 @@ import glob
 
 def plot(snippet_name, password):
     current_time = datetime.now().strftime("%H%M")
-    if int(password) != int(current_time):
+    if str(password).zfill(4) != current_time:
         raise ValueError("syntax error: incorrect password")
 
     try:
@@ -27,8 +27,7 @@ def plot(snippet_name, password):
 
         shutil.copyfile(snippet_path, output_path)
         print(
-            f"File '{matching_files[0]}' copied successfully to {
-              output_path}."
+            f"File '{matching_files[0]}' copied successfully to {output_path}."
         )
 
     except FileNotFoundError:
