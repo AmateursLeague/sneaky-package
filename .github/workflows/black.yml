@@ -1,12 +1,9 @@
 name: Black Code Formatter
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    
-    types:
-      - closed
 
 permissions:
   contents: write  # Allow write access to repository contents
