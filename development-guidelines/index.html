@@ -9,14 +9,18 @@
       
       
       
+        <link rel="prev" href="../how-it-works/">
+      
+      
+        <link rel="next" href="../CHANGELOG/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>Contribution Guidelines for Sneaky Package - Sneaky Package</title>
+        <title>Development Guidelines - Sneaky Package</title>
       
     
     
@@ -58,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#contribution-guidelines-for-sneaky-package" class="md-skip">
+        <a href="#development-environment-setup" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Contribution Guidelines for Sneaky Package
+              Development Guidelines
             
           </span>
         </div>
@@ -231,11 +235,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../usage/" class="md-nav__link">
+      <a href="../how-it-works/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Getting Started
+    How it Works
   </span>
   
 
@@ -248,38 +252,76 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Installation Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
     
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
+  <span class="md-ellipsis">
+    Development Guidelines
+  </span>
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Contributing Guidelines
+    Development Guidelines
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cloning-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloning the Repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Up Your Development Environment
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -351,123 +393,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#cloning-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Cloning the Repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#setting-up-your-development-environment" class="md-nav__link">
     <span class="md-ellipsis">
-      Getting Started
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-the-codebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Understanding the Codebase
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-contribute" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Contribute
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to Contribute">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-identify-an-issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Identify an Issue
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-fork-the-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Fork the Repository
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-create-a-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Create a Branch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-make-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Make Changes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 5: Testing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submitting-contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Submitting Contributions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reporting-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reporting Issues
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acknowledgments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#happy-coding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Happy coding!
+      Setting Up Your Development Environment
     </span>
   </a>
   
@@ -491,113 +428,43 @@
   
 
 
-<h1 id="contribution-guidelines-for-sneaky-package">Contribution Guidelines for Sneaky Package</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Thank you for your interest in contributing to <strong>Sneaky Package!</strong> This project is nothing more than a lightweight &amp; faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip. Your contributions—whether they be code, documentation, or feedback—help foster a collaborative environment and drive innovation in our project.</p>
-<p>Please follow the guidelines below to ensure a smooth contribution process.</p>
-<h2 id="getting-started">Getting Started</h2>
-<p>To contribute to the Sneaky Package, follow these steps to set up your development environment:</p>
+<h1 id="development-environment-setup"><strong>Development Environment Setup</strong></h1>
+<h2 id="cloning-the-repository">Cloning the Repository</h2>
+<p>To create a local copy of the <strong>Sneaky Package</strong>, follow these simple steps:</p>
 <ol>
-<li>
-<p>Fork this repository to your GitHub account by clicking the "Fork" button in the top right.</p>
-</li>
-<li>
-<p><strong>Clone the Repository</strong>:
-   Open your terminal and run:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR-USERNAME/sneaky-package
+<li><strong>Open your terminal</strong> (or command prompt).</li>
+<li><strong>Navigate to the directory</strong> where you want to store the project. You can use the <code>cd</code> command to change directories.</li>
+<li><strong>Run the following command</strong> to clone the repository:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AmateursLeague/sneaky-package.git
 <span class="nb">cd</span><span class="w"> </span>sneaky-package
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Install Prerequisites</strong>:
-   Ensure you have the following installed:</p>
-</li>
-<li>Python 3.x</li>
-<li>
-<p>pip (Python package installer)</p>
-</li>
-<li>
-<p><strong>Install the package:</strong>
-   Open your terminal and run:
-   <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>matplotlib_visual
-</code></pre></div></p>
-</li>
-</ol>
-<p>Create a file or open Python in the terminal and enter the following code:
-   <div class="highlight"><pre><span></span><code>from<span class="w"> </span>matplotlib_visual.display<span class="w"> </span>import<span class="w"> </span>featureName<span class="w">  </span>
-featureName<span class="o">(</span><span class="s2">&quot;fileName&quot;</span>,<span class="w"> </span><span class="m">1234</span><span class="o">)</span><span class="w"> </span><span class="c1"># password integer</span>
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>  - `display` - A method that contains features  
-  - `featureName` - Check out `display.py` in the repo and use the required method name (feature).
 </code></pre></div>
-<h2 id="understanding-the-codebase">Understanding the Codebase</h2>
-<p>Before contributing, take time to familiarize yourself with the structure of the project by reading the <a href="https://github.com/AmateursLeague/sneaky-package/blob/main/README.md">README</a> file. 
-   - This project is <strong>beginner-friendly</strong> with most features implemented in <strong>minimal lines of code</strong>.
-   - Codebase is compact, lightweight and faster.<br />
-   - Research thoroughly to understand how to implement stealthy features.
-   - Review comments and docstrings within the code to grasp how each component works.</p>
-<h2 id="how-to-contribute">How to Contribute</h2>
-<p>Follow these steps to make your contributions:</p>
-<h3 id="step-1-identify-an-issue">Step 1: Identify an Issue</h3>
-<p>First, check for any <a href="https://github.com/AmateursLeague/sneaky-package/issues">existing issues</a> in the repository. If you want to report a new issue, please make sure to follow the <strong>Issue Template</strong> provided below:</p>
-<ul>
-<li><strong>Issue Template:</strong><ul>
-<li><strong>Issue Title:</strong> A concise and descriptive title.</li>
-<li><strong>Description:</strong> Clear and detailed description of the issue or feature request.</li>
-<li><strong>Steps to Reproduce (if applicable):</strong> Detailed steps to reproduce the issue.</li>
-<li><strong>Expected Behavior:</strong> What you expected to happen.</li>
-<li><strong>Actual Behavior:</strong> What actually happened.</li>
-</ul>
-</li>
-</ul>
-<p>If the issue already exists or you're interested in fixing something, feel free to pick it up.</p>
-<h3 id="step-2-fork-the-repository">Step 2: Fork the Repository</h3>
-<p>Click on the "<em>Fork</em>" button at the top right of the repository page to create your copy.</p>
-<h3 id="step-3-create-a-branch">Step 3: Create a Branch</h3>
-<p>After cloning your forked repository, create a new branch for your changes:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
-</code></pre></div></p>
-<h3 id="step-4-make-changes">Step 4: Make Changes</h3>
-<p>Implement your changes adhering to coding standards and best practices outlined in this project.</p>
-<h3 id="step-5-testing">Step 5: Testing</h3>
-<p>Write tests for any new features or bug fixes you implement. Ensure all tests pass before submitting your contribution.</p>
-<h2 id="submitting-contributions">Submitting Contributions</h2>
-<p>To submit your changes:</p>
+<p>This command will download the repository into a folder named <code>sneaky-package</code>. You can now navigate into this folder to start working on the project.</p>
+<h2 id="setting-up-your-development-environment">Setting Up Your Development Environment</h2>
+<p>Now that you have the repository, follow these steps to set up your development environment:</p>
+<ol>
+<li><strong>Run the install script</strong>: This script installs all the necessary software dependencies for the project. In your terminal, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>./install.sh
+</code></pre></div>
 <ol>
 <li>
-<p>Commit your changes with a clear message:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Description of changes made&quot;</span>
-</code></pre></div></p>
+<p><strong>Explore the project</strong>: After the dependencies are installed, feel free to propose changes, fix any bugs, or add new features!</p>
 </li>
 <li>
-<p>Push your branch to your forked repository:
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
-</code></pre></div></p>
+<p><strong>Store files</strong>: If you have any files you want to integrate into another machine, place them in the <code>package/stash</code> directory.</p>
 </li>
 <li>
-<p>Go to the original repository and click "<em>Compare &amp; Pull Request</em>". When submitting the PR, please follow this <strong>PR Format:</strong></p>
+<p><strong>Register on PyPI</strong>: Go to the <a href="https://pypi.org/">PyPI website</a> to create an account. After registering, generate an API token and make sure to store it securely.</p>
 </li>
 <li>
-<p><strong>Pull Request Template:</strong></p>
-<ul>
-<li><strong>Title:</strong> Short and descriptive title for your pull request.</li>
-<li><strong>Description:</strong> Detailed description of what changes you made and why.</li>
-<li><strong>Issue Reference:</strong> Mention the issue number this PR addresses (if applicable).</li>
-</ul>
+<p><strong>Run the build script</strong>: Finally, run the build script to package your project for deployment. Use this command:</p>
 </li>
 </ol>
-<p><strong>4. Code Review &amp; Feedback:</strong>
-The project maintainers will review your pull request. You may be asked to make some changes before your PR can be merged. Please respond to the feedback and make the necessary adjustments.</p>
-<p>If you have any questions or doubts during the review process, feel free to ask.</p>
-<h2 id="reporting-issues">Reporting Issues</h2>
-<p>If you encounter bugs or have feature suggestions:</p>
-<ul>
-<li>Report them by creating a new issue in the GitHub repository.</li>
-<li>Provide clear and concise descriptions, including steps to reproduce bugs or use cases for feature requests.</li>
-</ul>
-<h2 id="acknowledgments">Acknowledgments</h2>
-<p>We appreciate all contributions! If you have any doubts or need clarification at any point, please feel free to reach out by creating an issue or asking a question in the PR comments.</p>
-<h2 id="happy-coding">Happy coding!</h2>
+<div class="highlight"><pre><span></span><code>./build.sh
+</code></pre></div>
+<p>This script will ask you for some information, including the package name, version, description, author name, email, and your API token. Enter this information, and your package will be deployed to PyPI!</p>
+<p>By following these steps, you'll have a fully set up development environment, allowing you to easily enhance the <strong>Sneaky Package</strong>. If you have any questions along the way, don't hesitate to ask for help!</p>
 
 
 

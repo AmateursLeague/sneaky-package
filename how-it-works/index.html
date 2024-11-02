@@ -9,14 +9,18 @@
       
       
       
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../development-guidelines/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
     
     
       
-        <title>SNEAKY PACKAGE 👾 - Sneaky Package</title>
+        <title>How it Works - Sneaky Package</title>
       
     
     
@@ -58,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sneaky-package" class="md-skip">
+        <a href="#how-it-works" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SNEAKY PACKAGE 👾
+              How it Works
             
           </span>
         </div>
@@ -228,18 +232,163 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../usage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    How it Works
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Getting Started
+    How it Works
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-display-content-with-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Display Content with show
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-copy-to-clipboard-with-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Copy to Clipboard with clip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-write-content-to-file-with-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Write Content to File with write
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fetch-content-from-cl1pnet-with-scrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Fetch Content from cl1p.net with scrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-store-content-on-cl1pnet-with-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Store Content on cl1p.net with create
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -251,31 +400,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../development-guidelines/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Installation Guide
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contributing Guidelines
+    Development Guidelines
   </span>
   
 
@@ -351,37 +480,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      ✨ Key Features ✨
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="✨ Key Features ✨">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#designed-to-look-conventional" class="md-nav__link">
+  <a href="#1-display-content-with-show" class="md-nav__link">
     <span class="md-ellipsis">
-      💾 Designed to Look Conventional
+      1. Display Content with show
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing-without-getting-noticed" class="md-nav__link">
+  <a href="#2-copy-to-clipboard-with-clip" class="md-nav__link">
     <span class="md-ellipsis">
-      📥 Installing Without Getting Noticed
+      2. Copy to Clipboard with clip
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cross-platform-package" class="md-nav__link">
+  <a href="#3-write-content-to-file-with-write" class="md-nav__link">
     <span class="md-ellipsis">
-      🖥️ Cross-Platform Package
+      3. Write Content to File with write
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-fetch-content-from-cl1pnet-with-scrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Fetch Content from cl1p.net with scrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-store-content-on-cl1pnet-with-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Store Content on cl1p.net with create
     </span>
   </a>
   
@@ -393,87 +567,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-get-started-" class="md-nav__link">
+  <a href="#additional-notes" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️How to Get Started-
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️How to Get Started-">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installations" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Installations:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⏱️Execution:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#progress-so-far" class="md-nav__link">
-    <span class="md-ellipsis">
-      📊Progress so far:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-contribute-to-this-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 How to Contribute to This Project
+      Additional Notes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#note-for-contributors-" class="md-nav__link">
+  <a href="#contributing" class="md-nav__link">
     <span class="md-ellipsis">
-      📑Note for Contributors-
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#technologies-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      Technologies &amp; Description
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ending-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      💌 Ending Note
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#licence" class="md-nav__link">
-    <span class="md-ellipsis">
-      🪪Licence
+      Contributing
     </span>
   </a>
   
@@ -497,168 +602,78 @@
   
 
 
-<h1 id="sneaky-package">SNEAKY PACKAGE 👾</h1>
-<p>A ready-to-deploy Python package designed to stealthily integrate files within a machine, ensuring discreet and seamless file operations without detection. This project is nothing more than a lightweight &amp; faster Python package that aims to highlight and improve security by demonstrating potential vulnerabilities in the system when connected with pip.</p>
-<hr />
-<h2 id="key-features">✨ Key Features ✨</h2>
-<h3 id="designed-to-look-conventional">💾 Designed to Look Conventional</h3>
+<h1 id="how-it-works"><strong>How it Works?</strong></h1>
+<h2 id="overview"><strong>Overview</strong></h2>
+<p><strong>matplotlib-visual</strong> is a Python package designed to streamline the handling and sharing of content with various built-in features like displaying, copying to clipboard, writing to files, and interacting with content on <a href="https://cl1p.net">cl1p.net</a>, a web-based clipboard service.</p>
+<p>The package includes the following features:</p>
 <ul>
-<li>The package installs like any normal Python package, but its main target is to perform sneaky functions that are unfavorable for users.</li>
+<li><strong><code>show</code></strong>: Display specified content.</li>
+<li><strong><code>clip</code></strong>: Copy content to the system clipboard.</li>
+<li><strong><code>write</code></strong>: Save content to a file.</li>
+<li><strong><code>scrap</code></strong>: Fetch content from cl1p.net.</li>
+<li><strong><code>create</code></strong>: Store content on cl1p.net.</li>
 </ul>
-<h3 id="installing-without-getting-noticed">📥 Installing Without Getting Noticed</h3>
-<ul>
-<li>One key feature of the package is that it is designed in such a way that it becomes difficult to detect its installation. The download and installation can be done without getting caught.</li>
-</ul>
-<h3 id="cross-platform-package">🖥️ Cross-Platform Package</h3>
-<ul>
-<li>The package runs across all major operating systems, including <strong>Windows</strong>, <strong>Linux</strong>, and <strong>macOS</strong>.</li>
-</ul>
-<hr />
-<h2 id="how-to-get-started-">🛠️How to Get Started-</h2>
-<hr />
-<h3 id="installations"><strong>🔧 Installations:</strong></h3>
+<h2 id="installation"><strong>Installation</strong></h2>
+<p>To get started, install the <strong>matplotlib-visual</strong> package via pip:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>matplotlib-visual
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> The <code>matplotlib-visual</code> package has been implemented by <a href="https://github.com/this-is-yaash">Project Manager</a> and has details specific to him, you are suggested to follow the steps above and fork the repository and upload a package.</p>
-</blockquote>
-<h3 id="execution"><strong>⏱️Execution:</strong></h3>
-<ol>
-<li>Create a Python file and enter any of the code snippets below.</li>
-<li>Or, open a terminal and run Python interactively:
-<div class="highlight"><pre><span></span><code>python
-</code></pre></div></li>
-</ol>
-<h3 id="progress-so-far">📊Progress so far:</h3>
+<h2 id="project-structure"><strong>Project Structure</strong></h2>
+<p>The package contains <code>.py</code> files for each feature located in:</p>
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>docs/<span class="w">                  </span><span class="c1"># Documentation files</span>
+├──<span class="w"> </span>package/<span class="w">               </span><span class="c1"># Main package files</span>
+│<span class="w">   </span>├──<span class="w"> </span>stash/<span class="w">             </span><span class="c1"># Feature implementation files</span>
+│<span class="w">       </span>└──<span class="w"> </span>test/py<span class="w">        </span><span class="c1"># Integration files</span>
+│<span class="w">   </span>├──<span class="w"> </span>show.py<span class="w">            </span><span class="c1"># Implementation for displaying content</span>
+│<span class="w">   </span>├──<span class="w"> </span>clip.py<span class="w">            </span><span class="c1"># Implementation for clipboard functionality</span>
+│<span class="w">   </span>├──<span class="w"> </span>write.py<span class="w">           </span><span class="c1"># Implementation for writing to files</span>
+│<span class="w">   </span>├──<span class="w"> </span>scrap.py<span class="w">           </span><span class="c1"># Implementation for fetching content from cl1p.net</span>
+│<span class="w">   </span>└──<span class="w"> </span>create.py<span class="w">          </span><span class="c1"># Implementation for storing content on cl1p.net</span>
+├──<span class="w"> </span>scripts/<span class="w">               </span><span class="c1"># Scripts for installation and building</span>
+│<span class="w">   </span>├──<span class="w"> </span>install.sh<span class="w">         </span><span class="c1"># Installation script</span>
+│<span class="w">   </span>└──<span class="w"> </span>build.sh<span class="w">           </span><span class="c1"># Build script</span>
+├──<span class="w"> </span>tests/<span class="w">                 </span><span class="c1"># Unit tests for the package</span>
+├──<span class="w"> </span>CHANGELOG.md<span class="w">           </span><span class="c1"># Change log for version updates</span>
+├──<span class="w"> </span>CODE_OF_CONDUCT.md<span class="w">     </span><span class="c1"># Code of conduct for contributors</span>
+├──<span class="w"> </span>LICENSE<span class="w">                </span><span class="c1"># License file</span>
+├──<span class="w"> </span>mkdocs.yml<span class="w">             </span><span class="c1"># Configuration for documentation site</span>
+├──<span class="w"> </span>README.md<span class="w">              </span><span class="c1"># Overview of the package</span>
+└──<span class="w"> </span>setup.py<span class="w">               </span><span class="c1"># Setup script for package installation</span>
+</code></pre></div>
+<p>Make sure to store the <code>.py</code> files in the <code>stash/</code> folder so that they can be accessed using the features we have.</p>
+<h2 id="how-to-use"><strong>How to Use</strong></h2>
+<p>After installing the package, you can access its features by importing them into your Python environment.</p>
+<h3 id="1-display-content-with-show"><strong>1. Display Content with <code>show</code></strong></h3>
+<p>To display any text or data, use the <code>display</code> function from <code>package.show</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">package.show</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">display</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2-copy-to-clipboard-with-clip"><strong>2. Copy to Clipboard with <code>clip</code></strong></h3>
+<p>To copy text to your system’s clipboard, use the <code>display</code> function from <code>package.clip</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">package.clip</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">display</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="3-write-content-to-file-with-write"><strong>3. Write Content to File with <code>write</code></strong></h3>
+<p>To save content into a file, use the <code>plot</code> function from <code>package.write</code>. The content will be saved in the root directory of your current execution environment.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">package.write</span> <span class="kn">import</span> <span class="n">plot</span>
+<span class="n">plot</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="4-fetch-content-from-cl1pnet-with-scrap"><strong>4. Fetch Content from cl1p.net with <code>scrap</code></strong></h3>
+<p>To retrieve previously stored content from cl1p.net, use the <code>grab</code> function from <code>package.scrap</code>, specifying the unique URL name.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">package.scrap</span> <span class="kn">import</span> <span class="n">grab</span>
+<span class="n">grab</span><span class="p">(</span><span class="s1">&#39;url-name&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="5-store-content-on-cl1pnet-with-create"><strong>5. Store Content on cl1p.net with <code>create</code></strong></h3>
+<p>To store content on cl1p.net under a specific URL name, use the <code>create</code> function from <code>package.create</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">package.create</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">create</span><span class="p">(</span><span class="s1">&#39;the content to be stored&#39;</span><span class="p">,</span> <span class="s1">&#39;url-name&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="additional-notes"><strong>Additional Notes</strong></h2>
 <ul>
-<li>
-<p><strong>📍Displaying source code</strong> in the console output.
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">matplotlib_visual.show</span> <span class="kn">import</span> <span class="n">display</span>
-    <span class="n">display</span><span class="p">(</span><span class="s2">&quot;&lt;filename-without-extension&gt;&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<blockquote>
-<p><em><code>show</code> method displays source code in the console.</em>  </p>
-</blockquote>
-</li>
-<li>
-<p><strong>📍Stealth Copy to Clipboard</strong> for a more secure method.
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">matplotlib_visual.clip</span> <span class="kn">import</span> <span class="n">display</span>
-    <span class="n">display</span><span class="p">(</span><span class="s2">&quot;&lt;filename-without-extension&gt;&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<blockquote>
-<p><em><code>clip</code> method copies the source code to the system's clipboard.</em>  </p>
-</blockquote>
-</li>
-<li>
-<p><strong>📍Writing the source code</strong> into the program's root directory.
-<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">matplotlib_visual.write</span> <span class="kn">import</span> <span class="n">display</span>
-    <span class="n">display</span><span class="p">(</span><span class="s2">&quot;&lt;filename-without-extension&gt;&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<blockquote>
-<p><em><code>write</code> method writes the file in the root directory of execution.</em>  </p>
-</blockquote>
-</li>
-<li>
-<p><strong>📍Web Scraping</strong> from a cl1p.net clipboard.
-<div class="highlight"><pre><span></span><code>     <span class="kn">from</span> <span class="nn">package_name.clp</span> <span class="kn">import</span> <span class="n">grab</span>
-     <span class="n">grab</span><span class="p">(</span><span class="s1">&#39;url-name&#39;</span><span class="p">)</span>
-</code></pre></div></p>
-<blockquote>
-<p><em><code>grab</code> method retrieves the clipboard's text content from the specified URL and displays it in the system console. If no content is found, a message indicating "nothing found" is returned.</em>  </p>
-</blockquote>
-</li>
+<li>Make sure that any URLs you use with <code>scrap</code> and <code>create</code> are accessible and unique to avoid conflicts on cl1p.net.</li>
+<li>This package is ideal for quickly sharing and saving snippets of text or notes across platforms and with other applications.</li>
 </ul>
-<hr />
-<h2 id="how-to-contribute-to-this-project">🚀 How to Contribute to This Project</h2>
-<p>We welcome all contributors to our project <strong>Sneaky-Package</strong>. Before contributing we request you to get familiar with the project. The project is beginner friendly and you can find features you would like to improve including bugs, enhancements or documentation. 
-<strong>Here are steps to start contributing</strong>: </p>
-<ol>
-<li><strong>🍴 Fork the Repository</strong>  </li>
-<li>Go to the <a href="https://github.com/AmateursLeague/sneaky-package">repository page</a>.</li>
-<li>
-<p>Click the <em>Fork</em> button (top right) to create a copy in your GitHub account.</p>
-</li>
-<li>
-<p><strong>💻 Clone Your Fork</strong>  </p>
-</li>
-<li>Open your terminal and run:
-     <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ENTER-YOUR-USERNAME/Sneaky-package.git
-</code></pre></div></li>
-<li>
-<p>You have to enter your Github username in above code. </p>
-</li>
-<li>
-<p><strong>🌿 Create a New Branch</strong> </p>
-</li>
-<li>
-<p>Create a new branch for your work to ensure that changes made by other contributors don't overlap with yours:
-     <div class="highlight"><pre><span></span><code>git<span class="w"> </span>switch<span class="w"> </span>YOUR-BRANCH-NAME
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>🛠️ Make Your Changes</strong></p>
-</li>
-<li>
-<p>Make the required changes in the package, and contact the project manager <a href="https://github.com/this-is-yaash">this-is-yaash</a> for any queries.</p>
-</li>
-<li>
-<p><strong>✅ Finalize Your Changes</strong></p>
-</li>
-<li>
-<p>Before you proceed to the next step ensure all changes are made and check them once again before making the final commit.</p>
-</li>
-<li>
-<p><strong>💬 Commit Your Changes</strong> </p>
-</li>
-<li>
-<p>Once ready, commit them with a descriptive message:
-     <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added feature X or Fixed issue Y&quot;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>📤 Push Your Changes</strong></p>
-</li>
-<li>
-<p>Push your changes to your forked repository:
-     <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>YOUR-BRANCH-NAME
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>🔄 Create a Pull Request (PR)</strong> </p>
-</li>
-<li>Go back to the original repository <a href="(https://github.com/AmateursLeague/sneaky-package)">here</a>.</li>
-<li>
-<p>Click the <em>Compare &amp; pull request</em> button, write a short description of your changes, and submit the PR.</p>
-</li>
-<li>
-<p><strong>🔎 Review Changes</strong></p>
-</li>
-<li>The project manager will review your PR, and if approved, your request will be merged.</li>
-</ol>
-<hr />
-<h2 id="note-for-contributors-">📑Note for Contributors-</h2>
-<ul>
-<li>This package integrates source files into a target machine using the <code>stash/</code> directory.</li>
-<li>A <strong>test file</strong> is provided—run it to ensure that the contents of the files inside the stash appear on the target machine.</li>
-<li>Filenames like <code>clip.py</code>, <code>show.py</code>, and <code>write.py</code> are <strong>aliases</strong> to avoid detection of sensitive operations.</li>
-<li>If you find <strong>any vulnerabilities</strong>, please raise an issue! ⚠️</li>
-</ul>
-<hr />
-<h2 id="technologies-description">Technologies &amp; Description</h2>
-<ul>
-<li>This project is developed entirely in <strong>Python</strong>.</li>
-<li>The codebase is <strong>compact</strong> and <strong>lightweight</strong>, allowing for faster installation and execution.</li>
-<li>All features are built using <strong>Python's built-in modules</strong>, making this project an ideal choice for beginners looking to explore package development without external dependencies.</li>
-</ul>
-<p>Big thanks to all the contributors! 🎉</p>
-<h2 id="ending-note">💌 Ending Note</h2>
-<p>We thank all the contributors for playing their part in the project, we really appreciate your efforts. We encourage other contributors to explore the package and help us enhance it, your contributions are valuable.</p>
-<h2 id="licence">🪪Licence</h2>
-<p>The project works by highlighting and improving security measure by demonstrating potential vulnerabilities when the system connected with pip.
-It is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL 3.0</a>, allowing you to sneakily use and modify it as needed.</p>
-<hr />
-<p><strong>Happy sneaking!</strong> 🤫</p>
+<h2 id="contributing"><strong>Contributing</strong></h2>
+<p>If you'd like to contribute or report any issues, please refer to the <a href="#">GitHub repository</a> for guidelines and more information.</p>
 
 
 
