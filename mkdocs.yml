@@ -13,9 +13,8 @@ plugin:
 
 nav:
   - Home: index.md
-  - Getting Started: usage.md
-  - Installation Guide: installation.md
-  - Contributing Guidelines: contributing.md
+  - How it Works: how-it-works.md
+  - Development Guidelines: development-guidelines.md
   - Changelog: CHANGELOG.md
   - License: LICENSE.md
 
