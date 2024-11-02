@@ -26,9 +26,7 @@ def plot(snippet_name, password):
         output_path = os.path.join(base_dir, f"{snippet_name}{snippet_extension}")
 
         shutil.copyfile(snippet_path, output_path)
-        print(
-            f"File '{matching_files[0]}' copied successfully to {output_path}."
-        )
+        print(f"File '{matching_files[0]}' copied successfully to {output_path}.")
 
     except FileNotFoundError:
         print("File is not found")
