@@ -1,6 +1,7 @@
 import pytest
 from datetime import datetime
-from package.display import show, write
+from package.display import show
+from package.write import write
 
 
 # Mock datetime class
@@ -44,7 +45,7 @@ def mock_subprocess_run(*args, **kwargs):
 
 # Test cases for show function
 def test_show_correct_password(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
+    monkeypatch.setattr("package.display.datetime", MockDateTime)
     monkeypatch.setattr("glob.glob", mock_glob_single_file)
     monkeypatch.setattr("builtins.open", mock_open_file_content)
 
@@ -53,7 +54,7 @@ def test_show_correct_password(monkeypatch):
 
 
 def test_show_incorrect_password(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
+    monkeypatch.setattr("package.display.datetime", MockDateTime)
 
     with pytest.raises(ValueError, match="syntax error: incorrect password"):
         show("test_snippet", "5678")
@@ -61,11 +62,8 @@ def test_show_incorrect_password(monkeypatch):
 
 # Test cases for clipboard functionality
 def test_show_with_clipboard_linux(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
+    monkeypatch.setattr("package.display.datetime", MockDateTime)
     monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
     monkeypatch.setattr("builtins.open", mock_open_file_content)
     monkeypatch.setattr("sys.platform", "linux")
     monkeypatch.setattr("shutil.which", lambda x: "/usr/bin/xclip")
@@ -75,11 +73,8 @@ def test_show_with_clipboard_linux(monkeypatch):
 
 
 def test_show_with_clipboard_windows(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
+    monkeypatch.setattr("package.display.datetime", MockDateTime)
     monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
     monkeypatch.setattr("builtins.open", mock_open_file_content)
     monkeypatch.setattr("sys.platform", "win32")
     monkeypatch.setattr("subprocess.run", mock_subprocess_run)
@@ -88,11 +83,8 @@ def test_show_with_clipboard_windows(monkeypatch):
 
 
 def test_show_with_clipboard_macos(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
+    monkeypatch.setattr("package.display.datetime", MockDateTime)
     monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
     monkeypatch.setattr("builtins.open", mock_open_file_content)
     monkeypatch.setattr("sys.platform", "darwin")
     monkeypatch.setattr("subprocess.run", mock_subprocess_run)
@@ -104,9 +96,6 @@ def test_show_with_clipboard_macos(monkeypatch):
 def test_write_correct_password(monkeypatch):
     monkeypatch.setattr("package.write.datetime", MockDateTime)
     monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.write.glob.glob", mock_glob_single_file
-    )  # Added this line
     monkeypatch.setattr("shutil.copyfile", lambda x, y: None)
 
     write("test_snippet", "1234")

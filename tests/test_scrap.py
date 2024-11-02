@@ -59,10 +59,10 @@ class TestGrabFunctions(unittest.TestCase):
 
     @patch("builtins.open", new_callable=mock_open)
     @patch("package.scrap.grab.grab_content", return_value="test content")
-    def test_write(self, mock_grab_content, mock_open):
+    def test_write(self, mock_grab_content, mock_open_file):
         write("test-url", "test.txt")
-        mock_open.assert_called_once_with("test.txt", "w")
-        mock_open().write.assert_called_once_with("test content")
+        mock_open_file.assert_called_once_with("test.txt", "w")
+        mock_open_file().write.assert_called_once_with("test content")
 
 
 if __name__ == "__main__":

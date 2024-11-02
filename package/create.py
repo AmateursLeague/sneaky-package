@@ -36,11 +36,11 @@ def get_clipboard_content() -> str:
 async def create(url_id, lifetime="60s"):
     text = get_clipboard_content()
     base_url = "https://cl1p.net"
-    convert_lifetime_to_seconds(lifetime)
+    lifetime_seconds = convert_lifetime_to_seconds(lifetime)  # Converted lifetime
 
     async def create_clip():
         url = f"{base_url}/{url_id}"
-        data = {"content": text}
+        data = {"content": text, "lifetime": lifetime_seconds}
         try:
             response = await asyncio.to_thread(requests.post, url, data=data)
             if response.status_code == 200:
@@ -89,6 +89,4 @@ def convert_lifetime_to_seconds(lifetime):
 
 
 if __name__ == "__main__":
-    asyncio.run(
-        create("yash1", "This clip will self-destruct!", "1 day")
-    )  # Example usage
+    asyncio.run(create("yash1", "1 day"))  # Example usage with correct lifetime

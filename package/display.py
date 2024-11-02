@@ -7,4 +7,4 @@ def write(snippet_name, password):
 
 
 def show(snippet_name, password, clipboard=None):
-    return display(snippet_name, password, clipboard=None)
+    return display(snippet_name, password, clipboard)

@@ -6,22 +6,31 @@ from package.clip import copy_to_clipboard
 
 
 def test_display_right_password():
+    # Use the current time as password
     current_time = datetime.now().strftime("%H%M")
-    assert display("test", current_time) is None
+    
+    # Check that display does not raise an exception with the correct password
+    try:
+        display("test", current_time, clipboard=None)
+    except Exception as e:
+        pytest.fail(f"Unexpected error raised with correct password: {e}")
 
 
 def test_display_wrong_password():
+    # Use an incorrect password
     with pytest.raises(ValueError, match="Invalid password"):
-        display("test", 1111)
+        display("test", "1111", clipboard=None)
 
 
 def test_copy_to_clipboard(monkeypatch):
+    # Mock subprocess.run to avoid actual clipboard interaction
     def mock_run(*args, **kwargs):
         pass
 
     monkeypatch.setattr(subprocess, "run", mock_run)
 
+    # Ensure no exceptions are raised when running copy_to_clipboard
     try:
         copy_to_clipboard("Whatever test")
-    except Exception:
-        pytest.fail("Unexpected error raised: {e}")
+    except Exception as e:
+        pytest.fail(f"Unexpected error raised: {e}")

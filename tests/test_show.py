@@ -30,6 +30,19 @@ def mock_open_file_content(*args, **kwargs):
     return MockFile()
 
 
+def test_display_correct_password(monkeypatch):
+    monkeypatch.setattr("package.show.datetime", MockDateTime)  # Mock datetime
+
+    snippet_name = "test"
+    correct_password = "1234"  # Matches the mocked datetime
+
+    # Should not raise any exception
+    try:
+        display(snippet_name, correct_password)
+    except Exception:
+        pytest.fail("Unexpected error raised for correct password")
+
+
 def test_display_incorrect_password(monkeypatch):
     monkeypatch.setattr("package.show.datetime", MockDateTime)  # Mock datetime
 
@@ -38,6 +51,14 @@ def test_display_incorrect_password(monkeypatch):
 
     with pytest.raises(ValueError, match="syntax error: incorrect password"):
         display(snippet_name, incorrect_password)
+
+
+def test_copy_to_clipboard_supported_os(monkeypatch):
+    # Test for a supported operating system (Linux example)
+    monkeypatch.setattr(sys, "platform", "linux")
+    monkeypatch.setattr("subprocess.run", mock_subprocess_run)
+
+    copy_to_clipboard("test content")  # Should run without error
 
 
 def test_copy_to_clipboard_unsupported_os(monkeypatch):

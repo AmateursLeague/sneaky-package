@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Add ing Colors for better output
+# Adding Colors for better output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -13,16 +13,19 @@ check_command() {
     fi
 }
 
-check_command "python"
-check_command "pip"
+check_command "python3" || check_command "python"
+check_command "pip3" || check_command "pip"
 
 # Check if Python packages are present
 echo -e "${YELLOW}Checking and installing required Python packages...${NC}"
-pip install twine wheel setuptools --quiet
+if ! pip install --quiet twine wheel setuptools; then
+    echo -e "${RED}Failed to install required packages. Check your network connection or permissions.${NC}"
+    exit 1
+fi
 
 prompt_for_input() {
-    local prompt_text=$1
-    local required=$2
+    local prompt_text="$1"
+    local required="$2"
     local value=""
     
     while true; do
@@ -98,7 +101,7 @@ if [ -d "dist" ]; then
 fi
 
 echo -e "${GREEN}Building the package...${NC}"
-if python setup.py sdist bdist_wheel; then
+if python3 setup.py sdist bdist_wheel; then
     echo -e "${GREEN}Package built successfully!${NC}"
 else
     echo -e "${RED}Package build failed!${NC}"
@@ -106,7 +109,7 @@ else
 fi
 
 echo -e "${GREEN}Uploading package to PyPI...${NC}"
-if python -m twine upload dist/*; then
+if python3 -m twine upload dist/*; then
     echo -e "${GREEN}Package successfully uploaded to PyPI!${NC}"
 else
     echo -e "${RED}Package upload failed!${NC}"

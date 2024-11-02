@@ -4,27 +4,27 @@ from datetime import datetime
 from package.write import plot
 
 
-# we cannot mock this function, so mocking the whole class
+# Mocking the datetime class
 class MockDateTime(datetime):
     @classmethod
     def now(cls):
-        return datetime.strptime("1234", "%H%M")
+        return datetime.strptime("1234", "%H%M")  # Mock time to 12:34
 
 
 def mock_copyfile(src, dst):
-    pass
+    pass  # Mock copyfile to do nothing
 
 
 def mock_glob_single(pattern):
-    return ["stash/test.py"]
+    return ["stash/test.py"]  # Return a single mock file
 
 
 def mock_glob_none(pattern):
-    return []
+    return []  # Return no files found
 
 
 def mock_glob_multiple(pattern):
-    return ["stash/test.py", "stash/test2.py"]
+    return ["stash/test.py", "stash/test2.py"]  # Return multiple mock files
 
 
 def test_plot_success(monkeypatch, capfd):

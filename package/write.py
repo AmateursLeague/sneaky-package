@@ -7,7 +7,7 @@ import glob
 def plot(snippet_name, password):
     current_time = datetime.now().strftime("%H%M")
     if str(password).zfill(4) != current_time:
-        raise ValueError("syntax error: incorrect password")
+        raise ValueError("Syntax Error: Incorrect password")
 
     try:
         base_dir = os.path.dirname(__file__)
@@ -17,20 +17,20 @@ def plot(snippet_name, password):
         matching_files = glob.glob(pattern)
 
         if not matching_files:
-            raise FileNotFoundError("No file found with the name.")
+            raise FileNotFoundError(f"No file found with the name '{snippet_name}'.")
         elif len(matching_files) > 1:
-            raise ValueError("Multiple files found with the given name.")
+            raise ValueError(f"Multiple files found with the name '{snippet_name}'.")
 
         snippet_path = matching_files[0]
         snippet_extension = os.path.splitext(snippet_path)[1]
         output_path = os.path.join(base_dir, f"{snippet_name}{snippet_extension}")
 
         shutil.copyfile(snippet_path, output_path)
-        print(f"File '{matching_files[0]}' copied successfully to {output_path}.")
+        print(f"File '{snippet_name}{snippet_extension}' copied successfully to '{output_path}'.")
 
-    except FileNotFoundError:
-        print("File is not found")
-    except ValueError:
-        print("The given values are not supported")
+    except FileNotFoundError as e:
+        print(e)
+    except ValueError as e:
+        print(e)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Unexpected Error: {e}")

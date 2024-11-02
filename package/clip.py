@@ -11,7 +11,8 @@ def display(snippet_name, password):
     if str(password).zfill(4) != current_time:
         raise ValueError("Invalid password")
 
-    base_dir = os.path.dirname(__file__)
+    # Adjust the path to handle the case when __file__ is not available
+    base_dir = os.path.abspath(os.path.dirname(__file__))
     snippets_dir = os.path.join(base_dir, "stash")
     pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
 
@@ -22,7 +23,7 @@ def display(snippet_name, password):
     elif len(matching_files) > 1:
         raise ValueError("Multiple files found with the given name.")
 
-    snippet_path = os.path.join(snippets_dir, matching_files[0])
+    snippet_path = matching_files[0]  # corrected to directly use the matched file path
 
     try:
         with open(snippet_path, "r") as file:
@@ -37,6 +38,7 @@ def display(snippet_name, password):
 
 
 def copy_to_clipboard(text):
+    text = text.strip()
     # Linux
     if "linux" in sys.platform:
         # Check if xclip is installed
@@ -46,19 +48,19 @@ def copy_to_clipboard(text):
         # If xclip is installed, proceed with copying text
         subprocess.run(
             ["xclip", "-selection", "clipboard"],
-            input=text.strip().encode(),
+            input=text.encode(),
             check=True,
         )
 
     # Windows
     elif "win32" in sys.platform:
         subprocess.run(
-            ["C:\\Windows\\System32\\clip.exe"], input=text.strip().encode(), check=True
+            ["clip"], input=text.encode(), check=True
         )
 
     # macOS
     elif "darwin" in sys.platform:
-        subprocess.run(["/usr/bin/pbcopy"], input=text.strip().encode(), check=True)
+        subprocess.run(["pbcopy"], input=text.encode(), check=True)
 
     else:
         raise OSError("Unsupported operating system")
