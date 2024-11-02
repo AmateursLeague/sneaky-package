@@ -4,9 +4,9 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
+    
+    types:
+      - closed
 
 permissions:
   contents: write  # Allow write access to repository contents
