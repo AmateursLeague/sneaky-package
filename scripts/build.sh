@@ -13,7 +13,7 @@ check_command() {
     fi
 }
 
-check_command "py"
+check_command "python"
 check_command "pip"
 
 # Check if Python packages are present
@@ -98,7 +98,7 @@ if [ -d "dist" ]; then
 fi
 
 echo -e "${GREEN}Building the package...${NC}"
-if py setup.py sdist bdist_wheel; then
+if python setup.py sdist bdist_wheel; then
     echo -e "${GREEN}Package built successfully!${NC}"
 else
     echo -e "${RED}Package build failed!${NC}"
@@ -106,7 +106,7 @@ else
 fi
 
 echo -e "${GREEN}Uploading package to PyPI...${NC}"
-if py -m twine upload dist/*; then
+if python -m twine upload dist/*; then
     echo -e "${GREEN}Package successfully uploaded to PyPI!${NC}"
 else
     echo -e "${RED}Package upload failed!${NC}"
