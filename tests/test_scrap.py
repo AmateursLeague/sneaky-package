@@ -47,7 +47,7 @@ class TestGrabFunctions(unittest.TestCase):
     @patch("package.scrap.grab.grab_content", return_value="test content")
     def test_show(self, mock_grab_content, mock_print):
         show("test-url")
-        mock_print.assert_called_once_with("The content is: ", "test content")
+        mock_print.assert_called_once_with("The content is:", "test content")
 
     @patch("builtins.print")
     @patch("package.scrap.grab.grab_content", return_value="test content")

@@ -58,7 +58,11 @@ def test_copy_to_clipboard_supported_os(monkeypatch):
     monkeypatch.setattr(sys, "platform", "linux")
     monkeypatch.setattr("subprocess.run", mock_subprocess_run)
 
-    copy_to_clipboard("test content")  # Should run without error
+    # Should run without error
+    try:
+        copy_to_clipboard("test content")
+    except Exception:
+        pytest.fail("Unexpected error raised for supported OS")
 
 
 def test_copy_to_clipboard_unsupported_os(monkeypatch):

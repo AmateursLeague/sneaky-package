@@ -56,7 +56,7 @@ def test_show_correct_password(monkeypatch):
 def test_show_incorrect_password(monkeypatch):
     monkeypatch.setattr("package.display.datetime", MockDateTime)
 
-    with pytest.raises(ValueError, match="syntax error: incorrect password"):
+    with pytest.raises(ValueError, match="Syntax Error: Incorrect password"):
         show("test_snippet", "5678")
 
 
@@ -104,5 +104,5 @@ def test_write_correct_password(monkeypatch):
 def test_write_incorrect_password(monkeypatch):
     monkeypatch.setattr("package.write.datetime", MockDateTime)
 
-    with pytest.raises(ValueError, match="syntax error: incorrect password"):
+    with pytest.raises(ValueError, match="Syntax Error: Incorrect password"):
         write("test_snippet", "5678")

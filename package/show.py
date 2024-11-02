@@ -6,18 +6,18 @@ from datetime import datetime
 import glob
 
 
-def display(snippet_name=None, password=None, clipboard=None):
-    base_dir = os.path.dirname(__file__)
+def display(snippet_name=None, password=None, clipboard=False):
+    base_dir = os.path.abspath(os.path.dirname(__file__))
     snippets_dir = os.path.join(base_dir, "stash")
 
-    if snippet_name is None and password is None and clipboard is None:
+    if snippet_name is None and password is None and not clipboard:
         # List files in the stash directory if no arguments are provided
         ls(snippets_dir)
         return
 
     current_time = datetime.now().strftime("%H%M")
 
-    if snippet_name is None or password is None:
+    if not snippet_name or not password:
         print("Both snippet_name and password must be provided")
         return
 
@@ -33,13 +33,12 @@ def display(snippet_name=None, password=None, clipboard=None):
         elif len(matching_files) > 1:
             raise ValueError("Multiple files found with the specified name.")
 
-        snippet_path = matching_files[0]  # Corrected to use the matched file directly
+        snippet_path = matching_files[0]
 
-        # Check if clipboard argument is passed as 1 to copy content to clipboard
         with open(snippet_path, "r") as file:
             content = file.read()
 
-        if clipboard == 1:
+        if clipboard:
             copy_to_clipboard(content)
             print("Content copied to clipboard.")
         else:

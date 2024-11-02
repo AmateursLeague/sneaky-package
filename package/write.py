@@ -10,10 +10,12 @@ def plot(snippet_name, password):
         raise ValueError("Syntax Error: Incorrect password")
 
     try:
-        base_dir = os.path.dirname(__file__)
+        # Set base directory as an absolute path
+        base_dir = os.path.abspath(os.path.dirname(__file__))
         snippets_dir = os.path.join(base_dir, "stash")
         pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
 
+        # Search for files matching the pattern
         matching_files = glob.glob(pattern)
 
         if not matching_files:
@@ -21,16 +23,16 @@ def plot(snippet_name, password):
         elif len(matching_files) > 1:
             raise ValueError(f"Multiple files found with the name '{snippet_name}'.")
 
+        # Use the first matching file
         snippet_path = matching_files[0]
         snippet_extension = os.path.splitext(snippet_path)[1]
         output_path = os.path.join(base_dir, f"{snippet_name}{snippet_extension}")
 
+        # Copy the file to the output path
         shutil.copyfile(snippet_path, output_path)
         print(f"File '{snippet_name}{snippet_extension}' copied successfully to '{output_path}'.")
 
-    except FileNotFoundError as e:
-        print(e)
-    except ValueError as e:
+    except (FileNotFoundError, ValueError) as e:
         print(e)
     except Exception as e:
         print(f"Unexpected Error: {e}")

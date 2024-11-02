@@ -51,8 +51,13 @@ AUTHOR_EMAIL=$(prompt_for_input "Enter author email" "true")
 DESCRIPTION=$(prompt_for_input "Enter package description (press Enter to skip)" "false")
 
 echo -e "${YELLOW}You'll need a PyPI token to upload your package.${NC}"
-echo -e "${YELLOW}If you don't have one, you can create it at https://pypi.org/manage/account/token/${NC}"
+echo -e "${YELLOW}If you don't have one, create it at https://pypi.org/manage/account/token/${NC}"
 PYPI_TOKEN=$(prompt_for_input "Enter your PyPI token" "true")
+
+if [[ -z "$PYPI_TOKEN" ]]; then
+    echo -e "${RED}Error: PyPI token is required.${NC}"
+    exit 1
+fi
 
 echo -e "${YELLOW}Creating .pypirc file...${NC}"
 cat > ~/.pypirc << EOL
@@ -87,15 +92,15 @@ EOL
 
 echo -e "${GREEN}setup.py file created successfully!${NC}"
 
-# Checking if required files exist
+# Check if package directory exists
 if [ ! -d "${PACKAGE_NAME}" ]; then
     echo -e "${YELLOW}Creating package directory structure...${NC}"
     mkdir -p "${PACKAGE_NAME}"
     touch "${PACKAGE_NAME}/__init__.py"
 fi
 
-# Cleaning the previous builds if they exist
-if [ -d "dist" ]; then
+# Cleaning previous builds if they exist
+if [ -d "dist" ] || [ -d "build" ] || [ -d "${PACKAGE_NAME}.egg-info" ]; then
     echo -e "${YELLOW}Cleaning previous builds...${NC}"
     rm -rf dist build *.egg-info
 fi
@@ -116,6 +121,7 @@ else
     exit 1
 fi
 
+# Clean up sensitive .pypirc file after upload
 echo -e "${YELLOW}Cleaning up...${NC}"
 rm -f ~/.pypirc
 

@@ -7,15 +7,19 @@ import glob
 
 
 def display(snippet_name, password):
+    # Check if the current time matches the provided password
     current_time = datetime.now().strftime("%H%M")
     if str(password).zfill(4) != current_time:
         raise ValueError("Invalid password")
 
-    # Adjust the path to handle the case when __file__ is not available
-    base_dir = os.path.abspath(os.path.dirname(__file__))
+    # Base directory adjustment for when __file__ is unavailable
+    try:
+        base_dir = os.path.abspath(os.path.dirname(__file__))
+    except NameError:
+        base_dir = os.getcwd()
+        
     snippets_dir = os.path.join(base_dir, "stash")
     pattern = os.path.join(snippets_dir, f"{snippet_name}.*")
-
     matching_files = glob.glob(pattern)
 
     if not matching_files:
@@ -23,29 +27,31 @@ def display(snippet_name, password):
     elif len(matching_files) > 1:
         raise ValueError("Multiple files found with the given name.")
 
-    snippet_path = matching_files[0]  # corrected to directly use the matched file path
+    snippet_path = matching_files[0]
 
     try:
         with open(snippet_path, "r") as file:
             source_code = file.read()
 
-        # Call the copy to clipboard function
+        # Call the function to copy the text to clipboard
         copy_to_clipboard(source_code)
+        print("Snippet copied to clipboard successfully.")
 
     except FileNotFoundError:
-        print("File not found")
+        print("File not found.")
         raise
 
 
 def copy_to_clipboard(text):
+    """Copies text to the clipboard depending on the operating system."""
     text = text.strip()
+
     # Linux
     if "linux" in sys.platform:
         # Check if xclip is installed
         if shutil.which("xclip") is None:
             print("Error: xclip not found. Install it.", file=sys.stderr)
             return
-        # If xclip is installed, proceed with copying text
         subprocess.run(
             ["xclip", "-selection", "clipboard"],
             input=text.encode(),
