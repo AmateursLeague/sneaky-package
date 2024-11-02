@@ -18,7 +18,7 @@ def display(snippet_name=None, password=None, clipboard=None):
         print("Both snippet_name and password must be provided")
         return
 
-    if int(password) != int(current_time):
+    if str(password).zfill(4) != current_time:
         raise ValueError("syntax error: incorrect password")
     try:
         base_dir = os.path.dirname(__file__)
