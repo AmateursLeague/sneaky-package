@@ -4,28 +4,7 @@ import subprocess
 import sys
 from package.password import valid_password
 
-def show(snippet_name=None, password=None):
-    base_dir = os.path.dirname(__file__)
-    snippets_dir = os.path.join(base_dir, "stash")
-
-    if snippet_name is None and password is None:
-        list_snippets(snippets_dir)
-        return
-
-    if not isinstance(password, int) or not valid_password(password):
-        raise ValueError("Incorrect password")
-
-    try:
-        snippet_path = os.path.join(snippets_dir, snippet_name)
-        with open(snippet_path, "r") as file:
-            content = file.read()
-            print(content)
-    except FileNotFoundError:
-        print("Error: No file found with the specified name.")
-    except Exception as e:
-        print(f"Error: {e}")
-
-def clip(snippet_name, password):
+def display_or_copy_snippet(snippet_name, password, action):
     if not isinstance(password, int) or not valid_password(password):
         raise ValueError("Incorrect password")
 
@@ -34,15 +13,32 @@ def clip(snippet_name, password):
     
     try:
         snippet_path = os.path.join(snippets_dir, snippet_name)
-
         with open(snippet_path, "r") as file:
             content = file.read()
-        copy_to_clipboard(content)
-        print("Snippet copied to clipboard.")
+        
+        if action == "display":
+            print(content)
+        elif action == "copy":
+            copy_to_clipboard(content)
+            print("Snippet copied to clipboard.")
     except FileNotFoundError:
         print("Error: No file found with the specified name.")
     except Exception as e:
         print(f"Error: {e}")
+
+
+def show(snippet_name=None, password=None):
+    if snippet_name is None and password is None:
+        base_dir = os.path.dirname(__file__)
+        snippets_dir = os.path.join(base_dir, "stash")
+        list_snippets(snippets_dir)
+        return
+
+    display_or_copy_snippet(snippet_name, password, action="display")
+
+
+def clip(snippet_name, password):
+    display_or_copy_snippet(snippet_name, password, action="copy")
 
 def write(snippet_name, password):
     if not isinstance(password, int) or not valid_password(password):
@@ -62,6 +58,7 @@ def write(snippet_name, password):
     except Exception as e:
         print(f"Error: {e}")
 
+
 def copy_to_clipboard(text):
     try:
         if "linux" in sys.platform:
@@ -80,6 +77,7 @@ def copy_to_clipboard(text):
     except subprocess.CalledProcessError:
         print("Error: Failed to copy to clipboard.")
 
+
 def list_snippets(snippets_dir):
     try:
         contents = os.listdir(snippets_dir)
@@ -89,6 +87,7 @@ def list_snippets(snippets_dir):
         print("Error: Stash directory not found.")
     except Exception as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     pass
