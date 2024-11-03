@@ -2,7 +2,13 @@ site_name: Sneaky Package
 repo_name: AmateursLeague/sneaky-package
 repo_url: https://github.com/AmateursLeague/sneaky-package
 
-theme: material
+theme:
+  name: material
+  favicon: assets/package.ico
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+
 
   
 include_sidebar: true
