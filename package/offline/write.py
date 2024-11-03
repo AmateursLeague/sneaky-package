@@ -9,7 +9,7 @@ def write(snippet_name, password):
 
     base_dir = os.path.dirname(__file__)
     snippets_dir = os.path.join(base_dir, "stash")
-    
+
     try:
         snippet_path = os.path.join(snippets_dir, snippet_name)
         output_path = os.path.join(base_dir, snippet_name)

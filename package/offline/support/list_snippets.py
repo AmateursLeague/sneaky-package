@@ -1,5 +1,6 @@
 import os
 
+
 def list_snippets(snippets_dir):
     try:
         contents = os.listdir(snippets_dir)

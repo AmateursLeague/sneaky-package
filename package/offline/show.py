@@ -2,6 +2,7 @@ import os
 from package.offline.support import list_snippets, display
 from package.password import valid_password
 
+
 def show(snippet_name=None, password=None):
     if snippet_name is None and password is None:
         base_dir = os.path.dirname(__file__)
