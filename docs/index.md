@@ -1,4 +1,4 @@
-## Getting Started
+# **Home**
 
 ### **[What is Sneaky Package?](index.md)**  
 A ready-to-deploy Python package designed to 🕵️‍♂️ stealthily integrate files within a machine, ensuring 🛡️ discreet and seamless file operations without detection.
