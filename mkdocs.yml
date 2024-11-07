@@ -5,6 +5,7 @@ repo_url: https://github.com/AmateursLeague/sneaky-package
 theme:
   name: material
   favicon: assets/package.ico
+  logo: assets/logo.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -19,8 +20,8 @@ plugin:
 
 nav:
   - Home: index.md
-  - How it Works: how-it-works.md
-  - Development Guidelines: development-guidelines.md
+  - How it Works: working.md
+  - Development Guidelines: development.md
   - Changelog: CHANGELOG.md
   - License: LICENSE.md
 
