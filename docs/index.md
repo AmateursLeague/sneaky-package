@@ -3,7 +3,7 @@
 ### **[What is Sneaky Package?](index.md)**  
 A ready-to-deploy Python package designed to 🕵️‍♂️ stealthily integrate files within a machine, ensuring 🛡️ discreet and seamless file operations without detection.
 
-### **[How it Works?](how.md)**
+### **[How it Works?](working.md)**
 **matplotlib-visual** is a ready-to-deploy package that demonstrates content management by providing dedicated functions for displaying, copying, saving, and sharing content. Users can easily download this repository, store their files in the `stash/` folder, and deploy their own package to integrate these functionalities into other machines.
 
 ### **[Development Guide](development.md)**  
