@@ -1,4 +1,4 @@
-# Changelog
+# **Changelog**
 ## [Stable-Release]
 
 ## v1.0.1 - 19-10-2024
