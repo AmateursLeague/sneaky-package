@@ -1,5 +1,5 @@
 import os
-from package.offline.support import copy_to_clipboard
+from package.offline.support.copy_to_clipboard import copy_to_clipboard
 from package.password import valid_password
 
 
