@@ -8,7 +8,7 @@ from package.password import valid_password
 
 def test_clip_invalid_password():
     snippet_name = "test_snippet.txt"
-    password = "invalid_password" 
+    password = "invalid_password"
 
     with pytest.raises(ValueError, match="Incorrect password"):
         clip(snippet_name, password)

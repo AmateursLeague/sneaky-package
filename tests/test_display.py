@@ -45,7 +45,6 @@ def test_display_wrong_password_type(mock_env):
         display("test.txt", "1430", "display")
 
 
-
 def test_display_file_not_found(mock_env, monkeypatch):
     def mock_open(*args, **kwargs):
         raise FileNotFoundError()
@@ -76,4 +75,3 @@ def test_display_content(mock_env, monkeypatch):
 
     display("test.txt", 1430, "display")
     mock_print.assert_called_once_with("Sample content")
-
