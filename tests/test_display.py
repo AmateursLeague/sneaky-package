@@ -1,119 +1,79 @@
 import pytest
 from datetime import datetime
-from package.display import show, write
+from unittest.mock import Mock
+from package.offline.support.display import display
 
 
-# Mock datetime class
+# Mock datetime class for fixed time
 class MockDateTime(datetime):
     @classmethod
     def now(cls):
-        return datetime.strptime("1234", "%H%M")  # Mock time to 12:34
+        return datetime.strptime("1430", "%H%M")
 
 
-# Mock file operations
-def mock_glob_single_file(*args, **kwargs):
-    return ["test_file.txt"]
+class MockFile:
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        pass
+
+    def read(self):
+        return "Sample content"
 
 
-def mock_glob_no_file(*args, **kwargs):
-    return []
+@pytest.fixture
+def mock_env(monkeypatch):
+    # Set up environment mocks
+    monkeypatch.setattr("package.password.datetime", MockDateTime)
+    monkeypatch.setattr("builtins.open", lambda *args, **kwargs: MockFile())
+    monkeypatch.setattr("package.offline.support.copy_to_clipboard", lambda x: None)
+    monkeypatch.setattr("builtins.print", lambda x: None)
 
 
-def mock_glob_multiple_files(*args, **kwargs):
-    return ["test1.txt", "test2.txt"]
+def test_display_correct_password(mock_env):
+    display("test.txt", 1430, "display")
 
 
-def mock_open_file_content(*args, **kwargs):
-    class MockFile:
-        def __enter__(self):
-            return self
-
-        def __exit__(self, *args):
-            pass
-
-        def read(self):
-            return "Sample content"
-
-    return MockFile()
+def test_display_incorrect_password(mock_env):
+    with pytest.raises(ValueError, match="Incorrect password"):
+        display("test.txt", 1431, "display")
 
 
-# Mock subprocess for clipboard operations
-def mock_subprocess_run(*args, **kwargs):
-    return None
+def test_display_wrong_password_type(mock_env):
+    with pytest.raises(ValueError, match="Incorrect password"):
+        display("test.txt", "1430", "display")
 
 
-# Test cases for show function
-def test_show_correct_password(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
-    monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr("builtins.open", mock_open_file_content)
 
-    # Should not raise any exception
-    show("test_snippet", "1234")
+def test_display_file_not_found(mock_env, monkeypatch):
+    def mock_open(*args, **kwargs):
+        raise FileNotFoundError()
 
+    monkeypatch.setattr("builtins.open", mock_open)
+    mock_print = Mock()
+    monkeypatch.setattr("builtins.print", mock_print)
 
-def test_show_incorrect_password(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
-
-    with pytest.raises(ValueError, match="syntax error: incorrect password"):
-        show("test_snippet", "5678")
+    display("nonexistent.txt", 1430, "display")
+    mock_print.assert_called_once_with("Error: No file found with the specified name.")
 
 
-# Test cases for clipboard functionality
-def test_show_with_clipboard_linux(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
-    monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
-    monkeypatch.setattr("builtins.open", mock_open_file_content)
-    monkeypatch.setattr("sys.platform", "linux")
-    monkeypatch.setattr("shutil.which", lambda x: "/usr/bin/xclip")
-    monkeypatch.setattr("subprocess.run", mock_subprocess_run)
+def test_display_general_error(mock_env, monkeypatch):
+    def mock_open(*args, **kwargs):
+        raise Exception("Test error")
 
-    show("test_snippet", "1234", clipboard=1)
+    monkeypatch.setattr("builtins.open", mock_open)
+    mock_print = Mock()
+    monkeypatch.setattr("builtins.print", mock_print)
+
+    display("test.txt", 1430, "display")
+    mock_print.assert_called_once_with("Error: Test error")
 
 
-def test_show_with_clipboard_windows(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
-    monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
-    monkeypatch.setattr("builtins.open", mock_open_file_content)
-    monkeypatch.setattr("sys.platform", "win32")
-    monkeypatch.setattr("subprocess.run", mock_subprocess_run)
+def test_display_content(mock_env, monkeypatch):
+    mock_print = Mock()
+    monkeypatch.setattr("builtins.print", mock_print)
 
-    show("test_snippet", "1234", clipboard=1)
+    display("test.txt", 1430, "display")
+    mock_print.assert_called_once_with("Sample content")
 
-
-def test_show_with_clipboard_macos(monkeypatch):
-    monkeypatch.setattr("package.show.datetime", MockDateTime)
-    monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.show.glob.glob", mock_glob_single_file
-    )  # Added this line
-    monkeypatch.setattr("builtins.open", mock_open_file_content)
-    monkeypatch.setattr("sys.platform", "darwin")
-    monkeypatch.setattr("subprocess.run", mock_subprocess_run)
-
-    show("test_snippet", "1234", clipboard=1)
-
-
-# Test cases for write function
-def test_write_correct_password(monkeypatch):
-    monkeypatch.setattr("package.write.datetime", MockDateTime)
-    monkeypatch.setattr("glob.glob", mock_glob_single_file)
-    monkeypatch.setattr(
-        "package.write.glob.glob", mock_glob_single_file
-    )  # Added this line
-    monkeypatch.setattr("shutil.copyfile", lambda x, y: None)
-
-    write("test_snippet", "1234")
-
-
-def test_write_incorrect_password(monkeypatch):
-    monkeypatch.setattr("package.write.datetime", MockDateTime)
-
-    with pytest.raises(ValueError, match="syntax error: incorrect password"):
-        write("test_snippet", "5678")
